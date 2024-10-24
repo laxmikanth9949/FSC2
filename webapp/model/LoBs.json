@@ -1,0 +1,70 @@
+{
+	"results": [
+
+		{
+			"text": "PE Ariba",
+			"key": "Ariba"
+		}, {
+			"text": "PE Business ByDesign",
+			"key": "ByDesign"
+		}, {
+			"text": "PE Concur",
+			"key": "Concur"
+		}, {
+			"text": "PE Customer Experience",
+			"key": "Experience"
+		}, {
+			"text": "PE Customer Solution Support & Innovation",
+			"key": "Innovation"
+		}, {
+			"text": "PE Digital Supply Chain",
+			"key": "Chain"
+		}, {
+			"text": "PE Enterprise Cloud Services",
+			"key": "ECloud"
+		}, {
+			"text": "PE Fieldglass",
+			"key": "Fieldglass"
+		}, {
+			"text": "PE Globalization Services",
+			"key": "Globalization"
+		}, {
+			"text": "PE Industry Cloud",
+			"key": "ICloud"
+		}, {
+			"text": "PE Innovative Business Solutions",
+			"key": "Solutions"
+		}, {
+			"text": "PE Integrated Business Planning",
+			"key": "Planning"
+		}, {
+			"text": "PE IoT",
+			"key": "IoT"
+		}, {
+			"text": "PE S/4HANA",
+			"key": "HANA"
+		}, {
+			"text": "PE SAP Enterprise Adoption",
+			"key": "Adoption"
+		}, {
+			"text": "PE SuccessFactors",
+			"key": "SuccessFactors"
+		}, {
+			"text": "T&I Artificial Intelligence",
+			"key": "Intelligence"
+		}, {
+			"text": "T&I Big Data",
+			"key": "BigData"
+		}, {
+			"text": "T&I BTP Core",
+			"key": "BTPCORE"
+		}, {
+			"text": "T&I HANA & Analytics",
+			"key": "Analytics"
+		}, {
+			"text": "T&I New Ventures & Technologies",
+			"key": "Ventures"
+		}
+
+	]
+}

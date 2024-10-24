@@ -1,0 +1,619 @@
+[{
+	"portfolio": [
+
+	],
+	"productFamily": "",
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "S4HANA",
+	"region": "AMER",
+	"serviceTeamId": "25970644",
+	"solutionArea": "MCC SAP S4HANA AMER"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": "",
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "S4HANA",
+	"region": "APJ",
+	"serviceTeamId": "25970641",
+	"solutionArea": "MCC SAP S4HANA APJ"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": "",
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "S4HANA",
+	"region": "EMEA",
+	"serviceTeamId": "16673868",
+	"solutionArea": "MCC SAP S4HANA EMEA"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": "",
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "S4HANA",
+	"region": "LAC",
+	"serviceTeamId": "25970643",
+	"solutionArea": "MCC SAP S4HANA LAC"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": "",
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "S4HANA",
+	"region": "MEE",
+	"serviceTeamId": "37440664",
+	"solutionArea": "MCC SAP S4HANA MEE"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BTP HANA"
+	}, {
+		"name": "BTP ABAP Platform"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "14235364",
+	"solutionArea": "MCC BTP HANA Analytics AMER"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BTP HANA"
+	}, {
+		"name": "BTP ABAP Platform"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "14235363",
+	"solutionArea": "MCC BTP HANA Analytics APJ"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BTP HANA"
+	}, {
+		"name": "BTP ABAP Platform"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "14217791",
+	"solutionArea": "MCC BTP HANA Analytics EMEA"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BTP HANA"
+	}, {
+		"name": "BTP ABAP Platform"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "14235365",
+	"solutionArea": "MCC BTP HANA Analytics LAC"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BTP HANA"
+	}, {
+		"name": "BTP ABAP Platform"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37537748",
+	"solutionArea": "MCC BTP HANA Analytics MEE"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BW & EPM"
+	}, {
+		"name": "Analytics"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "14235364",
+	"solutionArea": "MCC BTP HANA Analytics AMER"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BW & EPM"
+	}, {
+		"name": "Analytics"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "14235363",
+	"solutionArea": "MCC BTP HANA Analytics APJ"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BW & EPM"
+	}, {
+		"name": "Analytics"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "14217791",
+	"solutionArea": "MCC BTP HANA Analytics EMEA"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BW & EPM"
+	}, {
+		"name": "Analytics"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "14235365",
+	"solutionArea": "MCC BTP HANA Analytics LAC"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [{
+		"name": "BW & EPM"
+	}, {
+		"name": "Analytics"
+	}],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37537748",
+	"solutionArea": "MCC BTP HANA Analytics MEE"
+}, {
+	"portfolio": [{
+		"name": "Business Technology Platform"
+	}, {
+		"name": "Intelligent Technologies"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31458977",
+	"solutionArea": "MCC BTP Core AMER"
+}, {
+	"portfolio": [{
+		"name": "Business Technology Platform"
+	}, {
+		"name": "Intelligent Technologies"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31458975",
+	"solutionArea": "MCC BTP Core APJ"
+}, {
+	"portfolio": [{
+		"name": "Business Technology Platform"
+	}, {
+		"name": "Intelligent Technologies"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37537747",
+	"solutionArea": "MCC BTP Core MEE"
+}, {
+	"portfolio": [{
+		"name": "Business Technology Platform"
+	}, {
+		"name": "Intelligent Technologies"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31458974",
+	"solutionArea": "MCC BTP Core EMEA"
+}, {
+	"portfolio": [{
+		"name": "Business Technology Platform"
+	}, {
+		"name": "Intelligent Technologies"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31458978",
+	"solutionArea": "MCC BTP Core LAC"
+}, {
+	"portfolio": [{
+		"name": "Customer Experience"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31471674",
+	"solutionArea": "MCC Customer Experience AMER"
+}, {
+	"portfolio": [{
+		"name": "Customer Experience"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31471673",
+	"solutionArea": "MCC Customer Experience APJ"
+}, {
+	"portfolio": [{
+		"name": "Customer Experience"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31471672",
+	"solutionArea": "MCC Customer Experience EMEA"
+}, {
+	"portfolio": [{
+		"name": "Customer Experience"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31471675",
+	"solutionArea": "MCC Customer Experience LAC"
+}, {
+	"portfolio": [{
+		"name": "Customer Experience"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37440669",
+	"solutionArea": "MCC Customer Experience MEE"
+}, {
+	"portfolio": [{
+		"name": "Digital Core"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31495302",
+	"solutionArea": "MCC  Digital Supply Chain AMER"
+}, {
+	"portfolio": [{
+		"name": "Digital Core"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31458971",
+	"solutionArea": "MCC  Digital Supply Chain APJ"
+}, {
+	"portfolio": [{
+		"name": "Digital Core"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31458970",
+	"solutionArea": "MCC  Digital Supply Chain EMEA"
+}, {
+	"portfolio": [{
+		"name": "Digital Core"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31495304",
+	"solutionArea": "MCC  Digital Supply Chain LAC"
+}, {
+	"portfolio": [{
+		"name": "Digital Core"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37440675",
+	"solutionArea": "MCC  Digital Supply Chain MEE"
+}, {
+	"portfolio": [{
+		"name": "People"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31471680",
+	"solutionArea": "MCC Human Experience Management AMER"
+}, {
+	"portfolio": [{
+		"name": "People"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31471679",
+	"solutionArea": "MCC Human Experience Management APJ"
+}, {
+	"portfolio": [{
+		"name": "People"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31471678",
+	"solutionArea": "MCC Human Experience Management EMEA"
+}, {
+	"portfolio": [{
+		"name": "People"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31471681",
+	"solutionArea": "MCC Human Experience Management LAC"
+}, {
+	"portfolio": [{
+		"name": "People"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37440671",
+	"solutionArea": "MCC Human Experience Management MEE"
+}, {
+	"portfolio": [{
+		"name": "Ariba & Fieldglass"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31495298",
+	"solutionArea": "MCC ISBN AMER"
+}, {
+	"portfolio": [{
+		"name": "Ariba & Fieldglass"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31471689",
+	"solutionArea": "MCC ISBN APJ"
+}, {
+	"portfolio": [{
+		"name": "Ariba & Fieldglass"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31471688",
+	"solutionArea": "MCC ISBN EMEA"
+}, {
+	"portfolio": [{
+		"name": "Ariba & Fieldglass"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31495299",
+	"solutionArea": "MCC ISBN LAC"
+}, {
+	"portfolio": [{
+		"name": "Ariba & Fieldglass"
+	}],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37440672",
+	"solutionArea": "MCC ISBN MEE"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "Hybris",
+	"component": "",
+	"functionalArea": "",
+	"region": "AMER",
+	"serviceTeamId": "31471674",
+	"solutionArea": "MCC Customer Experience AMER"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "Hybris",
+	"component": "",
+	"functionalArea": "",
+	"region": "APJ",
+	"serviceTeamId": "31471673",
+	"solutionArea": "MCC Customer Experience APJ"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "Hybris",
+	"component": "",
+	"functionalArea": "",
+	"region": "EMEA",
+	"serviceTeamId": "31471672",
+	"solutionArea": "MCC Customer Experience EMEA"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "Hybris",
+	"component": "",
+	"functionalArea": "",
+	"region": "LAC",
+	"serviceTeamId": "31471675",
+	"solutionArea": "MCC Customer Experience LAC"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "Hybris",
+	"component": "",
+	"functionalArea": "",
+	"region": "MEE",
+	"serviceTeamId": "37440669",
+	"solutionArea": "MCC Customer Experience MEE"
+}, {
+	"portfolio": [
+
+	],
+	"productFamily": [
+
+	],
+	"imsSupportProduct": "",
+	"component": "",
+	"functionalArea": "",
+	"region": "",
+	"serviceTeamId": "20672944",
+	"solutionArea": "MCC GLOBAL"
+}]

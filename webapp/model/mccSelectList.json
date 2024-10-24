@@ -1,0 +1,541 @@
+{
+	"Template": [{
+		"line": "Request description:"
+	}, {
+		"line": "<Please feel free to describe your request within this email as plain text. For more complex situations please complete the questionnaire below as this will accelerate request handling.>\n\n"
+	}, {
+		"line": "_________"
+	}, {
+		"line": "Involved Stakeholders:"
+	}, {
+		"line": "_________"
+	}, {
+		"line": "Request Reason (please mark):"
+	}, {
+		"line": "[ ] Critical Customer Situation"
+	}, {
+		"line": "[ ] Cross Issue (additional customers at risk?)"
+	}, {
+		"line": "[ ] Service Request (particular MaxAttention)"
+	}, {
+		"line": "[ ] Success Plan Support <Preferred Care/ES/…>"
+	}, {
+		"line": "[ ] Engagement Review"
+	}, {
+		"line": "[ ] Other"
+	}, {
+		"line": "_________"
+	}, {
+		"line": "Business Impact (please mark and complete):"
+	}, {
+		"line": "[ ] Go-live endangered? If checked: <DATE>"
+	}, {
+		"line": "[ ] Business down or not usable? if checked: <please specify>"
+	}, {
+		"line": "[ ] Users affected: if checked: <How many are affected>"
+	}, {
+		"line": "[ ] Subscription Renewal at Risk"
+	}, {
+		"line": "[ ] Financial impact: if checked: <AMOUNT $>"
+	}, {
+		"line": "[ ] Other: if checked: <please specify e.g. customer is keynote speaker at Sapphire>"
+	}, {
+		"line": "_________"
+	}, {
+		"line": "Request reason & expectations/required actions from MCC Cloud:"
+	}, {
+		"line": "(please specify details around selected business impact and project status)"
+	}, {
+		"line": "_________"
+	}, {
+		"line": "Related Incidents:"
+	}, {
+		"line": "(BCP Ticket # - JIRA Ticket # - Product – Module – Priority – Business Impact - Which steps were taken before this request (e.g. CIM)? Why was it not sufficient?)"
+	}],
+	"RegionList": [{
+		"Region": "APJ",
+		"Topic": [{
+			"name": "Engagement Support APJ-ANZ",
+			"service_team_id": "16122383"
+		}, {
+			"name": "Engagement Support APJ-IN",
+			"service_team_id": "14722020"
+		}, {
+			"name": "Engagement Support APJ-JP",
+			"service_team_id": "16122385"
+		}, {
+			"name": "Engagement Support APJ-KOR",
+			"service_team_id": "22163161"
+		}, {
+			"name": "Engagement Support APJ-NA",
+			"service_team_id": "14217680"
+		}, {
+			"name": "Engagement Support APJ-SEA",
+			"service_team_id": "16122387"
+		}, {
+			"name": "HANA",
+			"service_team_id": "14235363"
+		}, {
+			"name": "Cloud",
+			"service_team_id": "19093065"
+		}, {
+			"name": "Hybrid",
+			"service_team_id": "25978270"
+		}, {
+			"name": "Innovation Adoption & Hybrid Ops",
+			"service_team_id": "14629050"
+		}, {
+			"name": "S/4 HANA",
+			"service_team_id": "25970641"
+		}]
+	}, {
+		"Region": "EMEA",
+		"Topic": [{
+			"name": "Engagement Support",
+			"service_team_id": "16539820"
+		}, {
+			"name": "HANA",
+			"service_team_id": "14217791"
+		}, {
+			"name": "Cloud",
+			"service_team_id": "17877275"
+		}, {
+			"name": "Hybrid",
+			"service_team_id": "25674544"
+		}, {
+			"name": "Innovation Adoption & Hybrid Ops",
+			"service_team_id": "14235826"
+		}, {
+			"name": "S/4 HANA",
+			"service_team_id": "16673868"
+		}]
+	}, {
+		"Region": "GLOBAL",
+		"Topic": [{
+			"name": "MCC",
+			"service_team_id": "20672944"
+		}, {
+			"name": "HANA",
+			"service_team_id": "13732949"
+		}, {
+			"name": "Cloud",
+			"service_team_id": "19568810"
+		}, {
+			"name": "Innovation Adopt & Hybrid Ops",
+			"service_team_id": "28054858"
+		}]
+	}, {
+		"Region": "LAC",
+		"Topic": [{
+			"name": "Engagement Support",
+			"service_team_id": "15966792"
+		}, {
+			"name": "HANA",
+			"service_team_id": "14235365"
+		}, {
+			"name": "Cloud",
+			"service_team_id": "17403528"
+		}, {
+			"name": "Hybrid",
+			"service_team_id": "25978266"
+		}, {
+			"name": "Innovation Adoption & Hybrid Ops",
+			"service_team_id": "15963535"
+		}, {
+			"name": "S/4 HANA",
+			"service_team_id": "25970643"
+		}]
+	}, {
+		"Region": "NA",
+		"Topic": [{
+			"name": "Engagement Support",
+			"service_team_id": "21710213"
+		}, {
+			"name": "HANA",
+			"service_team_id": "14235364"
+		}, {
+			"name": "Cloud",
+			"service_team_id": "16755384"
+		}, {
+			"name": "Hybrid",
+			"service_team_id": "25978264"
+		}, {
+			"name": "Innovation Adoption & Hybrid Ops",
+			"service_team_id": "19198289"
+		}, {
+			"name": "S/4 HANA",
+			"service_team_id": "25970644"
+		}]
+	}],
+	"StatusList": [{
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0010",
+		"value2": "",
+		"value3": "New",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0011",
+		"value2": "",
+		"value3": "In Process Backoffice",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0012",
+		"value2": "",
+		"value3": "Responsible's Action",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0013",
+		"value2": "",
+		"value3": "Confirmed",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0014",
+		"value2": "",
+		"value3": "Completed",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0018",
+		"value2": "",
+		"value3": "In Process SAC",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0019",
+		"value2": "",
+		"value3": "In MCC Dep Rooms",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0020",
+		"value2": "",
+		"value3": "In Process CIM",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0021",
+		"value2": "",
+		"value3": "In Process IEM",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0022",
+		"value2": "",
+		"value3": "In Process CIC",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0023",
+		"value2": "",
+		"value3": "In Process COM",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0024",
+		"value2": "",
+		"value3": "In Process PS",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('STATUS')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0025",
+		"value2": "",
+		"value3": "In Process IMS",
+		"bSelected": false
+	}],
+	"CategoryList": [{
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZB4",
+		"value2": "X",
+		"value3": "AGS:MCC",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZB2",
+		"value2": "X",
+		"value3": "DBS:Q-Gate Follow-Up",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZZA",
+		"value2": "X",
+		"value3": "DBS:PositioningSup",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZB5",
+		"value2": "X",
+		"value3": "DBS: PGA",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "Z93",
+		"value2": "",
+		"value3": "AGS:MaxAttentionMsg",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "Z91",
+		"value2": "",
+		"value3": "AGS:Production Down",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZB9",
+		"value2": "",
+		"value3": "AGS:ActEmbMsg",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "Z88",
+		"value2": "",
+		"value3": "AGS:Frontoffice Sup.",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "Z90",
+		"value2": "",
+		"value3": "AGS:GoLive Endanger",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZZN",
+		"value2": "",
+		"value3": "AGS:Embedded Support",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZZE",
+		"value2": "",
+		"value3": "AGS:StandardCustMsg",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZZH",
+		"value2": "",
+		"value3": "AGS:EnterprSupMsg",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "Z83",
+		"value2": "",
+		"value3": "AGS:Cust/Proj.Eval.",
+		"bSelected": false
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('CATEGORY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "CATEGORY",
+		"value1": "ZVM",
+		"value2": "",
+		"value3": "MCC Customer Visit",
+		"bSelected": false
+	}],
+	"PriorityList": [{
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "1",
+		"value2": "",
+		"value3": "Very high"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "3",
+		"value2": "",
+		"value3": "High"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "5",
+		"value2": "",
+		"value3": "Medium"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('PRIORITY')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "9",
+		"value2": "",
+		"value3": "Low"
+	}],
+	"RatingList": [{
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "RATING",
+		"value1": "G",
+		"value2": "",
+		"value3": "Green"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "RATING",
+		"value1": "R",
+		"value2": "",
+		"value3": "Red"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"uri": "https://webidetesting8291871-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_DASHBOARDS_SRV/SettingList('RATING')",
+			"type": "ZS_AGS_DASHBOARDS_SRV.Setting"
+		},
+		"key": "RATING",
+		"value1": "Y",
+		"value2": "",
+		"value3": "Yellow"
+	}]
+}

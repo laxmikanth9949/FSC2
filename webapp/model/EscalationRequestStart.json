@@ -1,0 +1,15 @@
+{
+				"p1":"<p></p><strong>WHEN TO USE:</strong><p></p>",
+				"p2":"Please use the Global Escalation Request Form only to request global escalations with a significant business impact for customers or for SAP.<br>",
+				"p3":"Do not use this Form to request escalations of incidents or business down situations <embed data-index=\"0\"><a target=\"_blank\" href=\"https://portal.wdf.sap.corp/go/mcs\">(dedicated escalation procedures available).</a><br>",
+				"p3Link":"(dedicated escalation procedures available).",
+				"p3LinkUrl":"https://portal.wdf.sap.corp/go/mcs",
+				"p4":"Do not use this Form for resource escalations (e.g. staffing), funding requests, project execution activities.<p></p>",
+				"p5":"<p></p><strong>IMPORTANT PROCESS INFORMATION:</strong><p></p>",
+				"p6":"Note that the request needs to be judged and decided by Mission Critical Support.<br>",
+				"p7":"No internal/external communication on the start of an escalation is allowed before the decision has been<br>",
+				"p8":"communicated by Mission Critical Support (MCS). Further information on MCS can be found on: <embed data-index=\"0\"><a target=\"_blank\" href=\"https://portal.wdf.sap.corp/go/mcs\">/go/mcs</a><p></p>",
+				"p8Link":"/go/mcs",
+				"p8LiknUrl":"https://portal.wdf.sap.corp/go/mcs"
+	
+			}

@@ -1,0 +1,130 @@
+{
+	"allStatus": [{
+		"Status": "E0010",
+		"StatusTxt": "New"
+	}, {
+		"Status": "E0011",
+		"StatusTxt": "Non Complete(Excl. New)"
+	}, {
+		"Status": "E0014",
+		"StatusTxt": "Complete (last 2 months)"
+	}],
+	"allPriority": [{
+		"PriorityCode": "1",
+		"Priority": "Very High"
+	}, {
+		"PriorityCode": "3",
+		"Priority": "High"
+	}, {
+		"PriorityCode": "5",
+		"Priority": "Medium"
+	}, {
+		"PriorityCode": "9",
+		"Priority": "Low"
+	}],
+	"allTimePeriod": [{
+		"TimePeriod": "1",
+		"TimePeriodTxt": "Last 3 days"
+	}, {
+		"TimePeriod": "2",
+		"TimePeriodTxt": "Last 7 days"
+	}, {
+		"TimePeriod": "3",
+		"TimePeriodTxt": "Last 30 days"
+	}, {
+		"TimePeriod": "4",
+		"TimePeriodTxt": "Last 90 days"
+	}, {
+		"TimePeriod": "5",
+		"TimePeriodTxt": "Last 1 year"
+	}, {
+		"TimePeriod": "6",
+		"TimePeriodTxt": "All Time"
+	}],
+	"incidentPriority": [{
+		"PriorityCode": "1",
+		"Priority": "Very high"
+	}, {
+		"PriorityCode": "3",
+		"Priority": "High"
+	}],
+	"incidentStatus": [{
+		"Status": "E0001",
+		"StatusTxt": "New"
+	}, {
+		"Status": "E0002",
+		"StatusTxt": "In Process"
+	}, {
+		"Status": "E0003",
+		"StatusTxt": "On Hold"
+	}, {
+		"Status": "E0004",
+		"StatusTxt": "Customer Action"
+	}, {
+		"Status": "E0005",
+		"StatusTxt": "Solution Provided"
+	}, {
+		"Status": "E0015",
+		"StatusTxt": "Pending Development"
+	}, {
+		"Status": "E0016",
+		"StatusTxt": "Pending Operations"
+	}, {
+		"Status": "E0017",
+		"StatusTxt": "Pending Partner"
+	}, {
+		"Status": "E0018",
+		"StatusTxt": "Pending Release"
+	}, {
+		"Status": "18",
+		"StatusTxt": "Awaiting Info"
+	}, {
+		"Status": "6",
+		"StatusTxt": "Resolved (last 2 months)"
+	}],
+	"situationStatus": [{
+		"Status": "cust_req_inproc",
+		"StatusTxt": "Non-Complete"
+	}, {
+		"Status": "cust_req_compl",
+		"StatusTxt": "Complete (last 2 months)"
+	}],
+	"caseStatus": [{
+		"Status": "20",
+		"StatusTxt": "Open / New"
+	}, {
+		"Status": "30",
+		"StatusTxt": "In Process"
+	}, {
+		"Status": "40",
+		"StatusTxt": "Closed (last 2 months)"
+	}, {
+		"Status": "50",
+		"StatusTxt": "Rejected (last 2 months)"
+	}],
+	"casePriority": [{
+		"PriorityCode": "1",
+		"Priority": "normal"
+	}, {
+		"PriorityCode": "2",
+		"Priority": "high"
+	}, {
+		"PriorityCode": "3",
+		"Priority": "very high"
+	}],
+	"AssignedToMeStatus": [{
+		"Status": "all",
+		"StatusTxt": "All"
+	}, {
+		"Status": "01_NOT_COMP",
+		"StatusTxt": "Non Completed"
+	}, {
+		"Status": "02_COMP",
+		"StatusTxt": "Completed"
+	}],
+	"allFilterIcon": "sap-icon://clear-filter",
+	"situationFilterIcon": "sap-icon://clear-filter",
+	"businessDownFilterIcon": "sap-icon://clear-filter",
+	"incidentFilterIcon": "sap-icon://clear-filter",
+	"caseFilterIcon": "sap-icon://clear-filter"
+}
