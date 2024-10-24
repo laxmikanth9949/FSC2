@@ -1,0 +1,133 @@
+{
+	"results": [{
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0010",
+		"value2": "",
+		"value3": "New"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0011",
+		"value2": "",
+		"value3": "In Process Backoffice"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0012",
+		"value2": "",
+		"value3": "Responsible's Action"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0013",
+		"value2": "",
+		"value3": "Confirmed"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0014",
+		"value2": "",
+		"value3": "Completed"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0018",
+		"value2": "",
+		"value3": "In Process SAC"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0019",
+		"value2": "",
+		"value3": "In MCC Dep Rooms"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0020",
+		"value2": "",
+		"value3": "In Process CIM"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0021",
+		"value2": "",
+		"value3": "In Process IEM"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0022",
+		"value2": "",
+		"value3": "In Process CIC"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0023",
+		"value2": "",
+		"value3": "In Process COM"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0024",
+		"value2": "",
+		"value3": "In Process PS"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('STATUS')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "STATUS",
+		"value1": "E0025",
+		"value2": "",
+		"value3": "In Process IMS"
+	}]
+}

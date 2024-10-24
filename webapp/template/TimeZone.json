@@ -1,0 +1,55 @@
+{
+	"results": [{
+		"zone": "Pacific Time",
+		"key": "PST",
+		"TimezoneOffset":"-8"
+	}, {
+		"zone": "Mountain Time (Denver)",
+		"key": "MST",
+		"TimezoneOffset":"-7"
+	}, {
+		"zone": "Central Time (Dallas)",
+		"key": "CST",
+		"TimezoneOffset":"-6"
+	}, {
+		"zone": "Eastern Time (New York)",
+		"key": "EST",
+		"TimezoneOffset":"-5"
+	}, {
+		"zone": "Western Europe",
+		"key": "WET",
+		"TimezoneOffset":"0"
+	}, {
+		"zone": "Central Europe",
+		"key": "CET",
+		"TimezoneOffset":"1"
+	}, {
+		"zone": "Eastern Europe",
+		"key": "EET",
+		"TimezoneOffset":"2"
+	}, {
+		"zone": "England, Ireland, Scotland",
+		"key": "UK",
+		"TimezoneOffset":"0"
+	}, {
+		"zone": "UTC",
+		"key": "UTC",
+		"TimezoneOffset":"0"
+	}, {
+		"zone": "UTC+5:30h",
+		"key": "UTC+53",
+		"TimezoneOffset":"5.5"
+	}, {
+		"zone": "UTC+6h",
+		"key": "UTC+6",
+		"TimezoneOffset":"6"
+	}, {
+		"zone": "UTC+7h",
+		"key": "UTC+7",
+		"TimezoneOffset":"7"
+	}, {
+		"zone": "UTC+8h",
+		"key": "UTC+8",
+		"TimezoneOffset":"8"
+	}]
+}
