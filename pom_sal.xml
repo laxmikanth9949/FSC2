@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.sap.fiori</groupId>
+		<artifactId>fnf-parent-pom</artifactId>
+		<version>1.17.11-SNAPSHOT</version>
+	</parent>
+
+	<!-- define the groupId for your project, e.g. com.sap.support.application -->
+	<groupId>sap.support.fsc2</groupId>
+	<!-- define the artifactId for your project, e.g. application -->
+	<artifactId>fsc2</artifactId>
+	<!-- define the next wave / version for your application, it must be in format YEAR.WAVE.VERSION-SNAPSHOT, e.g. 2017.3.1-SNAPSHOT -->
+	<version>2018.1.1-SNAPSHOT</version>
+	
+	<!-- define a human readable name for your application, e.g. Application -->
+	<name>fsc2</name>
+	<!-- describe your project, a quick comment to any readers of the POM -->
+	<description>Future Support for Critical Customer Issue</description>
+	
+	<packaging>war</packaging>
+ 
+</project>

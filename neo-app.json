@@ -1,0 +1,160 @@
+{
+	"welcomeFile": "/webapp/index.html",
+	"sendWelcomeFileRedirect": false,
+	"headerWhiteList": [
+		"AppIdentifier"
+	],
+	"routes": [{
+		"path": "/webapp/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/1.120.1/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/webapp/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/1.120.1/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/1.120.1/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/1.120.1/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/webapp/resources/sapit",
+		"target": {
+			"type": "application",
+			"name": "sapitlibrary"
+		},
+		"description": ""
+	}, {
+		"path": "/resources/sapit",
+		"target": {
+			"type": "application",
+			"name": "sapitlibrary"
+		},
+		"description": ""
+	}, {
+		"path": "/sap/ui5/1/resources/sapit",
+		"target": {
+			"type": "application",
+			"name": "sapitlibrary"
+		},
+		"description": ""
+	}, {
+		"path": "/intbc",
+		"target": {
+			"type": "destination",
+			"name": "int_bc"
+		},
+		"description": "BC* Landscape connection"
+	}, {
+		"path": "/intic",
+		"target": {
+			"type": "destination",
+			"name": "int_ic"
+		},
+		"description": "IC* Landscape connection"
+	}, {
+		"path": "/applications",
+		"target": {
+			"type": "application",
+			"name": "*"
+		},
+		"description": "HANA Cloud Platform Applications"
+	}, {
+		"path": "/servicenow",
+		"target": {
+			"type": "destination",
+			"name": "int_snow"
+		},
+		"description": "Service Now instance of Sandbox"
+	}, {
+		"path": "/sap/opu/odata",
+		"target": {
+			"type": "destination",
+			"name": "int_pg",
+			"entryPath": "/sap/opu/odata"
+		},
+		"description": "PG* Landscape connection"
+	}, {
+		"path": "/bct/odata",
+		"target": {
+			"type": "destination",
+			"name": "int_crm_ags_web",
+			"entryPath": "/sap/opu/odata"
+		},
+		"description": "BC* Landscape connection"
+	}, {
+		"path": "/w71",
+		"target": {
+			"type": "destination",
+			"name": "Int_w71"
+		},
+		"description": "w7t"
+	}, {
+		"path": "/w72",
+		"target": {
+			"type": "destination",
+			"name": "Int_w72"
+		},
+		"description": "w7t"
+	}, {
+		"path": "/ext_pd_api",
+		"target": {
+			"type": "destination",
+			"name": "ext_pagerduty"
+		},
+		"description": "pager duty instance api"
+	}, {
+		"path": "/ext_pd_events",
+		"target": {
+			"type": "destination",
+			"name": "ext_pagerdutyevents"
+		},
+		"description": "pager duty instance api"
+	}, {
+		"path": "/apim",
+		"target": {
+			"type": "destination",
+			"name": "ext_mcc_apim"
+		},
+		"description": "Connection to api management"
+	}, {
+		"path": "/apimcf",
+		"target": {
+			"type": "destination",
+			"name": "ext_mcc_apim_cf"
+		},
+		"description": "CF HANA OData Service"
+	}],
+	"securityConstraints": [{
+		"permission": "p_sap_employees",
+		"description": "Only SAPEmployees are allowed to access the application",
+		"protectedPaths": [
+			"/"
+		]
+	}, {
+		"permission": "p_neo-app.json_access",
+		"description": "Protects the Access to the neo-app.json",
+		"protectedPaths": [
+			"neo-app.json"
+		]
+	}]
+}
