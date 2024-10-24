@@ -1,0 +1,24 @@
+{
+		 "results":[
+            {
+                "__metadata":{
+                    "id":"https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2RequestSet(ID='0000312566',GUID='0894EF07EA301ED8A58CF1FA79F2F512')",
+                    "uri":"https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2RequestSet(ID='0000312566',GUID='0894EF07EA301ED8A58CF1FA79F2F512')",
+                    "type":"ZS_AGS_FSC2_SRV.FSC2Request"
+                },
+                "ID":"0000312566",
+                "GUID":"0894EF07EA301ED8A58CF1FA79F2F512",
+                "Description":"test request",
+                "CustomerNo":"0000012186",
+                "CustomerName":"Bayer Aktiengesellschaft",
+                "TransType":"ZS46",
+                "Status":"E0020",
+                "CreateAt":"00000000000000",
+                "Action":"myrequest",
+                "IncidentNum":"",
+                "BusImpact":"",
+                "RequestDesc":"",
+                "StatusTxt":"In Process CIM"
+            }
+        ]
+    }

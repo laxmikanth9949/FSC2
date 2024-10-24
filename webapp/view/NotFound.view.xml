@@ -1,0 +1,7 @@
+<mvc:View controllerName="sap.support.fsc2.controller.NotFound" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+	<MessagePage title="{i18n>NotFound}" text="{i18n>NotFound.text}" description="{i18n>NotFound.description}">
+		<buttons>
+			<Button text="Home" tooltip="Back" press="onNavHome"/>
+		</buttons>
+		</MessagePage>/>
+</mvc:View>

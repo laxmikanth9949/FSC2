@@ -1,0 +1,59 @@
+<mvc:View displayBlock="true" controllerName="sap.support.fsc2.controller.OtherMCCReq_N" height="100%" xmlns:uxap="sap.uxap"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:semantic="sap.f.semantic"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<semantic:SemanticPage id="othermccreq" headerPinnable="true" headerExpanded="false" toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false" titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>appTitle}"/>
+		</semantic:titleHeading>
+		<semantic:titleSnappedOnMobile>
+			<Title text="{i18n>appTitle}"/>
+		</semantic:titleSnappedOnMobile>
+		<semantic:content>
+			<VBox class="sapUiTinyMargin">
+				<layout:HorizontalLayout allowWrapping="true">
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>myRequests}" subheader="" press="onMyRequestsPress"
+						tooltip= "{parts:[{path:'homePageCount>/loadComplete'},{path:'homePageCount>/myRequestsChanged'}, {path:'homePageCount>/myRequests'}],formatter:'.formatter.formatReqTtip'}">
+						<TileContent footer="{=!${homePageCount>/loadComplete}? '': ''}" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center" width="90%" >
+								<ImageContent src="sap-icon://request">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+								<HBox justifyContent="SpaceBetween" alignItems="Center" width="50%">
+									<BusyIndicator  visible ="{= !${homePageCount>/loadComplete}}" />
+									<NumericContent visible ="{= !!${homePageCount>/loadComplete}}" value=" {homePageCount>/myRequestsChanged}" valueColor="Critical" width="40%" class="sapUiSmallMarginEnd"/>
+									<NumericContent visible ="{= !!${homePageCount>/loadComplete}}" value="({homePageCount>/myRequests})" width="40%" class="sapUiTinyMarginBegin"/>
+								</HBox>
+							</HBox>							
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>createGlobalEscalationRequestTile}" subheader=""
+						press="onCreateIssue">
+						<TileContent footer="" unit="">
+							<ImageContent src="sap-icon://create-form"></ImageContent>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>createCustomerVisitRequestTitle}" subheader=""
+						press="onCreateCCV">
+						<TileContent footer="" unit="">
+							<ImageContent src="sap-icon://create-form"></ImageContent>
+						</TileContent>
+					</GenericTile>
+					<!-- <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>supportEnablement}" press="onSupportEnablementPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center">
+								<ImageContent src="sap-icon://hint">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+							</HBox>
+						</TileContent>
+					</GenericTile> -->
+				</layout:HorizontalLayout>
+			</VBox>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

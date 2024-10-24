@@ -1,0 +1,156 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.IncidentSearch" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<!--<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>Incidentsearch}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+				suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValueIncident}"
+				class="sapUiMediumMarginTopBottom">
+				<suggestionItems>
+					<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+				</suggestionItems>
+			</SearchField>
+			<IconTabBar id="idSearchTab" headerMode="Inline" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter key="keyIncident" text="{i18n>incident}" count="{searchResult>/Incident/count}">
+						<!--<List id="idIncident" noDataText="{i18n>noData}" mode="None"-->
+						<!--	items="{path: 'searchResult>/Incident/results', sorter: { path: 'MessageYear',descending: true}}">-->
+						<!--	<ObjectListItem title="{searchResult>Description}" type="Active" press="handleRowPress($event, 'searchResult')">-->
+						<!--		<firstStatus>-->
+						<!--			<ObjectStatus text="{searchResult>Priority}"-->
+						<!--				state="{parts:[{path:'searchResult>SNow_number'},{path:'searchResult>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>-->
+						<!--		</firstStatus>-->
+						<!--		<secondStatus>-->
+						<!--			<ObjectStatus text="{searchResult>Component}" state="None"/>-->
+						<!--		</secondStatus>-->
+						<!--		<attributes>-->
+						<!--			<ObjectAttribute text="{searchResult>Name}"/>-->
+						<!--			<ObjectAttribute text="{searchResult>ShortID} {path:'searchResult>Active',formatter:'.formatActiveStatus'}"/>-->
+						<!--			<ObjectAttribute text="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>-->
+						<!--<ObjectAttribute text="{parts:[{path:'searchResult>ShortID'},{path:'searchResult>SNow_number'}],formatter:'.formatter.formatSNowNum'}"/>-->
+						<!--{path:'searchResult>ID',formatter:'.formatter.formatIncidentCatalog'}-->
+						<!--		</attributes>-->
+						<!--		<markers>-->
+						<!--			<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>-->
+						<!--			<ObjectMarker type="Flagged" visible="{searchResult>Escalation}"/>-->
+						<!--		</markers>-->
+						<!--	</ObjectListItem>-->
+						<!--</List>-->
+						<Table id="idIncident" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'searchResult>/Incident/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<CheckBox select = "onInactiveToggled" id = "inactiveCheckBox" text="Inactive Cases" class = "sapUiMediumMarginEnd" />
+										<SearchField id="searchFieldInc" search="onFilterTable($event, 'idIncident')" liveChange="onFilterTable($event, 'idIncident')"
+											placeholder="Filter" class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'IncidentSearch')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarInc" visible="false">
+									<Text id="vsdFilterLabelInc"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="Low"><Text text="Customer Name"/></Column>
+								<Column importance="Low"><Text text="Component"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="Low" hAlign="Center" visible="{path:'searchResult>/Incident/results', formatter:'.formatter.SnowColumnVisible'}"><Text text="NOW ID"/></Column>
+								<!--<Column importance="Low" hAlign="Center"><Text text=""/></Column>-->
+								<Column importance="High" hAlign="End"><Text text="Priority"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'searchResult')" type="Navigation">
+									<cells>
+										<ObjectIdentifier title="{searchResult>Description}"/>
+										<Text text="{searchResult>Name}"/>
+										<Text text="{searchResult>Component}"/>
+										<ObjectNumber number="{searchResult>ShortID} {path:'searchResult>Active',formatter:'.formatActiveStatus'}"/>
+										<ObjectNumber number="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>
+										<!--<ObjectMarker type="Flagged" visible="{searchResult>Escalation}"/>-->
+										<ObjectStatus text="{searchResult>Priority}"
+											state="{parts:[{path:'searchResult>SNow_number'},{path:'searchResult>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter key="favorites" text="{i18n>myFavorites}" 
+					count="{= !!${favorite>/Incident/loadComplete} ? ${favorite>/Incident/count} : 'N/A'}">
+						<!--<List id="idIncidentFav" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Incident/results'}">-->
+						<!--	<ObjectListItem title="{favorite>Description}" type="Active" press="handleRowPress($event, 'favorite')">-->
+						<!--		<firstStatus>-->
+						<!--			<ObjectStatus text="{favorite>Status}"/>-->
+						<!--		</firstStatus>-->
+						<!--		<secondStatus>-->
+						<!--			<ObjectStatus text="{favorite>Priority}"-->
+						<!--				state="{parts:[{path:'favorite>SNow_number'},{path:'favorite>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>-->
+						<!--		</secondStatus>-->
+						<!--		<attributes>-->
+						<!--			<ObjectAttribute text="{favorite>Name}"/>-->
+						<!--			<ObjectAttribute text="{favorite>ShortID}"/>-->
+						<!--{path:'favorite>ID',formatter:'.formatter.formatIncidentCatalog'}-->
+						<!--		</attributes>-->
+						<!--		<markers>-->
+						<!--			<ObjectMarker type="Favorite"/>-->
+						<!--		</markers>-->
+						<!--	</ObjectListItem>-->
+						<!--</List>-->
+						<Table id="idIncidentFav" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'favorite>/Incident/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<SearchField id="searchFieldIncFav" search="onFilterTable($event, 'idIncidentFav')" liveChange="onFilterTable($event, 'idIncidentFav')"
+											placeholder="Filter" class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'IncidentSearch')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarIncFav" visible="false">
+									<Text id="vsdFilterLabelIncFav"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="Low"><Text text="Customer Name"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="Medium" hAlign="End"><Text text="Priority"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'favorite')" type="Navigation">
+									<cells>
+										<ObjectIdentifier title="{favorite>Description}"/>
+										<Text text="{favorite>Name}"/>
+										<ObjectNumber number="{favorite>ShortID} {path:'favorite>Active',formatter:'.formatActiveStatus'}"/>
+										<ObjectStatus text="{favorite>Priority}"
+											state="{parts:[{path:'favorite>SNow_number'},{path:'favorite>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>
+										<ObjectStatus text="{favorite>Status}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

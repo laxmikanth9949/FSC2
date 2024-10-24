@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>settings}" class="sapUiSizeCompact sapUiContentPadding">
+		<content height="6rem">
+			<VBox>
+				<HBox class="sapMFlexBoxJustifySpaceBetween sapUiTinyMarginTop">
+					<Label text="{i18n>settingItem1}"></Label>
+					<Switch id="idNotification" state="{homePageConfig>/enableNotification}" customTextOn="Yes" customTextOff="No"></Switch>
+				</HBox>
+				<HBox class="sapMFlexBoxJustifySpaceBetween sapUiTinyMarginTop">
+					<Label text="{i18n>expertMode}"></Label>
+					<Switch id="idExpertMode" state="{homePageConfig>/expertMode}" customTextOn="Yes" customTextOff="No"></Switch>
+				</HBox>
+		<!--		<HBox class="sapMFlexBoxJustifySpaceBetween sapUiTinyMarginTop">
+					<Label text="{i18n>enableSaM}"></Label>
+					<Switch id="idEnableSaM" state="{homePageConfig>/enableSaM}" customTextOn="Yes" customTextOff="No"></Switch>
+				</HBox>-->
+				<HBox class="sapMFlexBoxJustifySpaceBetween sapUiTinyMarginTop">
+					<Label text="{i18n>useDefaultCase}"></Label>
+					<Switch id="idEnableDefaultCase" state="{homePageConfig>/enableDefaultCase}" customTextOn="Yes" customTextOff="No"></Switch>
+				</HBox>
+				<HBox class="sapMFlexBoxJustifySpaceBetween sapUiTinyMarginTop">
+					<Label text="{i18n>defaultCase}" class="sapUiTinyMarginTop"/>
+					<Input id="idDefaultCase" value="{homePageConfig>/defaultCase}" showValueHelp="true" editable="{homePageConfig>/enableDefaultCase}"
+						class="custReadOnlyInput" valueHelpOnly="false" valueHelpRequest="onCaseHelp" change="onSearchCaseID" valueLiveUpdate="true"/>
+				</HBox>
+				<List mode="None" class="custNoPadding" includeItemInSelection="false">
+					<InputListItem label="{i18n>subscribeTitle}" press="onNavToSubscription" class="sapUiTinyMarginTop" type="Active" visible="true">
+						<Button id="subscribeBtn" type="Transparent" icon="sap-icon://open-command-field" press="onNavToSubscription"/>
+					</InputListItem>
+				</List>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>confirm}" type="Emphasized" press="onConfirmSetting"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" press="onCancelSetting"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

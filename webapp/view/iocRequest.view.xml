@@ -1,0 +1,103 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified" xmlns:upload="sap.m.upload" xmlns:custom="sap.support.fsc2.ExtendControl"
+	controllerName="sap.support.fsc2.controller.iocRequest" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.f" xmlns:card="sap.f.cards">
+	<Page id="wizardContentPage" class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1 || ${/layout}.indexOf('OneColumn') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="IOC SWAT JUDGEMENT"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<HBox alignItems="Center">
+				<VBox alignItems="Center">
+					<FlexBox height="50rem" alignItems="Center" justifyContent="Center" width="50%">
+						<FormattedText htmlText="{/HTML}"/>
+					</FlexBox>
+				</VBox>
+			</HBox>
+			<!--<l:BlockLayout id="informationGrid">-->
+			<!--	<l:BlockLayoutRow>-->
+			<!--		<l:BlockLayoutCell>-->
+			<!--			<QuickViewCard >-->
+			<!--				<QuickViewPage pageId="aaaaa" header="Single LoB" icon="sap-icon://person-placeholder" title="Single LoB"-->
+			<!--					description="Cloud service disruptions &amp; degradations with expected duration > 2h AND high impact/high number of impacted customers">-->
+			<!--				</QuickViewPage>-->
+			<!--			</QuickViewCard>-->
+			<!--		</l:BlockLayoutCell>-->
+			<!--		<l:BlockLayoutCell>-->
+			<!--			<QuickViewCard>-->
+			<!--				<QuickViewPage pageId="aaaaa" header="Multiple LoBs" icon="sap-icon://group" title="Multiple LoBs"-->
+			<!--					description="Cloud service disruptions &amp; degradations with expected duration > 1h">-->
+			<!--				</QuickViewPage>-->
+			<!--			</QuickViewCard>-->
+			<!--		</l:BlockLayoutCell>-->
+			<!--		<l:BlockLayoutCell>-->
+			<!--			<QuickViewCard>-->
+			<!--				<QuickViewPage pageId="aaaaa" header="Flapping" icon="sap-icon://group" title="{i18n>iocReqFlappingTabTitle}"-->
+			<!--					description="Duration > 3h">-->
+			<!--				</QuickViewPage>-->
+			<!--			</QuickViewCard>-->
+			<!--		</l:BlockLayoutCell>-->
+			<!--	</l:BlockLayoutRow>-->
+			<!--	<l:BlockLayoutRow>-->
+			<!--		<l:BlockLayoutCell>-->
+			<!--			<MessageStrip text="{incidentDetail>/infoMessage}" enableFormattedText="true" showIcon="true" class="sapUiMediumMarginBottom"></MessageStrip>-->
+			<!--		</l:BlockLayoutCell>-->
+			<!--	</l:BlockLayoutRow>-->
+			<!--</l:BlockLayout>-->
+			<!--<form:SimpleForm id="createIocForm" editable="true" layout="ResponsiveGridLayout" columnsXL="4">-->
+			<!--	<form:content>-->
+			<!--		<Label text="Affected LoB(s)*"/>-->
+			<!--		<FlexBox id="lobButtons" height="auto" alignItems="Start" justifyContent="Start" wrap="Wrap" items="{LoBs>/results}">-->
+			<!--			<items>-->
+			<!--				<ToggleButton class="sapUiTinyMarginEnd" type="Accept" text="{LoBs>text}" enabled="true" pressed="false" press="onPressLoB"/>-->
+			<!--			</items>-->
+			<!--		</FlexBox>-->
+			<!--		<Label text=""/>-->
+			<!--		<Input 	change="onChange" id="lobInput" valueLiveUpdate="true" value="{iocForm>/custom_details/Affected LoB(s)}"></Input>-->
+			<!--		<Label text="Technical bridge call link*"/>-->
+			<!--		<Input change="onChange" valueLiveUpdate="true" id = "bridgeLink" value="{iocForm>/custom_details/Technical bridge call link}"></Input>-->
+			<!--		<Label text="Separate IOC SWAT judgement call needed?"/>-->
+			<!--		<RadioButtonGroup select="separateCallChanged" id="rbg4">-->
+			<!--			<RadioButton id="RB4-1" text="No. The technical bridge call can be used for IOC SWAT judgement."/>-->
+			<!--			<RadioButton id="RB4-2" text="Yes. A separate IOC SWAT judgement call should be set up by the SAP MCC Outage Escalation Lead (OEL), and the LoB respresentatives listed below need to be invited."/>-->
+			<!--		</RadioButtonGroup>-->
+			<!--		<Label visible="false" id="inviteForJudginglabel" text="LoB\GCS representatives to invite to IOC SWAT judgement call"/>-->
+			<!--		<Input visible="false" id="inviteForJudging" valueLiveUpdate="true" value="{iocForm>/custom_details/LoB\GCS representatives to invite to IOC SWAT judgement call}"></Input>-->
+			<!--		<Label text="SPC Event"/>-->
+			<!--		<Input type="text" value="{iocForm>/custom_details/SPC Event}"></Input>-->
+			<!--		<Label text="Affected cloud service(s)"/>-->
+			<!--		<Input type="text" value="{iocForm>/custom_details/Affected cloud service(s)}"></Input>-->
+			<!--		<Label text="Number of impacted customers"/>-->
+			<!--		<Input type="Number" valueLiveUpdate="true" value="{iocForm>/custom_details/Number of impacted customers}"></Input>-->
+			<!--		<Label text="Business impact"/>-->
+			<!--		<TextArea width="100%" value="{iocForm>/custom_details/Business impact}" rows="8" placeholder="Describe how the incident impacts the customer business…"/>-->
+			<!--		<Label text="Additional information"/>-->
+			<!--		<TextArea width="100%" value="{iocForm>/custom_details/Additional information}" valueLiveUpdate="true" rows="8"/>-->
+			<!--	</form:content>-->
+			<!--</form:SimpleForm>-->
+			<!--<VBox id="successCell" visible="false">-->
+			<!--	<core:Fragment fragmentName="sap.support.fsc2.view.fragments.iocSuccess" type="XML"/>-->
+			<!--</VBox>-->
+			<!--<VBox id="errorCell" visible="false">-->
+			<!--	<core:Fragment fragmentName="sap.support.fsc2.view.fragments.iocError" type="XML"/>-->
+			<!--</VBox>-->
+			<!--<MessageStrip id="iocInfoBottom" class="sapUiLargeMarginBeginEnd sapUiSmallMarginBottom"-->
+			<!--	text=" In case of technical challenges or issues with this service, kindly proceed with calling the MCC Red Phone at +49 6227 7-60002 to trigger the IOC SWAT Judgement. "-->
+			<!--	showIcon="false"></MessageStrip>-->
+		</content>
+		<!--<footer>-->
+		<!--	<Bar id="iocFooterBar">-->
+		<!--		<contentRight>-->
+		<!--			<Button text="{i18n>clearAll}" type="Reject" press="onClearAll"/>-->
+		<!--			<Button text="{i18n>submit}" type="Emphasized" press="onSubmitIncident"/>-->
+		<!--			<Button text="{i18n>cancel}" press="handleCancel"/>-->
+		<!--		</contentRight>-->
+		<!--	</Bar>-->
+		<!--</footer>-->
+	</Page>
+</mvc:View>

@@ -1,0 +1,160 @@
+<mvc:View xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" height="100%" controllerName="sap.support.fsc2.controller.SaM" class="sapUiSizeCompact">
+	<Page title="{i18n>scheduleManager}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Wizard id="ScheduleWizard" complete="onReview" visible="{SaM>/bEdit}">
+				<WizardStep id="Step1" title="{i18n>Step1ContentHead}" validated="false" activate="onActivateStep1">
+					<VBox class="sapUiSmallMarginBegin">
+						<Text text="{i18n>Step1ContentText1}" class="sapUiSmallMarginBottom"/>
+						<Text text="{i18n>Step1ContentText2}" class="sapUiSmallMarginBottom"/>
+					</VBox>
+					<Tree id="DateTimeTree" items="{path: 'SaMDateTree>/results'}" mode="SingleSelectMaster" includeItemInSelection="true"
+						selectionChange="onSelectDateTime">
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Text text="{i18n>currentTimeZone}{homePageConfig>/TimeZone}"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://edit" press="onOpenDialog_TimeZone"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<CustomTreeItem>
+							<VBox>
+								<Title text="{SaMDateTree>desc}"/>
+								<HBox visible="{SaMDateTree>level1}">
+									<Text text="{SaMDateTree>slotNum}" class="sapUiTinyMarginEnd"/>
+									<Text text="{i18n>availableSlots}"/>
+								</HBox>
+							</VBox>
+						</CustomTreeItem>
+					</Tree>
+				</WizardStep>
+				<WizardStep id="Step2" validated="false" title="{i18n>SamStep2}"  activate="onActivateStep2">
+					<form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1">
+						<Label text="{i18n>name}" required="true"/>
+						<Input value="{SaM>/SamContact}" valueLiveUpdate="true" liveChange="onActivateStep2"/>
+						<Label text="{i18n>phoneNum}" required="true"/>
+						<Input value="{SaM>/SamPhone}"   valueLiveUpdate="true" liveChange="onActivateStep2"/>
+						<Label text="{i18n>email}" required="true"/>
+						<Input value="{SaM>/SamEmail}"   valueLiveUpdate="true" liveChange="onActivateStep2"/>
+					</form:SimpleForm>
+				</WizardStep>
+				<WizardStep id="Step3" validated="false" activate="onActivateStep3" title="{i18n>SamStep3}">
+					<VBox class="sapUiSmallMarginBegin">
+						<Text text="{i18n>requestReasonTxt}" class="sapUiSmallMarginBottom"/>
+						<l:VerticalLayout id="id_requestReason">
+							<CheckBox text="{i18n>SaMRequestReason1}" selected="{SaM>/SamcProcessing}" select="onActivateStep3"/>
+							<CheckBox text="{i18n>SaMRequestReason2}" selected="{SaM>/SaMcLackResponse}"  select="onActivateStep3"/>
+							<CheckBox text="{i18n>SaMRequestReason3}" selected="{SaM>/SaMcNoProcessor}"  select="onActivateStep3"/>
+							<CheckBox text="{i18n>SaMRequestReason4}" selected="{SaM>/SaMcCriticalIssue}"  select="onActivateStep3"/>
+							<CheckBox text="{i18n>SaMRequestReason5}" selected="{SaM>/SaMcCommunication}"  select="onActivateStep3"/>
+							<CheckBox text="{i18n>SaMRequestReason6}" selected="{SaM>/SaMcOther}"  select="onActivateStep3"/>
+						</l:VerticalLayout>
+						<TextArea value="{SaM>/SaMOtherInput}" class="sapUiSmallMarginBeginEnd" width="90%" maxLength="1000"/>
+					</VBox>
+				</WizardStep>
+				<WizardStep id="Step4" validated="true" activate="optionalStepActivation" title="{i18n>SamStep4}"  complete="onPressNextStep4">
+					<VBox class="sapUiSmallMarginBegin">
+						<!--<Title text="{i18n>SamStep4}" class="custTitle sapUiSmallMarginBottom"/>-->
+						<Text text="{i18n>SaMadditionalText}" class="sapUiSmallMarginBottom"/>
+						<TextArea value="{SaM>/SaMAdditionalInfo}" class="sapUiSmallMarginBeginEnd" width="90%" rows="6"  maxLength="1000"/>
+					</VBox>
+				</WizardStep>
+			</Wizard>
+			<VBox visible="{= !${SaM>/bEdit}}">
+				<form:SimpleForm editable="true" title="{i18n>Step1ContentHead}" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="4"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1">
+					<Label text="{i18n>callTime}" class="mySFLabel"/>
+					<Text text="{SaM>/selectedTimeSlot}">
+						<layoutData>
+							<l:GridData span="XL8 L8 M6 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep1">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+					<Label text="{i18n>Date}"/>
+					<Text text="{SaM>/selectedDate}"/>
+				</form:SimpleForm>
+				<form:SimpleForm editable="true" title="{i18n>SamStep2}" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="4"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1">
+					<Label text="{i18n>name}" class="mySFLabel"/>
+					<Text text="{SaM>/SamContact}">
+						<layoutData>
+							<l:GridData span="XL8 L8 M6 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep2">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+					<Label text="{i18n>phoneNum}"/>
+					<Text text="{SaM>/SamPhone}"/>
+					<Label text="{i18n>email}"/>
+					<Text text="{SaM>/SamEmail}"/>
+				</form:SimpleForm>
+				<form:SimpleForm editable="true" title="{i18n>SamStep3}" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="4"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1">
+					<Label text="{i18n>requestReasons}" class="mySFLabel"/>
+					<Text
+						text="{parts:[{path:'SaM>/SamcProcessing'},{path:'SaM>/SaMcLackResponse'},{path:'SaM>/SaMcNoProcessor'},{path:'SaM>/SaMcCriticalIssue'},{path:'SaM>/SaMcCommunication'},{path:'SaM>/SaMcOther'},{path:'SaM>/SaMOtherInput'}], formatter:'.formatter.RequestReasonTxt'}">
+						<layoutData>
+							<l:GridData span="XL8 L8 M6 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep3">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+				</form:SimpleForm>
+				<form:SimpleForm editable="true" title="{i18n>SamStep4}" layout="ResponsiveGridLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="4"
+					labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1">
+					<Label text="{i18n>comment}" class="mySFLabel"/>
+					<Text text="{SaM>/SaMAdditionalInfo}">
+						<layoutData>
+							<l:GridData span="XL8 L8 M6 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep4">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+				</form:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<Toolbar>
+				<Button text="{i18n>cancel}" press="onNavBack" width="100%" visible="{SaM>/bEdit}"/>
+				<Button text="{i18n>submit}" type="Emphasized" press="onSubmit" width="50%" visible="{= !${SaM>/bEdit}}"/>
+				<Button text="{i18n>cancel}" press="onCancelSubmit" width="50%" visible="{= !${SaM>/bEdit}}"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

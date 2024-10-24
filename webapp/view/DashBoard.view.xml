@@ -1,0 +1,170 @@
+<mvc:View displayBlock="true" controllerName="sap.support.fsc2.controller.DashBoard" height="100%" xmlns:uxap="sap.uxap"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.f" xmlns:semantic="sap.f.semantic"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<semantic:SemanticPage id="dashboard" headerPinnable="true" headerExpanded="true" toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="true" titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="{i18n>appTitle}"/>
+		</semantic:titleHeading>
+		<!-- Title Breadcrumbs-->
+		<semantic:titleBreadcrumbs>
+			<Breadcrumbs></Breadcrumbs>
+		</semantic:titleBreadcrumbs>
+		<!-- Title Snapped On Mobile Content-->
+		<semantic:titleSnappedOnMobile>
+			<!--<Title text="Header Title On Phone"/>-->
+			<Title text="{i18n>appTitle}"/>
+		</semantic:titleSnappedOnMobile>
+		<!-- Title Content-->
+		<semantic:titleContent></semantic:titleContent>
+		<!-- TitleExpanded content-->
+		<semantic:titleSnappedContent></semantic:titleSnappedContent>
+		<!-- Header Content -->
+		<semantic:headerContent></semantic:headerContent>
+		<semantic:titleCustomIconActions>
+			<OverflowToolbarButton icon="sap-icon://sys-help" tooltip="Open Help" press="onOpenHelpJAM"/>
+			<!--<OverflowToolbarButton id="notificationBtn" icon="sap-icon://ui-notifications" tooltip="Notifications" press="onNavToNotification"/>-->
+			<OverflowToolbarButton id="settingBtn" icon="sap-icon://settings" tooltip="Settings" press="onSettingPress"/>
+		</semantic:titleCustomIconActions>
+		<!-- Content -->
+		<semantic:content>
+			<VBox class="sapUiTinyMargin">
+				<!--<layout:HorizontalLayout>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="IOC SWAT Judgement" subheader="" press="onIocRequestPress"
+						tooltip= "Ioc swat judgement">
+						<TileContent footer="{=!${homePageCount>/loadComplete}? '': ''}" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center">
+								<ImageContent src="sap-icon://disconnected">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent> 
+									<BusyIndicator  visible ="false" />
+								<NumericContent visible ="true" value="N/A" valueColor="Critical" width="20%" class="sapUiSmallMarginEnd"/>
+							</HBox>
+						</TileContent>
+					</GenericTile>
+				</layout:HorizontalLayout>-->
+				<!-- <layout:VerticalLayout>
+					<Title level="H1" text="Overview and Create" class="dashbordTitlePaddingFirstElement"/>
+					<layout:HorizontalLayout allowWrapping="true">
+					
+					
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>myRequests}" subheader="" press="onMyRequestsPress"
+						tooltip= "{parts:[{path:'homePageCount>/loadComplete'},{path:'homePageCount>/myRequestsChanged'}, {path:'homePageCount>/myRequests'}],formatter:'.formatter.formatReqTtip'}">
+						<TileContent footer="{=!${homePageCount>/loadComplete}? '': ''}" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center">
+								<ImageContent src="sap-icon://request">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent> 
+									<BusyIndicator  visible ="{= !${homePageCount>/loadComplete}}" />
+								<NumericContent visible ="{= !!${homePageCount>/loadComplete}}" value=" {homePageCount>/myRequestsChanged}" valueColor="Critical" width="40%" class="sapUiSmallMarginEnd"/>
+								<NumericContent visible ="{= !!${homePageCount>/loadComplete}}" value="({homePageCount>/myRequests})" width="40%" class="sapUiTinyMarginBegin"/>
+							</HBox>
+							
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>myActivity}" subheader="" press="onAssignedPress"
+					
+						tooltip="{parts:[{path:'activitySet>/loadComplete'},{path:'homePageCount>/myActivitiesChanged'}, {path:'homePageCount>/myActivities'}],formatter:'.formatter.formatReqTtip'}">
+						<TileContent>
+							<HBox justifyContent="SpaceBetween" alignItems="Center">
+								<ImageContent src="sap-icon://request">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+								<BusyIndicator  visible ="{= !${activitySet>/loadComplete}}" />
+								<NumericContent visible ="{= !!${activitySet>/loadComplete}}" value="{homePageCount>/myActivitiesChanged}" valueColor="Critical" width="40%" class="sapUiSmallMarginEnd"/>
+								<NumericContent visible ="{= !!${activitySet>/loadComplete}}" value="({homePageCount>/myActivities})" width="40%" class="sapUiTinyMarginBegin"/>
+							</HBox>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>createRequestTile}" subheader="" press="onCreateIssue">
+						<TileContent footer="" unit="">
+							<ImageContent src="sap-icon://create-form"></ImageContent>
+						</TileContent>
+					</GenericTile>
+				</layout:HorizontalLayout>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout>
+					<Title level="H1" text="Search" class="dashbordTitlePadding"/>
+					<layout:HorizontalLayout allowWrapping="true">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>searchCustomerLabel}"
+						subheader="{= !!${favorite>/Customer/loadComplete} ? ${favorite>/Customer/count} + ' Favorites' : 'N/A' } " press="onCustomerSearchPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center"> 
+								<ImageContent src="sap-icon://search">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+								<BusyIndicator  visible ="{= !${favorite>/Customer/loadComplete}}"/>
+							</HBox>
+							
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>searchRequests}"
+						subheader="{= !!${favorite>/Situation/loadComplete} ? ${favorite>/Situation/count} + ' Favorites' : 'N/A' } " press="onRequestSearchPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center"> 
+								<ImageContent src="sap-icon://search">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+								<BusyIndicator  visible ="{= !${favorite>/Situation/loadComplete}}"/>
+							</HBox>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>Incidentsearch}"
+						subheader="{= !!${favorite>/Incident/loadComplete} ? ${favorite>/Incident/count} + ' Favorites' : 'N/A' } " press="onIncidentSearchPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center"> 
+								<ImageContent src="sap-icon://search">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+								<BusyIndicator  visible ="{= !${favorite>/Incident/loadComplete}}"/>
+							</HBox>
+						</TileContent>
+					</GenericTile>
+				</layout:HorizontalLayout>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout>
+					<Title level="H1" text="Other" class="dashbordTitlePadding"/>
+					<layout:HorizontalLayout allowWrapping="true">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>otherMCCRequests}" press="onOtherMCCReqPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center"> 
+								<ImageContent src="sap-icon://detail-more">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+							</HBox>
+							
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="{i18n>supportEnablement}" press="onSupportEnablementPress">
+						<TileContent footer="" unit="">
+							<HBox justifyContent="SpaceBetween" alignItems="Center"> 
+								<ImageContent src="sap-icon://hint">
+									<layoutData>
+										<FlexItemData maxWidth="20%"/>
+									</layoutData>
+								</ImageContent>
+							</HBox>
+							
+						</TileContent>
+					</GenericTile>
+				</layout:HorizontalLayout>
+				</layout:VerticalLayout> -->
+			</VBox>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

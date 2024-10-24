@@ -1,0 +1,43 @@
+{
+	"results": [{
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "1",
+		"value2": "",
+		"value3": "Very high"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "3",
+		"value2": "",
+		"value3": "High"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "5",
+		"value2": "",
+		"value3": "Medium"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('PRIORITY')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "PRIORITY",
+		"value1": "9",
+		"value2": "",
+		"value3": "Low"
+	}]
+}

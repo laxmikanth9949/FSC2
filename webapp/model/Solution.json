@@ -1,0 +1,13 @@
+{
+	"results":[
+		{"text":"OnPremise","key":"OnPremise"},
+		{"text":"SAP Cloud","key":"SAPCloud"},
+		{"text":"Hybris","key":"Hybris"},
+		{"text":"SuccessFactors","key":"SuccessFactors"},
+		{"text":"Fieldglass","key":"Fieldglass"},
+		{"text":"Ariba","key":"Ariba"},
+		{"text":"Concur","key":"Concur"},
+		{"text":"Managed Cloud (HEC)","key":"ManagedCloud"},
+		{"text":"HANA Cloud Platform (HCP)","key":"HANACloudPlatform"}
+		]
+}

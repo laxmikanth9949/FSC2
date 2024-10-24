@@ -1,0 +1,297 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:commons="sap.suite.ui.commons" controllerName="sap.support.fsc2.controller.IncidentDetail" class="sapUiSizeCompact"
+	xmlns:semantic="sap.f.semantic" xmlns:ui="sap.suite.ui.microchart">
+	<semantic:SemanticPage id="incidentDetail" headerPinnable="true" headerExpanded="true" toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="true" titleAreaShrinkRatio="1:10:5" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<HBox alignItems="Center" justifyContent="Start">
+				<Button type="Back" tooltip="Back" press="onNavBack" class="sapUiTinyMarginEnd"
+					visible="{= ${device>/isPhone} || ${/layout}.indexOf('FullScreen') > -1}"/>
+				<Title text="{incidentDetailPage>/title}"/>
+			</HBox>
+		</semantic:titleHeading>
+		<!-- Title Snapped On Mobile Content-->
+		<semantic:titleSnappedOnMobile></semantic:titleSnappedOnMobile>
+		<!-- Title Content-->
+		<semantic:titleContent></semantic:titleContent>
+		<!-- TitleExpanded content-->
+		<semantic:titleSnappedContent></semantic:titleSnappedContent>
+		<!-- Header Content -->
+		<semantic:headerContent><MessageStrip text="{i18n>FeedbackRequestForClosedAoE}" showIcon="true" showCloseButton="false" type="Information"
+				class="sapUiMediumMarginBottom" visible="{= ${CIMRequest>/status} === 'Closed' || ${CIMRequest>/status} === 'Declined' ? true : false}"></MessageStrip>
+			<HBox alignItems="Center">
+				<Title text="{incidentDetailPage>/Description}" class="sapUiTinyMarginEnd"/>
+				<core:Icon src="sap-icon://favorite" visible="{incidentDetailPage>/ShowFavorite}" class="sapUiTinyMarginEnd"/></HBox>
+			<core:Fragment fragmentName="sap.support.fsc2.view.fragments.IncidentHeader" type="XML"/>
+		</semantic:headerContent>
+		<semantic:titleCustomTextActions>
+			<Button id="samButton" text="{i18n>scheduleManager}" type="Emphasized" width="auto" press="onSamClick" icon="sap-icon://headset"
+				visible="{SaMEnable>/enableCreate}"/>
+			<Button width="auto" icon="sap-icon://feedback" text="Feedback" press="onEscalationFeedbackPress"
+				visible="{incidentDetailPage>/showFeedbackButton}"/>
+			<Button id="replyButton" visible="{incidentDetailPage>/requestEditable}"
+				text="{= ${incidentDetailPage>/requestEditable} ? ${i18n>chatReply} : ${i18n>ScrollDown}}" type="Emphasized" width="auto" press="onReply"
+				icon="sap-icon://download"/>
+			<Button id="EscaBtn" text="{i18n>escalate}" icon="sap-icon://trend-up" press="onEscalateIncident"
+				visible="{incidentDetailPage>/showEscalateButtton}"/>
+			<Button text=" {i18n>changeEscLevel}" visible="{= ${incidentDetail>/isCimRequest} || ${incidentDetailPage>/requestEditable}}"
+				enabled="{incidentDetailPage>/enableChangeEscLevel}" press="onChangeEscLevel"/>
+			<Button text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite" visible="{= !(${incidentDetailPage>/ShowFavorite})}"/>
+			<Button text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite" visible="{incidentDetailPage>/ShowFavorite}"/>
+		</semantic:titleCustomTextActions>
+		<semantic:titleCustomIconActions>
+			<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+				visible="{= ${/layout}.indexOf('FullScreen') > -1}"/>
+			<Button type="Transparent" icon="sap-icon://decline" press="handleClose" visible="{= ${/layout}.indexOf('FullScreen') === -1}"/>
+		</semantic:titleCustomIconActions>
+		<!-- Content -->
+		<semantic:content>
+			<IconTabBar id="idObjectPageLayout" expanded="true" class="sapUiResponsiveContentPadding" select="onIconTabFilterChanged">
+				<items>
+					<IconTabFilter id="idOverViewSection" text="{= ${incidentDetailPage>/isRequest} ? ${i18n>IncOverview} : ${i18n>overview} }" key="overview"
+						visible="false">
+						<f:SimpleForm id="idCIMSimpleForm" width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+							labelSpanS="6" emptySpanL="1" emptySpanM="1" emptySpanS="1" columnsL="1" columnsM="1" adjustLabelSpan="false">
+							<f:content>
+								<VBox width="100%">
+									<Text text="{i18n>timeSAP}"/>
+									<ProgressIndicator percentValue="{incidentDetail>/SAPPercent}" displayValue="{incidentDetail>/SAP_D}" showValue="true" state="Error"
+										displayOnly="true"/>
+									<Text text="{i18n>timeCustomer}"/>
+									<ProgressIndicator percentValue="{incidentDetail>/CustomerPercent}" displayValue="{incidentDetail>/Customer_D}" showValue="true"
+										state="Success" displayOnly="true"/>
+									<Text text="{i18n>days}" textAlign="Right" width="100%" class="myFooterText"/>
+								</VBox>
+								<Label text="{i18n>incidentStatus}"/>
+								<Text text="{incidentDetail>/StatusTxt}"/>
+								<Label text="{i18n>incidentComponent}"/>
+								<Text text="{incidentDetail>/ComponentName}"/>
+								<Label text="{i18n>processingOrg}"/>
+								<Text text="{incidentDetail>/PROCESSOR_ORG}"/>
+								<Label text="{i18n>incidentProcessor}"/>
+								<Text text="{incidentDetail>/Processor}"/>
+								<Label text="{i18n>instno}"/>
+								<Text text="{incidentDetail>/Instno}"/>
+								<Label text="{i18n>sysID}"/>
+								<Text text="{incidentDetail>/SysID}"/>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>incidentBusinessImp}" visible="{incidentDetailPage>/isRequest}">
+						<!--snow-->
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="0"
+							emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1" columnsM="1" adjustLabelSpan="false">
+							<FormattedText htmlText="{incidentDetail>/business_impact}"/>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter id="comunicationSummaryItID" key="comunicationSummaryItKey"
+						text="{= ${incidentDetailPage>/isRequest} ? ${i18n>incCommunicationSummary} : ${i18n>communicationSummary} }">
+						<!--</l:VerticalLayout>-->
+						<commons:Timeline showHeaderBar="false" enableScroll="false" growingThreshold="0" content="{Communication>/results}" height="100%">
+							<commons:content>
+								<commons:TimelineItem id="idTemplateItem" userNameClickable="true" tooltip="{Communication>UserID}"
+									userPicture="{path:'Communication>UserID', formatter:'.formatter.formatProfileImage'}" userNameClicked="onPressName"
+									dateTime="{path:'Communication>Timestamp',formatter:'.formatter.formatTimelineDate'}" title="{Communication>Texttype}"
+									userName="{Communication>UserName}">
+									<FormattedText htmlText="{Communication>Text}"/>
+								</commons:TimelineItem>
+							</commons:content>
+						</commons:Timeline>
+					</IconTabFilter>
+					<!--begin of split incident bus impact-->
+					<IconTabFilter id="idIncidentBusImpact" key="incidentEscalation" visible="{= ${incidentDetailPage>/isRequest} === false }"
+						text="{i18n>businessImpact}">
+						<!--{= (${incidentDetailPage>/isSnowEscalation} ? ${i18n>snowEscTab} : ${incidentDetailPage>/isRequest} ? ${i18n>CIMRequestTab} : ${i18n>businessImpact} ) }-->
+						<!--//FORM FOR snow-->
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+							emptySpanL="1" emptySpanM="1" emptySpanS="1" columnsL="1" columnsM="1" adjustLabelSpan="false"
+							visible="{incidentDetailPage>/isSnowEscalation}">
+							<Label text="{i18n>category}"/>
+							<Button icon="sap-icon://save" type="Transparent" press="onSaveSnowCategoryButtonPress">
+								<layoutData>
+									<l:GridData span="XL2 L1 M1 S1"/>
+								</layoutData>
+							</Button>
+							<Label text="{i18n>responsiblePerson}"/>
+							<Text text="{CIMRequest>/responsible_person_name}"/>
+							<Label text="{i18n>reporter}"/>
+							<Text text="{CIMRequest>/report_person_name}"/>
+							<Label text="{i18n>status}"/>
+							<Text text="{CIMRequest>/status}"/>
+						</f:SimpleForm>
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="0"
+							emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1" columnsM="1" adjustLabelSpan="false">
+							<l:VerticalLayout>
+								<l:VerticalLayout visible="{= ${incidentDetailPage>/isRequest} ? false: true}">
+									<FormattedText htmlText="{incidentDetail>/business_impact}"/>
+								</l:VerticalLayout>
+							</l:VerticalLayout>
+						</f:SimpleForm>
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="0" labelSpanL="0" labelSpanM="0" labelSpanS="0"
+							emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1" columnsM="1" adjustLabelSpan="false"
+							visible="{incidentDetailPage>/isSnowEscalation}">
+							<f:toolbar>
+								<Toolbar>
+									<Label text="{i18n>requestDescription}"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+						</f:SimpleForm>
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="6"
+							emptySpanL="1" emptySpanM="1" emptySpanS="1" columnsL="1" columnsM="1" adjustLabelSpan="false" visible="{incidentDetailPage>/isRequest}">
+							<f:toolbar>
+								<Toolbar>
+									<Label text="{i18n>requestNotes}"/>
+									<ToolbarSpacer/>
+									<Button iconFirst="false" icon="sap-icon://add" visible="{incidentDetailPage>/isRequest}" press="onAddNotes" type="Transparent"/>
+								</Toolbar>
+							</f:toolbar>
+							<commons:Timeline showHeaderBar="false" growingThreshold="0" content="{NoteList>/results}" enableScroll="false" textHeight="automatic">
+								<commons:content>
+									<commons:TimelineItem userNameClickable="false" dateTime="{path:'NoteList>time',formatter:'.formatter.formatTimelineDate'}"
+										userName="{NoteList>name}">
+										<!--text="{NoteList>text}" -->
+										<FormattedText htmlText="{NoteList>text}"/>
+									</commons:TimelineItem>
+								</commons:content>
+							</commons:Timeline>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<!--begin of second split SNOW-->
+					<IconTabFilter id="idCIMRequest" key="CIMRequest"
+						visible="{= (${incidentDetailPage>/isRequest} &amp;&amp; ${incidentDetailPage>/SnowEscaType} === '3' )|| ${CIMRequest>/incidentHasEscalation}}"
+						text="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation} ? ${i18n>snowEscTab}: ${i18n>CIMRequestTab}}">
+						<core:Fragment fragmentName="sap.support.fsc2.view.fragments.EscalationDetails" type="XML"/>
+						<Panel expandable="true" width="auto">
+							<headerToolbar>
+								<OverflowToolbar style="Clear">
+									<Title text="{i18n>businessImpact}"/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://edit" visible="{= ${CIMRequest>/status} === 'Requested' || ${CIMRequest>/status} === 'Escalated'}"
+										press="onOpenBusImpactDialog" type="Transparent"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<content>
+								<FormattedText id="idBITextArea" htmlText="{CIMRequest>/business_impact}"/>
+							</content>
+						</Panel>
+						<Panel expandable="true" width="auto" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"
+							headerText="{i18n>requestDescription}">
+							<content>
+								<TextArea id="idReqDesc" value="{CIMRequest>/request_description}" rows="8" wrapping="Soft" editable="false" visible="true"
+									valueLiveUpdate="true" change="onDescInputChange" maxLength="950" width="100%"/>
+							</content>
+						</Panel>
+						<f:SimpleForm width="100%" editable="false" layout="ResponsiveGridLayout" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1"
+							columnsM="1" adjustLabelSpan="false" visible="{= ${incidentDetailPage>/isRequest} || ${incidentDetailPage>/incidentHasEscalation}}">
+							<f:toolbar>
+								<Toolbar>
+									<Title text="{i18n>requestNotes}"/>
+									<ToolbarSpacer/>
+									<!--	<Button iconFirst="false" icon="sap-icon://add" visible="{= ${incidentDetail>/isCimRequest} || ${incidentDetailPage>/requestEditable}}"
+										press="onAddNotes" type="Transparent"/>-->
+								</Toolbar>
+							</f:toolbar>
+							<VBox width="100%">
+								<List id="chatList" showSeparators="None" showNoData="true" noDataText="{i18n>NoDataChatText}" class="sapUiTinyMarginBottom"></List>
+								<FeedInput id="addNotes" post="onAddNotes" showIcon="true" placeholder="{i18n>ChatInputPlaceholder}" icon="{CurrentUserInfo>/userIconURL}"
+									enabled="{= ${CIMRequest>/status} === 'Requested' || ${CIMRequest>/status} === 'Escalated'}"
+									iconInitials="{CurrentUserInfo>/Initials}"/></VBox>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter id="idTBEDetails" key="TBEDetails"
+						visible="{= (${incidentDetailPage>/isRequest} &amp;&amp; ${incidentDetailPage>/SnowEscaType} === '0' )|| ${BDMRequest>/incidentHasEscalation}}"
+						text="{i18n>snowTBETab}">
+						<core:Fragment fragmentName="sap.support.fsc2.view.fragments.BDMEscalationDetails" type="XML"/>
+						<f:SimpleForm width="100%" editable="false" layout="ResponsiveGridLayout" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsL="1"
+							columnsM="1" adjustLabelSpan="false" visible="{= ${incidentDetailPage>/isRequest} || ${incidentDetailPage>/incidentHasEscalation}}">
+							<f:toolbar>
+								<Toolbar>
+									<Title text="{i18n>requestNotes}"/>
+									<ToolbarSpacer/>
+								</Toolbar>
+							</f:toolbar>
+							<VBox width="100%">
+								<List id="BDMchatList" showSeparators="None" showNoData="true" noDataText="{i18n>NoDataChatText}" class="sapUiTinyMarginBottom"></List>
+								<FeedInput id="addBDMNotes" post="onAddNotes" showIcon="true" iconInitials="{CurrentUserInfo>/Initials}"
+									placeholder="{i18n>ChatInputPlaceholder}" icon="{CurrentUserInfo>/userIconURL}"/>
+								<!--visible="{= ${incidentDetailPage>/requestEditable}}"-->
+							</VBox>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter id="SamDetail" text="{i18n>appointments}" key="appointment" visible="false">
+						<f:SimpleForm width="100%" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+							emptySpanL="1" emptySpanM="1" emptySpanS="1" columnsL="1" columnsM="1" adjustLabelSpan="false">
+							<f:toolbar>
+								<OverflowToolbar>
+									<Label text="{i18n>SamDetails}"/>
+									<ToolbarSpacer/>
+									<Button type="Transparent" text="{i18n>addToCalendar}" press="onAddToCalendar"/>
+									<Button type="Transparent" text="{i18n>editContact}" press="onEditSAMContact"/>
+									<Button type="Transparent" text="{i18n>CancelSAM}" press="onCancelSamSession"/>
+								</OverflowToolbar>
+							</f:toolbar>
+							<l:VerticalLayout width="95%" class="sapUiSmallMarginBeginEnd">
+								<core:HTML preferDOM="false" content="{i18n>SAMReviewInfo4}"/>
+							</l:VerticalLayout>
+							<Label text="{i18n>callTime}"/>
+							<Text text="{path:'SaMDetail>/Time',formatter:'.formatter.TimeTransToAmPm'} UTC"/>
+							<!--{homePageConfig>/TimeZone}-->
+							<Label text="{i18n>Date}"/>
+							<Text text="{path:'SaMDetail>/Date', formatter:'.formatter.formatDate8Desc'}"/>
+							<Label text="{i18n>localTime}"/>
+							<Text text="{SaMDetail>/localTime}"/>
+							<Label text="{i18n>name}"/>
+							<Text text="{SaMDetail>/SamContact}" visible="{= !(${SaMDetail>/bEditContact})}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Text>
+							<Input value="{SaMDetail>/SamContact}" visible="{SaMDetail>/bEditContact}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Input>
+							<Label text="{i18n>phoneNum}"/>
+							<Text text="{SaMDetail>/SamPhone}" visible="{= !(${SaMDetail>/bEditContact})}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Text>
+							<Input value="{SaMDetail>/SamPhone}" visible="{SaMDetail>/bEditContact}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Input>
+							<Label text="{i18n>email}"/>
+							<Text text="{SaMDetail>/SamEmail}" visible="{= !(${SaMDetail>/bEditContact})}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Text>
+							<Input value="{SaMDetail>/SamEmail}" visible="{SaMDetail>/bEditContact}">
+								<layoutData>
+									<l:GridData span="XL7 L7 M7 S12"/>
+								</layoutData>
+							</Input>
+							<Label text="{i18n>requestReasons}"/>
+							<Text
+								text="{parts:[{path:'SaMDetail>/SamcProcessing'},{path:'SaMDetail>/SaMcLackResponse'},{path:'SaMDetail>/SaMcNoProcessor'},{path:'SaMDetail>/SaMcCriticalIssue'},{path:'SaMDetail>/SaMcCommunication'},{path:'SaMDetail>/SaMcOther'},{path:'SaMDetail>/SaMOtherInput'}], formatter:'.formatter.RequestReasonTxt'}"/>
+							<Label text="{i18n>SamStep4}"/>
+							<Text text="{SaMDetail>/SaMAdditionalInfo}"/>
+						</f:SimpleForm>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:footerCustomActions>
+			<Button id="scrollDownButton" text="{= ${incidentDetailPage>/requestEditable} ? ${i18n>chatReply} : ${i18n>ScrollDown}}" type="Emphasized"
+				width="auto" press="onScrollBottom" icon="sap-icon://download" visible="false"/>
+			<Button id="scrollUpButton" text="{i18n>ScrollUp}" type="Emphasized" width="auto" press="onScrollTop" icon="sap-icon://back-to-top"
+				visible="false"/>
+			<Button text="{i18n>save}" type="Emphasized" press="onSaveSaMContact" visible="{SaMDetail>/bEditContact}"/>
+			<Button text="{i18n>cancel}" type="Transparent" press="onCancelSaMContact" visible="{SaMDetail>/bEditContact}"/>
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+</mvc:View>

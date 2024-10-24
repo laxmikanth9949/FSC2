@@ -1,0 +1,88 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.myRequest" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page id="request">
+		<customHeader>
+			<Toolbar>
+				<!--<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>myRequests}" level="H2"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<!--<List noDataText="{i18n>noData}" growing="true" growingScrollToLoad="true" mode="None"
+				items="{ path : 'requestSet>/results', sorter : { path : 'ChangedAt', descending: 'false' } }">
+				<CustomListItem press="onRequestItemPress" type="Navigation">
+					<VBox class="sapUiSmallMargin">
+						<Title text="{path:'requestSet>Description', formatter:'.formatter.formatRequestHeader'}" wrapping="false"/>
+						<Label text="{requestSet>CustomerName}" wrapping="true"/>
+						<Label width="100%" text="{path:'requestSet>ChangedAt',formatter:'.formatter.formatRequestDate'}"/>
+						<HBox>
+							<VBox class="sapUiTinyMarginEnd">
+								<core:Icon src="{path:'requestSet>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+							</VBox>
+							<VBox width="80%">
+								<Label width="100%" text="{parts:[{path:'requestSet>TransType'}, {path:'requestSet>ID'}], formatter:'.formatter.formatRequestType'}"/>
+							</VBox>
+							<VBox width="50%" alignItems="End">
+								<Label width="100%" text="{requestSet>StatusTxt}"/>
+							</VBox>
+						</HBox>
+					</VBox>
+				</CustomListItem>
+			</List>
+			<Toolbar id="tbShowMore" visible="{= (${requestSet>/results}).length !== (${homePageCount>/myRequests}) ? true : false }">
+				<ToolbarSpacer/>
+				<Button text="{i18n>showMore}" type="Transparent" press="onShowMore"/>
+				<ToolbarSpacer/>
+			</Toolbar>-->
+			<Table id="idMyRequestsTable" mode="None" autoPopinMode="true" items="{requestSet>/results}" noDataText="{i18n>noData}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<!--<Title text="{i18n>myRequests}" level="H2" visible="{= ${device>/isNoPhone}}"/>-->
+						<ToolbarSpacer/>
+						<FlexBox>
+							<SearchField id="searchField" search="onFilterTable" liveChange="onFilterTable" placeholder="Filter" class="sapUiTinyMarginEnd"/>
+							<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'Request')" ariaHasPopup="Dialog"
+								class="sapUiTinyMarginBegin"/>
+							<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+						</FlexBox>
+					</OverflowToolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<OverflowToolbar id="vsdFilterBar" visible="false">
+						<Text id="vsdFilterLabel"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column width="10%" importance="Low" hAlign="Center"><Text text="Trans. Type"/></Column>
+					<Column importance="High"><Text text="Description"/></Column>
+					<Column importance="Low"><Text text="Customer Name"/></Column>
+					<Column importance="Medium" hAlign="Center"><Text text="Changed At"/></Column>
+					<Column importance="Low" hAlign="Center"><Text text="Object ID"/></Column>
+					<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onRequestItemPress" type="Navigation" highlight="{requestSet>Highlight}">
+						<!--highlight="{parts:[{path:'requestSet>ID'}, {path:'requestSet>TransType'}, {path:'requestSet>ChangedAt'}], formatter:'.formatter.formatTableHighlight'}">-->
+						<cells>
+							<ObjectStatus icon="{path:'requestSet>TransType',formatter:'.formatter.formatRequestIcon'}"
+								tooltip="{parts:[{path:'requestSet>TransType'}, {path:'requestSet>ID'}], formatter:'.formatter.formatRequestType'}"/>
+							<!--text="{parts:[{path:'requestSet>TransType'}, {path:'requestSet>ID'}], formatter:'.formatter.formatRequestType'}"-->
+							<ObjectIdentifier title="{path:'requestSet>Description', formatter:'.formatter.formatRequestHeader'}"/>
+							<Text text="{requestSet>CustomerName}"/>
+							<Text text="{path:'requestSet>ChangedAt',formatter:'.formatter.formatRequestDate'}"/>
+							<ObjectNumber number="{path:'requestSet>ID', formatter:'.formatter.formatRequestId'}"/>
+							<ObjectStatus text="{requestSet>StatusTxt}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<!--	<Toolbar id="tbShowMore" visible="{= (${requestSet>/results}).length !== (${homePageCount>/myRequests}) ? true : false }">
+				<ToolbarSpacer/>
+				<Button text="{i18n>showMore}" type="Transparent" press="onShowMore"/>
+				<ToolbarSpacer/>
+			</Toolbar>-->
+		</content>
+	</Page>
+</mvc:View>

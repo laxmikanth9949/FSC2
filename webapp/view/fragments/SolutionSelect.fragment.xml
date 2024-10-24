@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="{i18n>AffectedSolSelect}" icon="sap-icon://dimension"  state="None" class="sapUiSizeCompact" stretch="{device>/isPhone}">
+		<content>
+			<VBox id="allSolutionList" items="{Solutions>/results}" class="sapUiMediumMarginBeginEnd">
+				<CheckBox editable="true" select="onSelectSolCheckBox" text="{Solutions>text}" selected="{path:'Solutions>text',formatter:'.formatSolutionSelect'}"/>
+			</VBox>
+		</content>
+		<buttons>
+			<Button width="30%" text="{i18n>addSolution}" press="onConfirmSol"/>
+			<Button width="30%" text="{i18n>cancel}" press="onCancelSol"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,77 @@
+{
+	"results": [{
+		"__metadata": {
+			"id": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E81979BC3A5D9D')",
+			"uri": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E81979BC3A5D9D')",
+			"type": "ZS_AGS_FSC2_SRV.Pushnotfmsg"
+		},
+		"msg_key": "0894EF23F7811ED8B5E81979BC3A5D9D",
+		"target_user": "I309444",
+		"app": "FSC2",
+		"timestamp": "20181024035633",
+		"source": "ICP",
+		"is_read": "",
+		"data": "0046739372$$Testing creation",
+		"message": "Activity 0046739372 has been changed:Processor is changed from Dongxu Bi to Doudou Wen",
+		"object_id": "0046739372",
+		"object_name": "Testing creation",
+		"object_customer": "160073",
+		"object_cust_name": "Bayer AG",
+		"object_type":"ZS90"
+	}, {
+		"__metadata": {
+			"id": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E805FD9FACFD34')",
+			"uri": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E805FD9FACFD34')",
+			"type": "ZS_AGS_FSC2_SRV.Pushnotfmsg"
+		},
+		"msg_key": "0894EF23F7811ED8B5E805FD9FACFD34",
+		"target_user": "I309444",
+		"app": "FSC2",
+		"timestamp": "20181024035211",
+		"source": "ICP",
+		"is_read": "",
+		"data": "0046759916$$TESTING CREATION",
+		"message": "Test message",
+		"object_id": "0046759916",
+		"object_name": "Test activity",
+		"object_customer": "0000160073",
+		"object_cust_name": "Bayer AG",
+		"object_type":"ZS46"
+	}, {
+		"__metadata": {
+			"id": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E805FD9FACDD34')",
+			"uri": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E805FD9FACDD34')",
+			"type": "ZS_AGS_FSC2_SRV.Pushnotfmsg"
+		},
+		"msg_key": "0894EF23F7811ED8B5E805FD9FACDD34",
+		"target_user": "I309444",
+		"app": "FSC2",
+		"timestamp": "20181024035211",
+		"source": "ICP",
+		"is_read": "",
+		"data": "0010252292",
+		"message": "New Note",
+		"object_id": "0010252292",
+		"object_name": "Test activity",
+		"object_customer": "0000160073",
+		"object_cust_name": "Bayer AG"
+	}, {
+		"__metadata": {
+			"id": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E7EA86410CDCBF')",
+			"uri": "https://fsc2-a73e63587.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/PushnotfmsgSet('0894EF23F7811ED8B5E7EA86410CDCBF')",
+			"type": "ZS_AGS_FSC2_SRV.Pushnotfmsg"
+		},
+		"msg_key": "0894EF23F7811ED8B5E7EA86410CDCBF",
+		"target_user": "I309444",
+		"app": "FSC2",
+		"timestamp": "20181024034603",
+		"source": "ICP",
+		"is_read": "",
+		"data": "0046739372$$TESTING CREATION",
+		"message": "ACTIVITY 0046739372 HAS BEEN CHANGED:PROCESSOR IS CHANGED FROM LONG ZHENG TO CLAIRE WEN",
+		"object_id": "0046739372",
+		"object_name": "TESTING CREATION",
+		"object_customer": "0000160073",
+		"object_cust_name": "BAYER AG"
+	}]
+}

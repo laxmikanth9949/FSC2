@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog contentWidth="50%" title="{i18n>MaintAgree}" class="sapUiPopupWithPadding" stretch="{device>/isPhone}">
+		<content>
+			<List items="{PremEngagement>/results}" >
+				<StandardListItem title="{PremEngagement>text}" type="Active" press="_handleConfirm_PreumEng"/>
+			</List>
+		</content>
+		<endButton>
+			<Button text="{i18n>close}" press="_handleClose_PreumEng" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

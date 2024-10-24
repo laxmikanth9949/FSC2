@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ActionSheet showCancelButton="true">
+		<buttons>
+			<!--<Button text="{i18n>edit}" icon="sap-icon://edit" press="onEdit" visible="{MCCPageConfig>/display}"/>-->
+			<Button text="{i18n>shareActivity}" icon="sap-icon://email" press="MailTo" visible="{MCCPageConfig>/display}"/>
+			<Button text="{i18n>sendEmailLast}" icon="sap-icon://email" press="onMailToLastChanger" visible="{MCCPageConfig>/display}"/>
+			<Button text="{i18n>sendEmailCreator}" icon="sap-icon://email" press="onMailToCreator" visible="{MCCPageConfig>/display}"/>
+			<Button text="{i18n>sendEmailPR}" icon="sap-icon://email" press="onMailToPersonResponsible" visible="{MCCPageConfig>/display}"/>
+			<!--<Button text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite"
+				visible="{= !(!(${MCCPageConfig>/display}) || (${MCCPageConfig>/_bFavorite}))}"/>
+			<Button text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite"
+				visible="{= !(!(${MCCPageConfig>/display}) || !(${MCCPageConfig>/_bFavorite}))}"/>-->
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

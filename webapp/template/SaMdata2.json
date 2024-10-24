@@ -1,0 +1,71 @@
+{	"TimeZone":"CET",
+	"DateTime": [{
+		"name": "Date1",
+		"level1":true,
+		"description": "Today, September 17, 2019",
+		"slot":"3",
+		"timeSlot": [{
+			"name": "time1",
+			"description": "10:00 AM",
+			"level1":false
+		}, {
+			"name": "time2",
+			"description": "10:45 AM",
+			"level1":false
+		}, {
+			"name": "time3",
+			"description": "02:00 PM",
+			"level1":false
+		}]
+	}, {
+		"name": "Date2",
+		"level1":true,
+		"description": "Tomorrow, September 18, 2019",
+		"slot":"2",
+		"timeSlot": [{
+			"name": "time4",
+			"description": "11:00 AM",
+			"level1":false
+		}, {
+			"name": "time5",
+			"description": "05:00 PM",
+			"level1":false
+		}]
+	}, {
+		"name": "Date3",
+		"level1":true,
+		"description": "Thursday, September 19, 2019",
+		"slot":"3",
+		"timeSlot": [{
+			"name": "time6",
+			"description": "09:00 AM",
+			"level1":false
+		}, {
+			"name": "time7",
+			"description": "01:00 PM",
+			"level1":false
+		}, {
+			"name": "time8",
+			"description": "03:00 PM",
+			"level1":false
+		}]
+	}],
+	"Name":"John Miller",
+	"PhoneNum":"+49123456789",
+	"Email":"john.miller@sap.com",
+	"requestReason":[
+		{"Reason":"Overall processing time","ID":"1"},
+		{"Reason":"Lack of response from SAP","ID":"2"},
+		{"Reason":"No processor assigned","ID":"3"},
+		{"Reason":"Critical issue with approaching due date","ID":"4"},
+		{"Reason":"Communication challenge with processor","ID":"5"},
+		{"Reason":"Other","ID":"6"}
+		
+		],
+	"bEdit":true,
+	"comment":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes",
+	"requestReasonTxt":"Lack of response from SAP\nCritical issue with approaching due date\nLorem ipsum another reason",
+	"Time":"Today at 10:45 AM CET",
+	"Date":"September 17, 2019",
+	"bEditContact":false
+}

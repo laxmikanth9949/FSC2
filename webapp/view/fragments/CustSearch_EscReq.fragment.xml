@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="{i18n>customerSearch}" icon="sap-icon://customer" contentWidth="70%" state="None" class="sapUiSizeCompact" stretch="{device>/isPhone}">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" maxContainerCols="1" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+					labelSpanS="6" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="1">
+					<Label text="{i18n>ERPNo.}"/>
+					<Input value="{CustSearchCriteria>/customer_no}" change="onStartCustSearch"/>
+					<Label text="{i18n>customerName}"/>
+					<Input value="{CustSearchCriteria>/account_name}"  change="onStartCustSearch"/>
+					<Label text="{i18n>bpID}"/>
+					<Input value="{CustSearchCriteria>/partner}" change="onStartCustSearch"/>
+				</f:SimpleForm>
+			<Table class="responsiveTable" items="{ path: 'CustSearchResult>/results'}">
+						<columns>
+							<Column hAlign="Left" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>erpCustNo}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>customerName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>custBPID}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" press="onPerssCust">
+								<cells>
+									<Label text="{CustSearchResult>customer_r3_no}"/>
+									<Label text="{CustSearchResult>customer_name}"/>
+									<Label text="{CustSearchResult>customer_id}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</VBox>
+		</content>
+		<buttons>
+			<Button width="30%" text="{i18n>clearSearch}" press="onClearCustSearch"/>
+			<Button width="30%" text="{i18n>startSearch}" press="onStartCustSearch"/>
+			<Button width="30%" text="{i18n>cancel}" press="onCancelCustSearch"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,6 @@
+{
+	"NoIncident":["Request global escalation","Others"],
+	"singleIncident":["Speed up","Assign processor","P2: Set Escal Flag","Raise to VH","Support required"],
+	"MultiIncidents":[],
+	"Empty":["Request global escalation","Incident/message","Others"]
+}

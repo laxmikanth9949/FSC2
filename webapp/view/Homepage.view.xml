@@ -1,0 +1,158 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" controllerName="sap.support.fsc2.controller.Homepage" displayBlock="true"
+	xmlns="sap.m" xmlns:f="sap.f">
+	<Page id="entryPage" class="mySapMPage" title="{i18n>appTitle}">
+		<!--<headerContent>-->
+		<!--	<Button icon="sap-icon://notification-2" tooltip="Notifications" press="onNavToNotification"/>-->
+		<!--	<Button icon="sap-icon://settings" tooltip="Settings" press="onSettingPress"/>-->
+		<!--</headerContent>-->
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://sys-help-2" tooltip="Open Help" press="onOpenHelp"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>appTitle}"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://ui-notifications" tooltip="Notifications" press="onNavToNotification"/>
+				<Button icon="sap-icon://settings" tooltip="Settings" press="onSettingPress"/>
+			</Toolbar>
+		</customHeader>
+		<Panel expandable="false" backgroundDesign="Transparent" class="homePanel">
+			<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+				suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValue}"
+				class="sapUiTinyMarginBottom">
+				<suggestionItems>
+					<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+				</suggestionItems>
+			</SearchField>
+			<Toolbar class="sapUiSmallMarginBottom">
+				<Text text="{i18n>createCustomerSituation}" class="myCopyPanelHeaderText"/>
+			</Toolbar>
+			<Button text="{i18n>createCustomerSituation}" press="onCreateIssue" type="Emphasized"/>
+			<Toolbar class="sapUiSmallMarginBottom">
+				<Text text="{i18n>myContent}" class="myCopyPanelHeaderText"/>
+			</Toolbar>
+			<VBox>
+				<Button text="{i18n>myRequests}" press="onPressRequests" type="Emphasized"/>
+				<Button text="{i18n>myFavorites}" press="onPressFavorites" type="Emphasized"/>
+				<!--<Button text="{i18n>gettingStartTitle}" press="onOpenHelp" type="Accept"/>-->
+			</VBox>
+		</Panel>
+		<!--		</IconTabFilter>-->
+		<!--		<IconTabFilter text="{i18n>myRequests}" count="{homePageConfig>/request}" key="request">-->
+		<!--		<List noDataText="{i18n>noData}" mode="None" items="{path: 'requestSet>/results'}">-->
+		<!--		<CustomListItem press="onRequestItemPress" type="Navigation">-->
+		<!--			<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+		<!--				<Text text="{requestSet>Description}" class="myItemTextHeader"/>-->
+		<!--				<Toolbar height="1.5rem" class="myToolbar myToolbarMargin">-->
+		<!--					<Label text="{requestSet>CustomerName}"/>-->
+		<!--					</Toolbar>-->
+		<!--				<Toolbar height="1rem" class="myToolbar myToolbarMargin">-->
+		<!--					<Label text="{requestSet>ID}"/>-->
+		<!--					<ToolbarSpacer/>-->
+		<!--					<Label text="{requestSet>StatusTxt}" class="myStatusText"/>-->
+		<!--				</Toolbar>-->
+		<!--			</VBox>-->
+		<!--		</CustomListItem>-->
+		<!--	</List>-->
+		<!--		</IconTabFilter>-->
+		<!--		<IconTabFilter text="{i18n>myFavorites}" count="{homePageConfig>/favorite}" key="favorite">-->
+		<!--				<IconTabBar id="idFavTab" headerMode="Inline" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">-->
+		<!--		<items>-->
+		<!--			<IconTabFilter key="0" text="{i18n>customer}" count="{favorite>/Customer/count}">-->
+		<!--				<List id="idCustomer" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Customer/results'}">-->
+		<!--					<CustomListItem press="onFavoriteItemPress" type="Navigation">-->
+		<!--						<Toolbar class="myToolbar sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+		<!--							<VBox   width="80%">-->
+		<!--								<Text text="{favorite>CustomerName}"/>-->
+		<!--								<Label text="{path:'favorite>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>-->
+		<!--							</VBox>-->
+		<!--							<ToolbarSpacer/>-->
+		<!--							<core:Icon src="{path:'favorite>Action',formatter:'.formatter.favoriteState'}" size="1.5rem" color="steelblue"-->
+		<!--								tooltip="{path:'favorite>Action',formatter:'.formatter.favoriteText'}" press="onFavoritePress"/>-->
+		<!--						</Toolbar>-->
+		<!--					</CustomListItem>-->
+		<!--				</List>-->
+		<!--			</IconTabFilter>-->
+		<!--			<IconTabFilter text="{i18n>criticalSituation}" count="{favorite>/Situation/count}">-->
+		<!--				<List id="idSituation" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Situation/results'}">-->
+		<!--					<CustomListItem press="onFavoriteItemPress" type="Navigation">-->
+		<!--						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+		<!--							<Text text="{favorite>Description}" class="myItemTextHeader"/>-->
+		<!--							<Toolbar height="1.5rem" class="myToolbar myToolbarMargin">-->
+		<!--								<Label text="{favorite>CustomerName}"/>-->
+		<!--								<ToolbarSpacer/>-->
+		<!--								<core:Icon src="{path:'favorite>Action',formatter:'.formatter.favoriteState'}" size="1.5rem" color="steelblue"-->
+		<!--									tooltip="{path:'favorite>Action',formatter:'.formatter.favoriteText'}" press="onFavoritePress"/>-->
+		<!--							</Toolbar>-->
+		<!--							<Toolbar height="1rem" class="myToolbar myToolbarMargin">-->
+		<!--								<Label text="{favorite>ID}"/>-->
+		<!--								<ToolbarSpacer/>-->
+		<!--								<Label text="{favorite>Status}" class="myStatusText"/>-->
+		<!--							</Toolbar>-->
+		<!--						</VBox>-->
+		<!--					</CustomListItem>-->
+		<!--				</List>-->
+		<!--			</IconTabFilter>-->
+		<!--			<IconTabFilter text="{i18n>incident}" count="{favorite>/Incident/count}">-->
+		<!--				<List id="idIncident" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Incident/results'}">-->
+		<!--					<CustomListItem press="onFavoriteItemPress" type="Navigation">-->
+		<!--						<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">-->
+		<!--							<Text text="{favorite>Description}" class="myItemTextHeader"/>-->
+		<!--							<Toolbar height="1.5rem" class="myToolbar myToolbarMargin">-->
+		<!--								<Label text="{favorite>Name}"/>-->
+		<!--								<ToolbarSpacer/>-->
+		<!--								<core:Icon src="sap-icon://flag" class="myIconMargin" visible="{favorite>Escalation}" color="crimson" size="1.5rem"/>-->
+		<!--								<core:Icon src="{path:'favorite>Action',formatter:'.formatter.favoriteState'}" size="1.5rem" color="steelblue"-->
+		<!--									tooltip="{path:'favorite>Action',formatter:'.formatter.favoriteText'}" press="onFavoritePress"/>-->
+		<!--							</Toolbar>-->
+		<!--							<Toolbar height="1rem" class="myToolbar myToolbarMargin">-->
+		<!--								<Label text="{favorite>ShortID}"/>-->
+		<!--								<ToolbarSpacer/>-->
+		<!--								<ObjectStatus	text="{favorite>Priority}"	state="{path:'favorite>PriorityID',formatter:'.formatter.formatPriority'}" class="myStatusText"/>-->
+		<!--							</Toolbar>-->
+		<!--						</VBox>-->
+		<!--					</CustomListItem>-->
+		<!--				</List>-->
+		<!--			</IconTabFilter>-->
+		<!--		</items>-->
+		<!--	</IconTabBar>-->
+		<!--		</IconTabFilter>-->
+		<!--	</items>-->
+		<!--</IconTabBar>-->
+		<!--<headerContent>-->
+		<!--	<Toolbar>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<Button icon="sap-icon://refresh" type="Transparent" tooltip="Refresh" press="onRefresh"/>-->
+		<!--		<MenuButton text="" type="Transparent" icon="sap-icon://settings">-->
+		<!--			<menu>-->
+		<!--				<Menu title="">-->
+		<!--					<items>-->
+		<!--						<MenuItem text="{i18n>settingItem1}" icon="sap-icon://notes"/>-->
+		<!--					</items>-->
+		<!--				</Menu>-->
+		<!--			</menu>-->
+		<!--		</MenuButton>-->
+		<!--	</Toolbar>-->
+		<!--</headerContent>-->
+		<!--<Toolbar>-->
+		<!--	<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"-->
+		<!--		suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }">-->
+		<!--		<suggestionItems>-->
+		<!--			<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>-->
+		<!--		</suggestionItems>-->
+		<!--	</SearchField>-->
+		<!--</Toolbar>-->
+		<!--<content>-->
+		<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="My Requests" press="onPressRequests">-->
+		<!--		<TileContent>-->
+		<!--			<NumericContent value="{homePageConfig>/request}" icon="sap-icon://request"/>-->
+		<!--		</TileContent>-->
+		<!--	</GenericTile>-->
+		<!--	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="My Favorites" press="onPressFavorites">-->
+		<!--		<TileContent>-->
+		<!--			<NumericContent value="{homePageConfig>/favorite}" icon="sap-icon://favorite-list"/>-->
+		<!--		</TileContent>-->
+		<!--	</GenericTile>-->
+		<!--	<f:Avatar src="sap-icon://add" displaySize="XL" displayShape="Circle" class="myCreate" press="onCreateIssue"></f:Avatar>-->
+		<!--</content>-->
+	</Page >
+</mvc:View>

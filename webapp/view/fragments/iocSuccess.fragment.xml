@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"  xmlns:form="sap.ui.layout.form">
+	<l:BlockLayout visible="false" id="BlockLayout" background="{/selectedBackground}">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell>
+				<MessageStrip text="{incidentDetail>/successMessage}" type="Success" enableFormattedText="true" showIcon="false" class="sapUiMediumMarginBottom"></MessageStrip>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+				<l:BlockLayoutRow>
+				<l:BlockLayoutCell>
+			<form:SimpleForm id="successform" editable="true" layout="ResponsiveGridLayout" columnsXL="4">
+				<form:content>
+					<Label text="Affected LoB(s)*"/>
+					<Text text="{iocForm>/custom_details/Affected LoB(s)}"></Text>
+					<Label text="Technical bridge call link*"/>
+					<Text   text="{iocForm>/custom_details/Technical bridge call link}"></Text>
+					<Label text="Separate IOC SWAT judging call needed?"/>
+						<Text text="{iocForm>/custom_details/Separate IOC SWAT judgement call needed?}"></Text>
+						
+					<Label visible="{= ${iocForm>/custom_details/Separate IOC SWAT judgement call needed?}.includes('Yes')}"  text="LoB\GCS representatives to invite to IOC SWAT judgement call"/>
+					<Text  visible="{= ${iocForm>/custom_details/Separate IOC SWAT judgement call needed?}.includes('Yes')}" text="{iocForm>/custom_details/LoB\GCS representatives to invite to IOC SWAT judgement call}"></Text>
+					
+					<Label text="SPC Event"/>
+					<Input type="text" value="{iocForm>/custom_details/SPC Event}"></Input>
+					<Label text="Affected cloud service(s)"/>
+					<Input type="text" value="{iocForm>/custom_details/Affected cloud service(s)}"></Input>
+					<Label text="Number of impacted customers"/>
+					<Text text="{iocForm>/custom_details/Number of impacted customers}"></Text>
+					<Label text="Business impact"/>
+					<TextArea editable= "false" width="100%" value="{iocForm>/custom_details/Business impact}" rows="8"/>
+					<Label text="Additional information"/>
+					<TextArea editable = "false"  width="100%" value="{iocForm>/custom_details/Details}" valueLiveUpdate="true" rows="8"/>
+				</form:content>
+			</form:SimpleForm>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</core:FragmentDefinition>

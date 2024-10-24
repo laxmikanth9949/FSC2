@@ -1,0 +1,129 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.CustomerSearch" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:f="sap.f" xmlns:tnt="sap.tnt">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<!--<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>searchCustomerLabel}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+				suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValueCustomer}"
+				class="sapUiMediumMarginTopBottom">
+				<suggestionItems>
+					<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+				</suggestionItems>
+			</SearchField>
+			<IconTabBar id="idSearchTab" headerMode="Inline" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter key="keyCustomer" text="{i18n>customer}" count="{searchResult>/Customer/count}">
+						<!--	<List id="idCustomer" noDataText="{i18n>noData}" mode="None" items="{path: 'searchResult>/Customer/results'}">
+							<ObjectListItem title="{searchResult>CustomerName}" type="Active" press="handleRowPress($event, 'searchResult')">
+								<attributes>
+									<ObjectAttribute text="{path:'searchResult>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>
+								</markers>
+							</ObjectListItem>
+						</List>-->
+						<Table id="idCustomer" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'searchResult>/Customer/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<SearchField search="onFilterTable($event, 'idCustomer')" liveChange="onFilterTable($event, 'idCustomer')" placeholder="Filter"
+											class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerSearch')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarCust" visible="false">
+									<Text id="vsdFilterLabelCust"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High"><Text text="Customer Name"/></Column>
+								<Column importance="Low" hAlign="Center"><Text text="Customer No."/></Column>
+								<!--<Column importance="Low" hAlign="Center"><Text text="Iac"/></Column>-->
+								<Column importance="Low" hAlign="Center"><Text text=""/></Column>
+								<Column importance="Low" hAlign="Center"><Text text=""/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'searchResult')" type="Navigation">
+									<cells>
+										<VBox alignItems="Center">
+											<!--{parts:[{path:'selectedIncidentList>desc'},{path:'selectedIncidentList>SNow_number'}],formatter:'.formatIcdDesc'}"-->
+											<!--<Avatar displayShape="Square" src="{parts:[{path:'searchResult>Logo/MimeType'},{path:'searchResult>Logo/Value'}],formatter:'.formatter.formatLogoSrc'}"/>-->
+											<Text text="{searchResult>CustomerName}" class="sapUiSmallMarginTop" textAlign="Center"/>
+										</VBox>
+										
+										<ObjectNumber number="{path:'searchResult>CustomerNo', formatter:'.formatter.trimPreZeros'}"/>
+										<!--<Text text="{searchResult>Iac}"/>-->
+										<tnt:InfoLabel width="225px" text="Top Match" colorScheme="2" visible="{searchResult>isTopMatch}"/>
+										<tnt:InfoLabel width="190px" text='{searchResult>filterProp}' colorScheme="{= ${searchResult>IsGlobalUltimate} ? 1 : 5}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter key="favorites" text="{i18n>myFavorites}"
+						count="{= !!${favorite>/Customer/loadComplete} ? ${favorite>/Customer/count} : 'N/A'}">
+						<!--<List id="idCustomerFav" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Customer/results'}">
+							<ObjectListItem title="{favorite>CustomerName}" type="Active" press="handleRowPress($event, 'favorite')">
+								<attributes>
+									<ObjectAttribute text="{path:'favorite>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${favorite>Action} === 'X'}"/>
+								</markers>
+							</ObjectListItem>
+						</List>-->
+						<Table id="idCustomerFav" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'favorite>/Customer/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<SearchField search="onFilterTable($event, 'idCustomerFav')" liveChange="onFilterTable($event, 'idCustomerFav')" placeholder="Filter"
+											class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerSearch')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarCustFav" visible="false">
+									<Text id="vsdFilterLabelCustFav"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High" width="10%"><Text text=""/></Column>
+								<Column importance="High"><Text text="Customer Name"/></Column>
+								<Column importance="Low" hAlign="Center"><Text text="Customer No."/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'favorite')" type="Navigation">
+									<cells>
+										<Avatar src="{favorite>/Picture}" fallbackIcon="sap-icon://building" imageFitType="Contain" displaySize="S" backgroundColor="Transparent"/>
+										<Text text="{favorite>CustomerName}"/>
+										<ObjectNumber number="{path:'favorite>CustomerNo', formatter:'.formatter.trimPreZeros'}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

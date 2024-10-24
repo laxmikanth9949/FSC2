@@ -1,0 +1,95 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.myActivity" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page id="assigned">
+		<customHeader>
+			<Toolbar>
+				<!--<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>myActivity}" level="H2"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<!--		<List noDataText="{i18n>noData}" growing="true" growingThreshold="5" growingScrollToLoad="false" growingTriggerText="{i18n>showMore}"
+				items="{path: 'activitySet>/results'}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>MCCActivities}" level="H6" class="custH6Title"/>
+						<ToolbarSpacer/>
+						<ComboBox id="ActivityFilter" placeholder="{i18n>status}" width="16rem" class="sapUiSmallMarginEnd"
+							items="{path:'filterOptionModel>/AssignedToMeStatus'}" selectionChange="_onRouteMatched">
+							<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+						</ComboBox>
+					</Toolbar>
+				</headerToolbar>
+				<CustomListItem press="onActivityItemPress" type="Navigation">
+					<VBox class="sapUiSmallMargin">
+						<Title text="{path:'activitySet>activity_description', formatter:'.formatter.formatRequestHeader'}" wrapping="false"/>
+						<Label text="{activitySet>account_name_F}" wrapping="true"/>
+						<Label width="100%" text="{activitySet>activity_change_date}"/>
+						<HBox>
+							<VBox class="sapUiTinyMarginEnd">
+								<core:Icon src="{path:'activitySet>activity_process_type',formatter:'.formatter.formatRequestIcon'}"/>
+							</VBox>
+							<VBox width="80%">
+								<Label width="100%"
+									text="{parts:[{path:'activitySet>activity_process_type'}, {path:'activitySet>activity_id'}], formatter:'.formatter.formatRequestType'}"/>
+							</VBox>
+							<VBox width="50%" alignItems="End">
+								<Label width="100%" text="{activitySet>activity_status_desc}"/>
+							</VBox>
+						</HBox>
+					</VBox>
+				</CustomListItem>
+			</List>-->
+			<Table id="idMyToDosTable" growingTriggerText="{i18n>showMore}" items="{activitySet>/results}" mode="None" autoPopinMode="true"
+				noDataText="{i18n>noData}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<!--<Title text="{i18n>myActivity}" level="H2"/>-->
+						<ToolbarSpacer/>
+						<FlexBox>
+							<SearchField id="searchField" search="onFilterTable" liveChange="onFilterTable" placeholder="Filter" class="sapUiTinyMarginEnd"/>
+							<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'ToDo')" ariaHasPopup="Dialog"
+								class="sapUiTinyMarginBegin"/>
+							<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+						</FlexBox>
+					</OverflowToolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<OverflowToolbar id="vsdFilterBar" visible="false">
+						<Text id="vsdFilterLabel"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column width="10%" importance="Low" hAlign="Center"><Text text="Trans. Type"/></Column>
+					<Column importance="High"><Text text="Description"/></Column>
+					<Column importance="Low"><Text text="Customer Name"/></Column>
+					<Column importance="Medium" hAlign="Center"><Text text="Changed At"/></Column>
+					<Column importance="Low" hAlign="Center"><Text text="Object ID"/></Column>
+					<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onActivityItemPress" type="Navigation" highlight="{activitySet>Highlight}">
+						<!--highlight="{parts:[{path:'activitySet>activity_id'}, {path:'activitySet>activity_process_type'}, {path:'activitySet>activity_change_date'}], formatter:'.formatter.formatTableHighlight'}">-->
+						<cells>
+							<ObjectStatus icon="{path:'activitySet>activity_process_type',formatter:'.formatter.formatRequestIcon'}"
+								tooltip="{parts:[{path:'activitySet>activity_process_type'}, {path:'activitySet>activity_id'}], formatter:'.formatter.formatRequestType'}"/>
+							<!--text="{parts:[{path:'activitySet>activity_process_type'}, {path:'activitySet>activity_id'}], formatter:'.formatter.formatRequestType'}"-->
+							<ObjectIdentifier title="{path:'activitySet>activity_description', formatter:'.formatter.formatRequestHeader'}"/>
+							<Text text="{activitySet>account_name_F}"/>
+							<Text text="{activitySet>activity_change_date}"/>
+							<ObjectNumber number="{path:'activitySet>activity_id', formatter:'.formatter.formatRequestId'}"/>
+							<ObjectStatus text="{activitySet>activity_status_desc}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+	<!--<Toolbar id="tbShowMore" visible="{= (${activitySet>/results}).length >= 5 ? true : false }">-->
+	<!--	<ToolbarSpacer/>-->
+	<!--	<Button text="{i18n>showMore}" type="Transparent" press="onShowMore"/>-->
+	<!--	<ToolbarSpacer/>-->
+	<!--</Toolbar>-->
+</mvc:View>

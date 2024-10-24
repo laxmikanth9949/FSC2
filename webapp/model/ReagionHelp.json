@@ -1,0 +1,1977 @@
+[{
+	"COUNTRYCODE": "AF",
+	"COUNTRY": "Afghanistan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "AL",
+	"COUNTRY": "Albania",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "DZ",
+	"COUNTRY": "Algeria",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "VI",
+	"COUNTRY": "Amer.Virgin Is.",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AD",
+	"COUNTRY": "Andorra",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AO",
+	"COUNTRY": "Angola",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "AI",
+	"COUNTRY": "Anguilla",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AQ",
+	"COUNTRY": "Antarctica",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AG",
+	"COUNTRY": "Antigua/Barbuda",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AR",
+	"COUNTRY": "Argentina",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AM",
+	"COUNTRY": "Armenia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "AW",
+	"COUNTRY": "Aruba",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AU",
+	"COUNTRY": "Australia",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AT",
+	"COUNTRY": "Austria",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "DACH",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AZ",
+	"COUNTRY": "Azerbaijan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "BS",
+	"COUNTRY": "Bahamas",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BH",
+	"COUNTRY": "Bahrain",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "BD",
+	"COUNTRY": "Bangladesh",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "INDIA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BB",
+	"COUNTRY": "Barbados",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BY",
+	"COUNTRY": "Belarus",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "BE",
+	"COUNTRY": "Belgium",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BZ",
+	"COUNTRY": "Belize",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BJ",
+	"COUNTRY": "Benin",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "BM",
+	"COUNTRY": "Bermuda",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BT",
+	"COUNTRY": "Bhutan",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BO",
+	"COUNTRY": "Bolivia",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BQ",
+	"COUNTRY": "Bonaire, Saba",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BA",
+	"COUNTRY": "Bosnia-Herz.",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "BW",
+	"COUNTRY": "Botswana",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "BR",
+	"COUNTRY": "Brazil",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "BRAZIL",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "IO",
+	"COUNTRY": "Brit.Ind.Oc.Ter",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "VG",
+	"COUNTRY": "Brit.Virgin Is.",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "BN",
+	"COUNTRY": "Brunei Dar-es-S",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "BG",
+	"COUNTRY": "Bulgaria",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "BF",
+	"COUNTRY": "Burkina Faso",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "BI",
+	"COUNTRY": "Burundi",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "KH",
+	"COUNTRY": "Cambodia",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CM",
+	"COUNTRY": "Cameroon",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "CA",
+	"COUNTRY": "Canada",
+	"REGION": "NA",
+	"MCCREGION": "NA",
+	"SUBREGION": "NA",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "IC",
+	"COUNTRY": "Canary Islands",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CV",
+	"COUNTRY": "Cap Verde",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "KY",
+	"COUNTRY": "Cayman Islands",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TD",
+	"COUNTRY": "Chad",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "CL",
+	"COUNTRY": "Chile",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CX",
+	"COUNTRY": "Christmas Islnd",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CC",
+	"COUNTRY": "Coconut Islands",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CO",
+	"COUNTRY": "Colombia",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "KM",
+	"COUNTRY": "Comoros",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "CK",
+	"COUNTRY": "Cook Islands",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CR",
+	"COUNTRY": "Costa Rica",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HR",
+	"COUNTRY": "Croatia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "CU",
+	"COUNTRY": "Cuba",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CY",
+	"COUNTRY": "Cyprus",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CW",
+	"COUNTRY": "Curacao",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CZ",
+	"COUNTRY": "Czech Republic",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "CD",
+	"COUNTRY": "Dem. Rep. Congo",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "DK",
+	"COUNTRY": "Denmark",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "DJ",
+	"COUNTRY": "Djibouti",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "DM",
+	"COUNTRY": "Dominica",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "DO",
+	"COUNTRY": "Dominican Rep.",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AN",
+	"COUNTRY": "Dutch Antilles",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TL",
+	"COUNTRY": "East Timor",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "EC",
+	"COUNTRY": "Ecuador",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "EG",
+	"COUNTRY": "Egypt",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "SV",
+	"COUNTRY": "El Salvador",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GQ",
+	"COUNTRY": "Equatorial Guin",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "ER",
+	"COUNTRY": "Eritrea",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "EE",
+	"COUNTRY": "Estonia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ET",
+	"COUNTRY": "Ethiopia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "FO",
+	"COUNTRY": "Faroe Islands",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "FK",
+	"COUNTRY": "Falkland Islnds",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "FJ",
+	"COUNTRY": "Fiji",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "FI",
+	"COUNTRY": "Finland",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "FR",
+	"COUNTRY": "France",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "PF",
+	"COUNTRY": "Frenc.Polynesia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "GF",
+	"COUNTRY": "French Guayana",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "GA",
+	"COUNTRY": "Gabon",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "TF",
+	"COUNTRY": "French S.Territ",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GM",
+	"COUNTRY": "Gambia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "GE",
+	"COUNTRY": "Georgia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "DE",
+	"COUNTRY": "Germany",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "DACH",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GH",
+	"COUNTRY": "Ghana",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "GI",
+	"COUNTRY": "Gibraltar",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "GR",
+	"COUNTRY": "Greece",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GL",
+	"COUNTRY": "Greenland",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "GD",
+	"COUNTRY": "Grenada",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GP",
+	"COUNTRY": "Guadeloupe",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "GU",
+	"COUNTRY": "Guam",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GT",
+	"COUNTRY": "Guatemala",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GN",
+	"COUNTRY": "Guinea",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "GW",
+	"COUNTRY": "Guinea-Bissau",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "GY",
+	"COUNTRY": "Guyana",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HT",
+	"COUNTRY": "Haiti",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HM",
+	"COUNTRY": "Heard/McDon.Isl",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HN",
+	"COUNTRY": "Honduras",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HU",
+	"COUNTRY": "Hungary",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "IS",
+	"COUNTRY": "Iceland",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "IN",
+	"COUNTRY": "India",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "INDIA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ID",
+	"COUNTRY": "Indonesia",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "IR",
+	"COUNTRY": "Iran",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "IQ",
+	"COUNTRY": "Iraq",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "IE",
+	"COUNTRY": "Ireland",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "IM",
+	"COUNTRY": "Isle of Man",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "IL",
+	"COUNTRY": "Israel",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "IT",
+	"COUNTRY": "Italy",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ITALY "
+}, {
+	"COUNTRYCODE": "CI",
+	"COUNTRY": "Ivory Coast",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "JM",
+	"COUNTRY": "Jamaica",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "JP",
+	"COUNTRY": "Japan",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "JAPAN",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "JO",
+	"COUNTRY": "Jordan",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "KZ",
+	"COUNTRY": "Kazakhstan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "JE",
+	"COUNTRY": "Jersey",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "KE",
+	"COUNTRY": "Kenya",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "KW",
+	"COUNTRY": "Kuwait",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "KG",
+	"COUNTRY": "Kyrgyzstan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "KI",
+	"COUNTRY": "Kiribati",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LA",
+	"COUNTRY": "Laos",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LV",
+	"COUNTRY": "Latvia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LB",
+	"COUNTRY": "Lebanon",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "LS",
+	"COUNTRY": "Lesotho",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "LR",
+	"COUNTRY": "Liberia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "LY",
+	"COUNTRY": "Libya",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "LI",
+	"COUNTRY": "Liechtenstein",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "DACH",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LT",
+	"COUNTRY": "Lithuania",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LU",
+	"COUNTRY": "Luxembourg",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MK",
+	"COUNTRY": "Macedonia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "MG",
+	"COUNTRY": "Madagascar",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "MW",
+	"COUNTRY": "Malawi",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "MY",
+	"COUNTRY": "Malaysia",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MV",
+	"COUNTRY": "Maldives",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ML",
+	"COUNTRY": "Mali",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "MT",
+	"COUNTRY": "Malta",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ITALY "
+}, {
+	"COUNTRYCODE": "MQ",
+	"COUNTRY": "Martinique",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "MR",
+	"COUNTRY": "Mauritania",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "MU",
+	"COUNTRY": "Mauritius",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MH",
+	"COUNTRY": "Marshall Islnds",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "YT",
+	"COUNTRY": "Mayotte",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "MX",
+	"COUNTRY": "Mexico",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MD",
+	"COUNTRY": "Moldavia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "MC",
+	"COUNTRY": "Monaco",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "ME",
+	"COUNTRY": "Montenegro",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "FM",
+	"COUNTRY": "Micronesia",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "UM",
+	"COUNTRY": "Minor Outl.Isl.",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MS",
+	"COUNTRY": "Montserrat",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "MA",
+	"COUNTRY": "Morocco",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "MZ",
+	"COUNTRY": "Mozambique",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "MM",
+	"COUNTRY": "Myanmar",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "INDIA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NA",
+	"COUNTRY": "Namibia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "NP",
+	"COUNTRY": "Nepal",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NL",
+	"COUNTRY": "Netherlands",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NC",
+	"COUNTRY": "New Caledonia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "MP",
+	"COUNTRY": "N.Mariana Islnd",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NZ",
+	"COUNTRY": "New Zealand",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NR",
+	"COUNTRY": "Nauru",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NI",
+	"COUNTRY": "Nicaragua",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NE",
+	"COUNTRY": "Niger",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "NG",
+	"COUNTRY": "Nigeria",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "NU",
+	"COUNTRY": "Niue",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NF",
+	"COUNTRY": "Norfolk Islands",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "NO",
+	"COUNTRY": "Norway",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "OM",
+	"COUNTRY": "Oman",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "PK",
+	"COUNTRY": "Pakistan",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "PA",
+	"COUNTRY": "Panama",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "MEXICO",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "KP",
+	"COUNTRY": "North Korea",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PG",
+	"COUNTRY": "Pap. New Guinea",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PY",
+	"COUNTRY": "Paraguay",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PE",
+	"COUNTRY": "Peru",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PW",
+	"COUNTRY": "Palau",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PS",
+	"COUNTRY": "Palestine",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PH",
+	"COUNTRY": "Philippines",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PN",
+	"COUNTRY": "Pitcairn Islands",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "PL",
+	"COUNTRY": "Poland",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "PT",
+	"COUNTRY": "Portugal",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "PR",
+	"COUNTRY": "Puerto Rico",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "QA",
+	"COUNTRY": "Qatar",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CG",
+	"COUNTRY": "Rep.of Congo",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "RE",
+	"COUNTRY": "Reunion",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "RO",
+	"COUNTRY": "Romania",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "RU",
+	"COUNTRY": "Russia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "RW",
+	"COUNTRY": "Rwanda",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "GS",
+	"COUNTRY": "S. Sandwich Ins",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ST",
+	"COUNTRY": "S.Tome,Principe",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AS",
+	"COUNTRY": "Samoa, American",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SM",
+	"COUNTRY": "San Marino",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ITALY "
+}, {
+	"COUNTRYCODE": "SA",
+	"COUNTRY": "Saudi Arabia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "SN",
+	"COUNTRY": "Senegal",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "SH",
+	"COUNTRY": "Saint Helena",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "WS",
+	"COUNTRY": "Samoa",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "RS",
+	"COUNTRY": "Serbia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "SC",
+	"COUNTRY": "Seychelles",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME North "
+}, {
+	"COUNTRYCODE": "SL",
+	"COUNTRY": "Sierra Leone",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "SG",
+	"COUNTRY": "Singapore",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SK",
+	"COUNTRY": "Slovakia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "SI",
+	"COUNTRY": "Slovenia",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CEE "
+}, {
+	"COUNTRYCODE": "SB",
+	"COUNTRY": "Solomon Islands",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SO",
+	"COUNTRY": "Somalia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "SX",
+	"COUNTRY": "Sint Maarten",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ZA",
+	"COUNTRY": "South Africa",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "KR",
+	"COUNTRY": "South Korea",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "SOUTH KOREA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "ES",
+	"COUNTRY": "Spain",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "LK",
+	"COUNTRY": "Sri Lanka",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "INDIA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "KN",
+	"COUNTRY": "St Kitts&Nevis",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "LC",
+	"COUNTRY": "St. Lucia",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "VC",
+	"COUNTRY": "St. Vincent",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "PM",
+	"COUNTRY": "St.Pier,Miquel.",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "FRANCE "
+}, {
+	"COUNTRYCODE": "BL",
+	"COUNTRY": "St Barthelemy",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SD",
+	"COUNTRY": "Sudan",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "SR",
+	"COUNTRY": "Suriname",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SJ",
+	"COUNTRY": "Svalbard",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "SZ",
+	"COUNTRY": "Swaziland",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "SE",
+	"COUNTRY": "Sweden",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "Nordics "
+}, {
+	"COUNTRYCODE": "CH",
+	"COUNTRY": "Switzerland",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "DACH",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "SY",
+	"COUNTRY": "Syria",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TJ",
+	"COUNTRY": "Tajikistan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "TZ",
+	"COUNTRY": "Tanzania",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "TH",
+	"COUNTRY": "Thailand",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TG",
+	"COUNTRY": "Togo",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "TT",
+	"COUNTRY": "Trinidad,Tobago",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TN",
+	"COUNTRY": "Tunisia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "TR",
+	"COUNTRY": "Turkey",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "TM",
+	"COUNTRY": "Turkmenistan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "TC",
+	"COUNTRY": "Turksh Caicosin",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TO",
+	"COUNTRY": "Tonga",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "UG",
+	"COUNTRY": "Uganda",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "UA",
+	"COUNTRY": "Ukraine",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "GB",
+	"COUNTRY": "United Kingdom",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "UKI "
+}, {
+	"COUNTRYCODE": "US",
+	"COUNTRY": "United States",
+	"REGION": "NA",
+	"MCCREGION": "NA",
+	"SUBREGION": "NA",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "UY",
+	"COUNTRY": "Uruguay",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "SOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TV",
+	"COUNTRY": "Tuvalu",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "AE",
+	"COUNTRY": "Utd.Arab Emir.",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "UZ",
+	"COUNTRY": "Uzbekistan",
+	"REGION": "EMEA",
+	"MCCREGION": "MEE",
+	"SUBREGION": "MEE",
+	"SUBSUBREGION": "EMEA East",
+	"SUBSUBSUBREGION ": "CIS "
+}, {
+	"COUNTRYCODE": "VU",
+	"COUNTRY": "Vanuatu",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "ANZ",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "VA",
+	"COUNTRY": "Vatican City",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ITALY "
+}, {
+	"COUNTRYCODE": "VE",
+	"COUNTRY": "Venezuela",
+	"REGION": "LAC",
+	"MCCREGION": "LAC",
+	"SUBREGION": "LAC",
+	"SUBSUBREGION": "NOLA",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "VN",
+	"COUNTRY": "Vietnam",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "APJ",
+	"SUBSUBREGION": "South East Asia",
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "EH",
+	"COUNTRY": "West Sahara",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA North",
+	"SUBSUBSUBREGION ": "SEFA "
+}, {
+	"COUNTRYCODE": "YE",
+	"COUNTRY": "Yemen",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "ME South "
+}, {
+	"COUNTRYCODE": "ZM",
+	"COUNTRY": "Zambia",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "ZW",
+	"COUNTRY": "Zimbabwe",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "SS",
+	"COUNTRY": "South Sudan",
+	"REGION": "EMEA",
+	"MCCREGION": "EMEA",
+	"SUBREGION": "EMEA",
+	"SUBSUBREGION": "EMEA South",
+	"SUBSUBSUBREGION ": "AFRICA "
+}, {
+	"COUNTRYCODE": "WF",
+	"COUNTRY": "Wallis,Futuna",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "CN",
+	"COUNTRY": "China",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "GTC",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "HK",
+	"COUNTRY": "Hong Kong",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "GTC",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "YU",
+	"COUNTRY": "Yugoslavia",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MO",
+	"COUNTRY": "Macau",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "GTC",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "MN",
+	"COUNTRY": "Mongolia",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "GTC",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "GG",
+	"COUNTRY": "Guernsey",
+	"REGION": null,
+	"MCCREGION": null,
+	"SUBREGION": null,
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}, {
+	"COUNTRYCODE": "TW",
+	"COUNTRY": "Taiwan",
+	"REGION": "APJ",
+	"MCCREGION": "APJ",
+	"SUBREGION": "GTC",
+	"SUBSUBREGION": null,
+	"SUBSUBSUBREGION ": " "
+}]

@@ -1,0 +1,31 @@
+<mvc:View xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="sap.support.fsc2.controller.Help">
+	<Page title="{i18n>help}" navButtonPress="onNavBack" showNavButton="true" showHeader="true">
+		<Panel width="100%" height="auto" expandable="false" expanded="true" expandAnimation="true" backgroundDesign="Solid">
+			<content>
+				<FlexBox direction="Column" alignItems="Center" justifyContent="Center">
+					<items>
+						<Image id="iMainImage" alt="{i18n>mccLogo}"/>
+						<Text text="Version {i18n>versionNo}"/>
+					</items>
+				</FlexBox>
+				<List mode="None" width="100%">
+					<items>
+						<StandardListItem title="{i18n>whatIsNew}" description="" icon="sap-icon://newspaper" iconInset="false" iconDensityAware="false" press="onNews"
+							type="Navigation"/>
+						<StandardListItem title="{i18n>needSomeHelp}" description="" icon="sap-icon://sys-help" iconInset="false" iconDensityAware="false"
+							press="onHelp" type="Navigation"/>
+						<StandardListItem title="{i18n>visitUsOnJam}" description="" icon="sap-icon://jam" iconInset="false" iconDensityAware="false" press="onJam"
+							type="Navigation"/>
+						<StandardListItem title="{i18n>shareApp}" description="" icon="sap-icon://share-2" iconInset="false" iconDensityAware="false"
+							press="onShare" type="Navigation"/>
+						<StandardListItem title="{i18n>reportAnIssue}" description="" icon="sap-icon://notification" iconInset="false" iconDensityAware="false"
+							press="onReportIssue" type="Navigation"/>
+						<!--<StandardListItem title="{i18n>guidelineForHandling}" description="" icon="sap-icon://documents" iconInset="false"-->
+						<!--	iconDensityAware="false" press="onGuideline" type="Navigation"/>-->
+					</items>
+				</List>
+			</content>
+		</Panel>
+	</Page>
+</mvc:View>

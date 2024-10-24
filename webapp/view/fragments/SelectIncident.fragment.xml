@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>selectIncident}"  stretch="{device>/isPhone}" class="sapUiSizeCompact" contentWidth="65%">
+		<Toolbar>
+			<Label text="{i18n>incidentNo}" class="sapUiSmallMarginBeginEnd" />
+			<Input enabled="false" value="{SelectIncident>/IncidentNo}"  width="30%" class="sapUiMediumMarginEnd"/>
+			<Label text="{i18n>year}" class="sapUiSmallMarginEnd" />
+			<Input enabled="false" value="{SelectIncident>/IncidentYear}"  width="30%"/>
+		</Toolbar>
+		<Table class="responsiveTable sapUiSmallMargin" items="{ path: 'SelectIncident>/results'}" >
+			<columns>
+				<Column hAlign="Left" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+					<Text text="{i18n>incident2}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+					<Text text="{i18n>customer}"/>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+					<Text text="{i18n>cimServiceReq}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem type="Active" press="onNavToCreateByIncident">
+					<cells>
+						<VBox>
+						<Label text="{SelectIncident>ID}"/>
+						<Label text="{SelectIncident>Description}"/>
+						</VBox>
+						<Label text="{SelectIncident>CustomerName}"/>
+						<Label text="{SelectIncident>CIM_ID}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Dialog>
+</core:FragmentDefinition>

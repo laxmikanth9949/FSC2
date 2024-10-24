@@ -1,0 +1,36 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.support.fsc2.controller.IncidentList"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{createCriticalSituation>/IncidentTitle}" showNavButton="{= !${device>/isLaunchpad}}" navButtonPress="handleSaveSelect">
+		<!--<Dialog title="{incidentListTitle>/title}" stretch="true" class="sapUiSizeCompact">-->
+		<Toolbar>
+			<SearchField liveChange="handleIncidentSearch" width="100%"/>
+		</Toolbar>
+		<List id="idIncidentList" items="{incidentList>/results}" mode="MultiSelect" noDataText="{i18n>noData}" selectionChange="onSelectIncident"
+			rememberSelections="true">
+			<infoToolbar>
+				<OverflowToolbar visible="false" id="idInfoToolbar">
+					<Label id="idFilterLabel"/>
+				</OverflowToolbar>
+			</infoToolbar>
+			<!--<StandardListItem title="{incidentList>Description}" description="{incidentList>Title}" info="{incidentList>Priority}"-->
+			<!--	infoState="{parts:[{path:'incidentList>SNow_number'},{path:'incidentList>PriorityKey'}],formatter:'.formatter.formatIcdPriority'}" type="Navigation" press="onIncidentItemPress"/>-->
+			<ObjectListItem title="{incidentList>Description}" press="onIncidentItemPress">
+				<firstStatus>
+					<ObjectStatus text="{incidentList>Priority}"
+						state="{parts:[{path:'incidentList>SNow_number'},{path:'incidentList>PriorityKey'}],formatter:'.formatter.formatIcdPriority'}"/>
+				</firstStatus>
+				<attributes>
+					<ObjectAttribute text="{incidentList>Title}"/>
+					<ObjectAttribute text="{incidentList>SNow_number}" visible="{= ${incidentList>SNow_number} ? true : false}"/>
+				</attributes>
+			</ObjectListItem>
+		</List>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>save}" type="Emphasized" press="handleSaveSelect"/>
+				<Button text="{i18n>cancel}" press="handleIncidentClose"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm width="100%" editable="true" layout="ColumnLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="2" labelSpanS="2" emptySpanL="1"
+		emptySpanM="1" emptySpanS="1" columnsXL="2" columnsL="2" columnsM="1" adjustLabelSpan="false">
+		<Label text="{i18n>escalationRecord}"/>
+		<Text visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"
+			text="{BDMRequest>/object_id}"/>
+		<Label text="{i18n>reporter}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Text text="{BDMRequest>/report_person_name}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Label text="{i18n>status}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Text text="{BDMRequest>/status}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Label text="{i18n>DEA}" />
+		<Text text="{BDMRequest>/responsible_person_name}"/>
+		<!--<Link text="Chat on MS Teams" target="_search" href="https://teams.microsoft.com/l/chat/0/0?users={BDMRequest>/responsible_person_email}" visible="{= ${BDMRequest>/responsible_person_name}.trim().length > 0 ? true : false}"/>-->
+		<Label text="{BDMRequest>/EscalationReasonLabel}"
+			visible="{= ${BDMRequest>/EscalationReasonVisible} &amp;&amp; (${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation})}"/>
+		<Text text="{BDMRequest>/EscalationReason}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+	</f:SimpleForm>
+</core:FragmentDefinition>

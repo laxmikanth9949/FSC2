@@ -1,0 +1,77 @@
+<core:FragmentDefinition height="100%" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Page id="wizardReviewPage" showHeader="false">
+		<content>
+			<form:SimpleForm minWidth="1024" editable="true" layout="ResponsiveGridLayout">
+				<form:toolbar>
+					<Toolbar>
+						<Title text="{i18n>customer}" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer/>
+						<Button type="Transparent" press="editStepOne" text="{i18n>edit}"/>
+					</Toolbar>
+				</form:toolbar>
+				<form:content>
+					<Label text="{i18n>customerNo.}"/>
+					<Text text="{createCriticalSituation>/CustomerNo}"/>
+					<Label text="{i18n>customerName}"/>
+					<Text text="{createCriticalSituation>/CustomerName}"/>
+					<!--<Link press="editStepOne" text="Edit"/>-->
+				</form:content>
+			</form:SimpleForm>
+			<form:SimpleForm minWidth="1024" editable="true" layout="ResponsiveGridLayout">
+				<form:toolbar>
+					<Toolbar>
+						<Title text="{i18n>selectRelevantIncidents}" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer/>
+						<Button type="Transparent" press="editStepTwo" text="{i18n>edit}"/>
+					</Toolbar>
+				</form:toolbar>
+				<form:content>
+					<!--<Label text="{i18n>businessImpact}"/>-->
+					<!--<Text text="{createCriticalSituation>/BusinessImpact/Text}"/>-->
+					<!--<Label text="{i18n>incident}"/>-->
+					<List items="{selectedIncidentList>/results}" noDataText="No Relevant Incidents">
+						<items>
+							<StandardListItem title="{selectedIncidentList>title}" description="{selectedIncidentList>desc}"/>
+						</items>
+					</List>
+					<!--<Link press="editStepTwo" text="Edit"/>-->
+				</form:content>
+			</form:SimpleForm>
+			<form:SimpleForm minWidth="1024" editable="true" layout="ResponsiveGridLayout">
+				<form:toolbar>
+					<Toolbar>
+						<Title text="{i18n>requestReasons}" level="H4" titleStyle="H4"/>
+						<ToolbarSpacer/>
+						<Button type="Transparent" press="editStepThree" text="{i18n>edit}"/>
+					</Toolbar>
+				</form:toolbar>
+				<form:content>
+					<Label text="{i18n>businessImpact}"/>
+					<Text text="{createCriticalSituation>/BusinessImpact/Text}"/>
+					<Label text="{i18n>requestReasons}"/>
+					<Text text="{createCriticalSituation>/RequestReason}"/>
+					<Label text="{i18n>requestDescription}"/>
+					<Text text="{createCriticalSituation>/Description}"/>
+					<!--<Text-->
+					<!--	text="{parts:[{path:'createCriticalSituation>/Description'}, {path:'createCriticalSituation>/RequestReason'}], formatter:'.formatter.formatReviewDesc'}"/>-->
+					<Label text="{i18n>attachments}"/>
+					<List id="idAttachmentList" items="{ path: 'fileList>/results', sorter: { path: 'Name' } }">
+						<items>
+							<StandardListItem title="{fileList>fileName}" description="{fileList>fileSize}" icon="sap-icon://attachment" iconDensityAware="false"
+								iconInset="false"/>
+						</items>
+					</List>
+					<!--<Link press="editStepThree" text="Edit"/>-->
+				</form:content>
+			</form:SimpleForm>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="{i18n>submit}" type="Emphasized" press="handleWizardSubmit"></Button>
+					<Button text="{i18n>cancel}" press="handleWizardCancel"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>

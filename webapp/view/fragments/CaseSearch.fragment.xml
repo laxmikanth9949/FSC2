@@ -1,0 +1,60 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog id="CaseDialog" title="{i18n>caseSearch}" class="sapUiSizeCompact" stretch="{device>/isPhone}">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" maxContainerCols="1" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+					labelSpanS="6" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="1">
+					<Label text="{i18n>caseID}"/>
+					<Input type="Number" value="{caseSearch>/case_id}" />
+					<Label text="{i18n>erpCustomerNumber}"/>
+					<Input type="Number" value="{caseSearch>/customer_r3_no}" />
+					<Label text="{i18n>crmBpNumber}"/>
+					<Input type="Number" value="{caseSearch>/customer_bp_id}" />
+					<Label text="{i18n>customerName}"/>
+					<Input type="Text" value="{caseSearch>/customer_name}" />
+					<Label text="{i18n>freeTextField}"/>
+					<Input type="Text" value="{caseSearch>/free_text}" />
+					<Label text=""/>
+					<Button type="Emphasized" text="{i18n>search}" press="onPressCaseSearch" width="50%"/>
+				</f:SimpleForm>
+				<Table id="iResultsList" mode="SingleSelectLeft" items="{ path: 'ActivityCaseList>/results', sorter: { path: 'case_title' } }">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>result}"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column  width="50%">
+							<Text text="{i18n>case}"/>
+						</Column>
+						<Column demandPopin="true" width="50%">
+							<Text text="{i18n>customer}" wrapping="false"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<VBox>
+								<Title text="{ActivityCaseList>case_id}" />
+								<Text text="{ActivityCaseList>case_title}" wrapping="false"/>
+								<Text text="{ActivityCaseList>case_type_text}" wrapping="false"/>
+								</VBox>
+								<VBox>
+									<Text text="{path:'ActivityCaseList>customer_bp_id', formatter:'.formatter.formatBPNo'}"/>
+									<Text text="{path:'ActivityCaseList>customer_r3_no', formatter:'.formatter.formatERPNo'}"/>
+									<Text text="{ActivityCaseList>customer_name}" wrapping="false"/>
+								</VBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+		<beginButton>
+			<Button text="{i18n>ok}" press="onConfirmCaseSecect"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" press="onCloseCaseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

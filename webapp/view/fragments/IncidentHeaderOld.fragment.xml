@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<f:SimpleForm width="100%" editable="true" layout="ColumnLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="2" labelSpanS="2" emptySpanL="1"
+		emptySpanM="1" emptySpanS="1" columnsXL="2" columnsL="2" columnsM="1" adjustLabelSpan="false">
+		<!--<core:Title text=""/>-->
+		<Label text="{i18n>CIMRequest}"/>
+		<Text text="{CIMRequest>/object_id}" visible="{incidentDetailPage>/isCimRequest}"/>
+		<Label text="{i18n>incidentNo}"/>
+		<Text text="{incidentDetail>/ShortID}"/>
+		<Label text="{i18n>snowNumber}"/>
+		<Text text="{incidentDetail>/SNow_number}" visible="{= ${incidentDetail>/SNow_number} ? true: false}"/>
+		<Label text="{i18n>priority}"/>
+		<ObjectStatus text="{incidentDetail>/PriorityTxt}"
+			state="{parts:[{path:'incidentDetail>/SNow_number'},{path:'incidentDetail>/Priority'}],formatter:'.formatter.formatIcdPriority'}"/>
+		<Label text="{i18n>customerName}"/>
+		<Text id="idCustName" text="{incidentDetail>/CustomerName}"/>
+		<Label text="{i18n>contract}"/>
+		<Text text="{incidentDetail>/Contract_Type}"/>
+		<Label text=""/>
+		<ObjectStatus text="{path:'incidentDetail>/Escalation',formatter:'.formatter.formatEscalation'}" state="Error"/>
+		<Label text="{i18n>escalationRecord}"/>
+		<Text visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"
+			text="{incidentDetailPage>/SnowEscaNumber}"/>
+		<!--<core:Title text="ServiceNow Details" visible="{incidentDetailPage>/isSnowEscalation}"/>-->
+		<Label text="{i18n>category}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<MultiComboBox id="idCategoryMultiSnow" selectedKeys="{CIMRequest>/category_escalation}" editable="{incidentDetailPage>/requestEditable}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"
+			items="{ path: 'snowEscCategoryJson>/categories', sorter: {path : 'categoryId'} }">
+			<core:ListItem key="{snowEscCategoryJson>categoryId}" text="{snowEscCategoryJson>categoryName}"
+				additionalText="{snowEscCategoryJson>categoryId}"/>
+			<!--	<layoutData>
+						<l:GridData span="XL4 L4 M7 S7"/>
+					</layoutData>-->
+		</MultiComboBox>
+		<Button icon="sap-icon://save" type="Transparent" press="onSaveSnowCategoryButtonPress" width="50px"
+			visible="{= ${incidentDetailPage>/requestEditable} &amp;&amp; (${incidentDetailPage>/isSnowEscalation}|| ${incidentDetailPage>/incidentHasEscalation})}">
+			<!--	<layoutData>
+						<l:GridData span="XL1 L1 M1 S1"/>
+					</layoutData>-->
+		</Button>
+		<Label text="{i18n>responsiblePerson}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Text text="{CIMRequest>/responsible_person_name}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Label text="{i18n>reporter}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Text text="{CIMRequest>/report_person_name}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Label text="{i18n>status}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Text text="{CIMRequest>/status}" visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+		<Label text="{incidentDetailPage>/EscalationReasonLabel}"
+			visible="{= ${incidentDetailPage>/EscalationReasonVisible} &amp;&amp; (${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation})}"/>
+		<Text text="{incidentDetailPage>/EscalationReason}"
+			visible="{= ${incidentDetailPage>/isSnowEscalation} || ${incidentDetailPage>/incidentHasEscalation}}"/>
+	</f:SimpleForm>
+</core:FragmentDefinition>

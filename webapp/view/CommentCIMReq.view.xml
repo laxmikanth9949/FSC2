@@ -1,0 +1,23 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" controllerName="sap.support.fsc2.controller.CommentCIMReq"
+	class="sapUiSizeCompact">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{= ${TitleModel>/isNowEsc} ? ${i18n>SNOWRequestDetail} : ${i18n>CIMRequestDetail}}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<PullToRefresh id="idPullToRefresh" refresh="handleRefresh"/>
+		<content>
+			<FeedInput id="idInput" post="onPostButtonPress" showIcon="true" rows="6"/>
+			<List showSeparators="Inner" id="idCommentList" items="{EntryCollection>/results}">
+				<FeedListItem sender="{EntryCollection>Author}" showIcon="false" iconDensityAware="false" info="{EntryCollection>Type}"
+					timestamp="{EntryCollection>Date}" text="{EntryCollection>Text}"/>
+			</List>
+		</content>
+		<footer></footer>
+	</Page>
+</mvc:View>

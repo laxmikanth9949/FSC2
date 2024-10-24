@@ -1,0 +1,292 @@
+<mvc:View xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" height="100%" controllerName="sap.support.fsc2.controller.EscalationRequestCreate" class="sapUiSizeCompact"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page id="escaReqCreate">
+		<!--title="{i18n>escalationRequestForm}" showNavButton="true" navButtonPress="onNavBack"-->
+		<customHeader>
+			<Toolbar >
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back"
+					visible="{= !${device>/isLaunchpad}|| ${/layout}.indexOf('FullScreen') > -1}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1 || ${/layout}.indexOf('OneColumn') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>escalationRequestForm}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+				<Button type="Transparent" icon="sap-icon://decline" press="handleClose" visible="{= ${/layout}.indexOf('FullScreen') === -1}"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<Panel headerText="{i18n>formAdmin}">
+				<content>
+					<Table id="sharedUserTable" class="responsiveTable" mode="{= ${UIconfigModel>/enabled} ? 'Delete' : 'None' }" delete="onDeleteSharedUser"
+						items="{ path: 'SharedUsers>/results', sorter: { path: 'Name' } }">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="{i18n>sharedTable}" level="H2"/>
+									<ToolbarSpacer/>
+									<Button enabled="{UIconfigModel>/enabled}" text="{i18n>addUser}" press="onClickAddUser"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column hAlign="Left" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>userID}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>lastName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>firstName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>bpID}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Label text="{SharedUsers>parties_user_id}"/>
+									<Label text="{SharedUsers>parties_lastname}"/>
+									<Label text="{SharedUsers>parties_firstname}"/>
+									<Label text="{SharedUsers>parties_bp_id}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+			<Panel headerText="{i18n>requestDetail}">
+				<headerToolbar>
+					<Toolbar height="3rem">
+						<Title text="{i18n>requestDetail}"/>
+						<ToolbarSpacer/>
+						<Button enabled="{UIconfigModel>/enabled}" icon="sap-icon://add" text="{i18n>changeRequestor}" press="onClickChangeRequestor"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="2" emptySpanL="2" emptySpanM="1" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="{i18n>requestorUserID}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{RequestorDetail>/parties_user_id}"/>
+							<Label text="{i18n>requestorBPID}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{RequestorDetail>/parties_bp_id}"/>
+							<Label text="{i18n>requestorName}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false"
+								value="{parts:[{path:'RequestorDetail>/parties_firstname'},{path:'RequestorDetail>/parties_lastname'}],formatter:'.formatter.formatName'}"/>
+							<Label text="{i18n>email2}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{RequestorDetail>/parties_email}"/>
+							<Label text="{i18n>mobilePhoneNo}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{RequestorDetail>/parties_mobile}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<Panel>
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>customerDetails}"/>
+						<ToolbarSpacer/>
+						<Button enabled="{UIconfigModel>/enabled}" text="{i18n>addCustomer}" press="onClickAddCust"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="2" emptySpanL="2" emptySpanM="1" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="{i18n>custBPID}" required="true" class="sapUiTinyMarginTop"/>
+							<Input id="customer_id" enabled="false" value="{CustDetail>/customer_id}" liveChange="_validateMandatoryInput"/>
+							<Label text="{i18n>erpCustNo}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{CustDetail>/customer_r3_no}"/>
+							<Label text="{i18n>customerName}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{CustDetail>/customer_name}"/>
+							<Label text="{i18n>address}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{CustDetail>/customer_location}"/>
+							<Label text="{i18n>country}" class="sapUiTinyMarginTop"/>
+							<Input enabled="false" value="{CustDetail>/country}"/>
+							<Label text="{i18n>refCust}" class="sapUiTinyMarginTop"/>
+							<Select id="RefCust" enabled="{UIconfigModel>/enabled}" selectedKey="{CustDetail>/ref_customer}">
+								<core:Item text="Yes" key="ZSREFCUS01"/>
+								<core:Item text="No" key="ZSREFCUS02"/>
+							</Select>
+							<Label text="{i18n>custLandscape}" required="true" class="sapUiTinyMarginTop"/>
+							<Input id="cust_landscape" enabled="{UIconfigModel>/enabled}" value="{CustDetail>/cust_landscape}" maxLength="255"
+								liveChange="_validateMandatoryInput"
+								placeholder="Specify the Landscape and Infrastructure at Customer Site, e.g. Solution Manager, Netweaver, etc. (max. 255 chars)"/>
+							<Label text=""/>
+							<Button id="addIncBtn_GER" visible="{FieldVisible>/AddIncBtn}" text="{i18n>AddRelevantIncidents}" type="Emphasized"
+								enabled="{= ${CustDetail>/customer_id} &amp;&amp; ${CustDetail>/customer_id}.length > 0 &amp;&amp; ${UIconfigModel>/enabled} ? true : false }"
+								press="onAddIncidentImpact_GER" class="buttonRelevantIncidentsAdd">
+								<layoutData>
+									<l:GridData span="XL10 L10 M10 S6"/>
+								</layoutData>
+							</Button>
+							<Label text="{i18n>criticalOpenIncd}"/>
+							<List id="selectedList_GER" items="{selectedIncidentList>/results}" growingScrollToLoad="false"
+								noDataText="{= ${CustDetail>/customer_id} ? ${i18n>noDataTextList2} : ${i18n>noDataTextList} }">
+								<items>
+									<CustomListItem >
+										<HBox class="priority_cust">
+											<ObjectListItem title="{selectedIncidentList>title}">
+												<attributes>
+													<ObjectAttribute text="{parts:[{path:'selectedIncidentList>desc'},{path:'selectedIncidentList>SNow_number'}],formatter:'.formatIcdDesc'}"/>
+												</attributes>
+											</ObjectListItem>
+											<ObjectListItem title="Priority">
+												<firstStatus>
+													<ObjectStatus
+														text="{parts:[{ path: 'selectedIncidentList>p_formatter'},{path:'selectedIncidentList>priority'}], formatter: '.formatter.formatCCSPriorityText' }"
+														state="{ path: 'selectedIncidentList>priority', formatter: '.formatter.formatPriority' }" app:priority_state="test"/>
+												</firstStatus>
+											</ObjectListItem>
+											<ObjectListItem title="Processor" class="cust_proc_test">
+												<attributes>
+													<ObjectAttribute text="{selectedIncidentList>Assigned_to}"/>
+												</attributes>
+											</ObjectListItem>
+										</HBox>
+									</CustomListItem>
+								</items>
+							</List>
+							<!--<TextArea id="critial_incident" enabled="{UIconfigModel>/enabled}" value="{CustDetail>/critial_incident}" maxLength="255" cols="100"-->
+							<!--	rows="6" width="100%" liveChange="_validateMandatoryInput"-->
+							<!--	placeholder="Number of critical open incidents and most critical incidents (max. 255 chars)"/>-->
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<Panel headerText="{i18n>EScalationRequestDetail}">
+				<content>
+					<List mode="Delete" delete="handleDeleteSolution" items="{ path: 'AffectedSolution>/results' }">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="{i18n>affectedSolu}"/>
+									<ToolbarSpacer/>
+									<Button enabled="{UIconfigModel>/enabled}" icon="sap-icon://add" text="{i18n>addRemoveSol}" press="onClickAddSol"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<StandardListItem title="Solution Name: {AffectedSolution>text}"/>
+					</List>
+					<f:SimpleForm layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false"
+						emptySpanXL="2" emptySpanL="2" emptySpanM="1" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+						<f:content>
+							<Label text="{i18n>EscReqDesc}" required="true" class="sapUiTinyMarginTop"/>
+							<Input id="activity_description" maxLength="40" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/activity_description}"
+								liveChange="_validateMandatoryInput" placeholder="Enter the Escalation Request Description (max. 40 chars)"/>
+							<Label text="{i18n>affectedSolCust}" required="true" class="sapUiTinyMarginTop"/>
+							<Input id="affectedSolCust" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/affectedSolCust}" maxLength="60"
+								liveChange="_validateMandatoryInput" placeholder="Enter the details of the affected Solutions, e.g. ERP 6.0, C4C, etc. (max. 60 chars)"/>
+							<Label text="{i18n>LicenseContract}" required="true" class="sapUiTinyMarginTop"/>
+							<Input id="contract_volumn" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/contract_volumn}" maxLength="60"
+								liveChange="_validateMandatoryInput"
+								placeholder="Enter the value of the Licencse Contract or the Subscription Volume per Year (Cloud) (max. 60 chars)"/>
+							<Label text="{i18n>MaintAgree}" required="true" class="sapUiTinyMarginTop"/>
+							<!--<Input value="{EscRequestDetail>/premium_engagement}" maxLength="60" placeholder="Enter the Maintenance Agreement/Premium Engagement (max. 60 chars)"/>-->
+							<Input id="premium_engagement" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/premium_engagement}" maxLength="60"
+								liveChange="_validateMandatoryInput" placeholder="Enter the Maintenance Agreement/Premium Engagement (max. 60 chars)" showSuggestion="true"
+								showValueHelp="true" suggestionItems="{PremEngagement>/results}" valueHelpRequest="handleValueHelp_PreumEng">
+								<suggestionItems>
+									<core:Item text="{PremEngagement>text}"/>
+								</suggestionItems>
+							</Input>
+							<Label text="{i18n>mainReason}" class="sapUiTinyMarginTop"/>
+							<Select id="mainReason" enabled="{UIconfigModel>/enabled}" selectedKey="{EscRequestDetail>/main_reason}"
+								tooltip="Select the Main Reason for Escalation">
+								<core:Item key="ZU1" text="Product Issue"/>
+								<core:Item key="ZU2" text="Project Issues"/>
+								<core:Item key="ZU3" text="Operations Issues"/>
+								<core:Item key="ZU4" text="Sales Issues"/>
+								<core:Item key="ZU5" text="Support Issues"/>
+								<core:Item key="ZU6" text="Involved Partner"/>
+								<core:Item key="ZU7" text="Security Issues"/>
+								<core:Item key="ZU8" text="Public Relation Issues"/>
+								<core:Item key="ZU9" text="Legal or Compensation Issues"/>
+								<core:Item key="ZU0" text="Business Down Situation"/>
+							</Select>
+							<Label text="{i18n>BussImpCust}" required="true" class="sapUiTinyMarginTop"/>
+							<Select id="businessImpact" enabled="{UIconfigModel>/enabled}" selectedKey="{EscRequestDetail>/business_impact}"
+								tooltip="Select the Business Impact for Customer">
+								<core:Item key="ZSBIZIMP01" text="Go Live delayed"/>
+								<core:Item key="ZSBIZIMP02" text="Go Live endangered"/>
+								<core:Item key="ZSBIZIMP03" text="Major Milestone not reached"/>
+								<core:Item key="ZSBIZIMP04" text="Project delayed"/>
+								<core:Item key="ZSBIZIMP05" text="Major Business Scenario disrupted"/>
+								<core:Item key="ZSBIZIMP06" text="Complete Business Down"/>
+							</Select>
+							<Label text="{i18n>detailReasonEsc}" required="true" class="sapUiTinyMarginTop"/>
+							<TextArea id="ZU01" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/detail_reason}" cols="100" rows="6" width="100%"
+								liveChange="_validateMandatoryInput" placeholder="Explain in detail the reason for a potential escalation"/>
+							<Label text="{i18n>detailBusImpactCust}" required="true" class="sapUiTinyMarginTop"/>
+							<TextArea id="ZU02" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/detail_BI_customer}" cols="100" rows="6" width="100%"
+								liveChange="_validateMandatoryInput" placeholder="Explain in detail the business impact for the customer"/>
+							<Label text="{i18n>detailBusImpactSap}" required="true" class="sapUiTinyMarginTop"/>
+							<TextArea id="ZU03" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/detail_BI_sap}" cols="100" rows="6" width="100%"
+								liveChange="_validateMandatoryInput" placeholder="Explain in detail the business impact for SAP"/>
+							<Label text="{i18n>MisInfo}" class="sapUiTinyMarginTop"/>
+							<TextArea id="ZU04" enabled="{UIconfigModel>/enabled}" value="{EscRequestDetail>/mis_info}" cols="100" rows="6" width="100%"
+								placeholder="Please add here all additional information"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+			<Panel>
+				<headerToolbar>
+					<Toolbar >
+						<Title text="{i18n>involvedPersons}"/>
+						<ToolbarSpacer/>
+						<Button enabled="{UIconfigModel>/enabled}" icon="sap-icon://add" text="{i18n>addInvolvedPersons}" press="onClickAddInvPerson"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<Table id="InvolvedPersonTable" class="responsiveTable" mode="{= ${UIconfigModel>/enabled} ? 'Delete' : 'None' }"
+						delete="handleDeleteInvPerson" items="{ path: 'InvolvedPerson>/results' }">
+						<columns>
+							<Column hAlign="Left" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>userID}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>lastName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>firstName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>role}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>bpID}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Label text="{InvolvedPerson>parties_user_id}"/>
+									<Label text="{InvolvedPerson>parties_lastname}"/>
+									<Label text="{InvolvedPerson>parties_firstname}"/>
+									<Select selectedKey="{InvolvedPerson>role}" items="{path:'RoleModel>/results'}" enabled="{UIconfigModel>/enabled}">
+										<core:Item text="{RoleModel>value_txt}" key="{RoleModel>value_key}"/>
+									</Select>
+									<Label text="{InvolvedPerson>parties_bp_id}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>saveAsDraft}" tooltip="Save as Draft" enabled="{path: 'GEViewModel>/enableSaveDraftButton'}" press="onClickSaveAsDraft"
+					width="20%"/>
+				<Button id="saveEmailBtn" tooltip="Save Global Escalation" enabled="true" text="{i18n>SaveEscReqEmail}" type="Emphasized"
+					press="onClickSaveAsEmail" width="30%"/>
+				<Button text="{i18n>submit}" enabled="{UIconfigModel>/enabled}" type="Emphasized" press="onClickSubmit" width="20%"/>
+				<Button text="{i18n>print}" enabled="true" icon="sap-icon://print" press="onPrint" width="20%"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

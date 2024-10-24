@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm="handleSortDialogConfirm" sortItems="{sortProperties>/}" >
+		<sortItems>
+			<ViewSettingsItem text="{sortProperties>text}" key="{sortProperties>key}"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

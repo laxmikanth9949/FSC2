@@ -1,0 +1,27 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.support.fsc2.controller.Notification"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>msgPushNotification}" navButtonPress="onNavBack" showNavButton="{= !${device>/isLaunchpad}}" showHeader="true">
+		<content>
+			<List id="pushNotifMsgTab" items="{notification>/results}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>msgPushNotification}" level="H2"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>deleteAll}" type="Reject" press="onDeleteAll"/>
+					</Toolbar>
+				</headerToolbar>
+				<NotificationListItem title="{notification>object_id}" description="{notification>message}" authorName="{notification>object_cust_name}"
+					datetime="{ path: 'notification>timestamp', formatter: '.formatter.formatNotificationTime' }"
+					priority="{ path: 'notification>is_read', formatter: '.formatter.formatMsgIsRead' }"
+					press="onPressNotifListItem" close="onDeleteNotifListItem">
+					<customData>
+						<core:CustomData key="msgkey" value="{notification>msg_key}"/>
+						<core:CustomData key="actid"
+							value="{parts:[{path:'notification>object_id'}, {path:'notification>data'}], formatter:'.formatter.formatNotificationActId'}"/>
+						<core:CustomData key="objtype" value="{notification>object_type}"/>
+					</customData>
+				</NotificationListItem>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

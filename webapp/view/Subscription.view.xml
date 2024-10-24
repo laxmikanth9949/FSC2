@@ -1,0 +1,155 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" height="100%"
+	controllerName="sap.support.fsc2.controller.Subscription" class="sapUiSizeCompact">
+	<Page title="{i18n>subscribeTitle}" showNavButton="true" navButtonPress="onNavBack">
+		<headerContent>
+			<Button icon="sap-icon://refresh" type="Transparent" press="_refreshFavData"/>
+		</headerContent>
+		<!--<PullToRefresh-->
+		<!--		id="idPullToRefresh"-->
+		<!--		refresh="handleRefresh" />-->
+		<!--<customHeader>-->
+		<!--	<Toolbar>-->
+		<!--		<Button type="Back" id="idBackButton" press="onNavBack"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--		<Title text="{i18n>notifiSetting}" level="H2"/>-->
+		<!--		<ToolbarSpacer/>-->
+		<!--	</Toolbar>-->
+		<!--</customHeader>-->
+		<content>
+			<Panel class="sapUiDemoFlexBoxSizeAdjustments" id="idSubscribPanel">
+				<headerToolbar>
+					<Toolbar>
+						<Title level="H2" text="{i18n>subscribeInformation}"/>
+					</Toolbar>
+				</headerToolbar>
+				<IconTabBar id="idCustAndIcdTabBar" busyIndicatorDelay="0" upperCase="true" select="onTabBarSelected" class="sapUiResponsiveContentPadding">
+					<items>
+						<IconTabFilter id="idCustomerTabBar" icon="sap-icon://customer" text="{i18n>customer}" count="">
+							<VBox>
+								<!--<Text text="{i18n>favCustomer}" textAlign="Center"/>-->
+								<RadioButtonGroup visible="false" id="idFavCustRadioButtonGroup"></RadioButtonGroup>
+								<Table id="idCustTable" inset="false" items="{ path: 'favoriteCustModel>/results' }">
+									<columns>
+										<Column width="12em">
+											<Text text="{i18n>customer}"/>
+										</Column>
+										<Column hAlign="Center" demandPopin="true">
+											<Text text="{i18n>1}"/>
+										</Column>
+										<Column demandPopin="true" hAlign="Center">
+											<Text text="{i18n>2}"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{favoriteCustModel>CustomerName}"/>
+												<!--enabled="{path:'notifiModel>/Value',formatter:'.setNotiSelected'}"-->
+												<CheckBox enabled="true" busyIndicatorDelay="0" select="selectCheckBoxCust"
+													selected="{ parts:[{path:'favoriteCustModel>ID'},{path:'checkBoxType>/VH'}], formatter:'.setCheckBoxCust' }">
+													<customData>
+														<core:CustomData key="customerNum" value="{path:'favoriteCustModel>ID'}"/>
+														<core:CustomData key="priority" value="1"/>
+													</customData>
+												</CheckBox>
+												<CheckBox enabled="true" busyIndicatorDelay="0" select="selectCheckBoxCust"
+													selected="{ parts:[{path:'favoriteCustModel>ID'},{path:'checkBoxType>/H'}], formatter:'.setCheckBoxCust' }">
+													<customData>
+														<core:CustomData key="customerNum" value="{path:'favoriteCustModel>ID'}"/>
+														<core:CustomData key="priority" value="3"/>
+													</customData>
+												</CheckBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</IconTabFilter>
+						<IconTabFilter id="idIncidentTabBar" icon="sap-icon://notification-2" text="{i18n>incident}" count="">
+							<VBox>
+								<!--<Text text="{i18n>favIncident}" textAlign="Center"/>-->
+								<Table id="idIncidentTable" inset="false" items="{ path: 'favoriteIcdModel>/results' }">
+									<columns>
+										<Column width="12em">
+											<Text text="{i18n>incident}"/>
+										</Column>
+										<Column hAlign="Center" demandPopin="true">
+											<Text text="{i18n>1}" textAlign="Center"/>
+										</Column>
+										<Column hAlign="Center" demandPopin="true">
+											<Text text="{i18n>2}" textAlign="Center"/>
+										</Column>
+										<Column demandPopin="true" hAlign="Center">
+											<Text text="{i18n>3}" textAlign="Center"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<ObjectIdentifier title="{favoriteIcdModel>ShortID} {favoriteIcdModel>Description}"/>
+												 <!--enabled="{path:'notifiModel>/Value',formatter:'.setNotiSelected'}"-->
+												<CheckBox enabled="true" busyIndicatorDelay="0" select="selectCheckBoxCIM"
+													selected="{ parts:[{path:'favoriteIcdModel>ID'},{path:'checkBoxType>/status'}], formatter:'.setCheckBoxCIM' }">
+													<customData>
+														<core:CustomData key="icdNum" value="{path:'favoriteIcdModel>ID'}"/>
+														<core:CustomData key="property" value="{checkBoxType>/status}"/>
+													</customData>
+												</CheckBox>
+												<CheckBox enabled="true" busyIndicatorDelay="0" select="selectCheckBoxCIM"
+													selected="{ parts:[{path:'favoriteIcdModel>ID'},{path:'checkBoxType>/proOrg'}], formatter:'.setCheckBoxCIM' }">
+													<customData>
+														<core:CustomData key="icdNum" value="{path:'favoriteIcdModel>ID'}"/>
+														<core:CustomData key="property" value="{checkBoxType>/proOrg}"/>
+													</customData>
+												</CheckBox>
+												<CheckBox enabled="true" busyIndicatorDelay="0" select="selectCheckBoxCIM"
+													selected="{ parts:[{path:'favoriteIcdModel>ID'},{path:'checkBoxType>/component'}], formatter:'.setCheckBoxCIM' }">
+													<customData>
+														<core:CustomData key="icdNum" value="{path:'favoriteIcdModel>ID'}"/>
+														<core:CustomData key="property" value="{checkBoxType>/component}"/>
+													</customData>
+												</CheckBox>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+			</Panel>
+			<Panel id="idCustomerSettingPanel" class="sapUiDemoFlexBoxSizeAdjustments" visible="{expandJson>/customerExpand}">
+				<headerToolbar>
+					<Toolbar>
+						<Title level="H2" text="{i18n>subscribeSettings}"/>
+					</Toolbar>
+				</headerToolbar>
+				<VBox>
+					<Text text="{i18n>subToVh}"/>
+					<Text text="{i18n>subToH}"/>
+				</VBox>
+			</Panel>
+			<Panel id="idIncidentSettingPanel" class="sapUiDemoFlexBoxSizeAdjustments" visible="{expandJson>/incidentExpand}">
+				<headerToolbar>
+					<Toolbar>
+						<Title level="H2" text="{i18n>settings}"/>
+					</Toolbar>
+				</headerToolbar>
+				<VBox>
+					<Text text="{i18n>changeOfIncidentStatus}"/>
+					<Text text="{i18n>changeOfProcessingOrg}"/>
+					<Text text="{i18n>changeOfComponent}"/>
+				</VBox>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<HBox id="idNotiHBox" busyIndicatorDelay="0">
+					<CheckBox id = "notifCheckbox" text="{i18n>updateFromCIMTeam}" select="handlePushNotiCheckBoxSelect"
+						selected="{path:'notifiModel>/Value',formatter:'.setNotiSelected'}"/>
+				</HBox>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

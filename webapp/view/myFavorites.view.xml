@@ -1,0 +1,63 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.myFavorites" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page id="favorites">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<IconTabBar id="idFavTab" headerMode="Inline" expandable="false">
+				<items>
+					<IconTabFilter key="0" text="{i18n>customer}" count="{favorite>/Customer/count}">
+						<List id="idCustomer" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Customer/results'}">
+							<ObjectListItem title="{favorite>CustomerName}" type="Active" press="onFavoriteItemPress">
+								<attributes>
+									<ObjectAttribute text="{path:'favorite>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>criticalSituation}" count="{favorite>/Situation/count}">
+						<List id="idSituation" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Situation/results'}">
+							<ObjectListItem title="{favorite>Description}" type="Active" press="onFavoriteItemPress">
+								<firstStatus>
+									<ObjectStatus text="{favorite>Status}" state="None"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{favorite>CustomerName}"/>
+									<ObjectAttribute text="{path:'favorite>ID',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>incident}" count="{favorite>/Incident/count}">
+						<List id="idIncident" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Incident/results'}">
+							<ObjectListItem title="{favorite>Description}" type="Active" press="onFavoriteItemPress">
+								<firstStatus>
+									<ObjectStatus text="{favorite>Status}"/>
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus text="{favorite>Priority}"
+										state="{parts:[{path:'favorite>SNow_number'},{path:'favorite>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>
+								</secondStatus>
+								<attributes>
+									<ObjectAttribute text="{favorite>Name}"/>
+									<ObjectAttribute text="{favorite>ShortID}"/><!--{path:'favorite>ID',formatter:'.formatter.formatIncidentCatalog'}--></attributes>
+								<markers>
+									<ObjectMarker type="Favorite"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>
