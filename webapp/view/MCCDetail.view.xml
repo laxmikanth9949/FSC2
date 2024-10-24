@@ -1,0 +1,315 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:semantic="sap.f.semantic" xmlns:commons="sap.suite.ui.commons" controllerName="sap.support.fsc2.controller.MCCDetail"
+	class="sapUiSizeCompact">
+	<NavContainer id="idMCCNav">
+		<semantic:SemanticPage id="idDetailPage" headerPinnable="true" headerExpanded="true" toggleHeaderOnTitleClick="true"
+			preserveHeaderStateOnScroll="true" titleAreaShrinkRatio="1:10:5" showFooter="true">
+			<!-- Title Heading-->
+			<semantic:titleHeading>
+				<HBox alignItems="Center" justifyContent="Start">
+					<Button type="Back" tooltip="Back" press="onNavBack" class="sapUiTinyMarginEnd"
+						visible="{= ${device>/isPhone} || ${/layout}.indexOf('FullScreen') > -1}"/>
+					<Title text="{i18n>activityDetailTitle}"/>
+				</HBox>
+				<!---->
+			</semantic:titleHeading>
+			<!-- Title Snapped On Mobile Content-->
+			<semantic:titleSnappedOnMobile></semantic:titleSnappedOnMobile>
+			<!-- Title Content-->
+			<semantic:titleContent></semantic:titleContent>
+			<!-- TitleExpanded content-->
+			<semantic:titleSnappedContent></semantic:titleSnappedContent>
+			<!-- Header Content -->
+			<semantic:headerContent>
+				<MessageStrip text="{i18n>FeedbackRequestForClosedAoE}" showIcon="true" showCloseButton="false" type="Information"
+					class="sapUiMediumMarginBottom"
+					visible="{= ${MCCDetail>/activity_status} === 'E0013' || ${MCCDetail>/activity_status} === 'E0014' ? true : false}"></MessageStrip>
+				<HBox class="sapUiSmallMarginBottom" alignItems="Center">
+					<Title text="{MCCDetail>/activity_description}" class="sapUiTinyMarginEnd"/>
+					<core:Icon src="sap-icon://favorite" visible="{MCCPageConfig>/_bFavorite}" class="sapUiTinyMarginEnd"/>
+					<Image id="noRelatedCaseImg" width="30px" height="30px" alt="{i18n>activityNotRelatedCase}" press="openQuickView"
+						visible="{MCCPageConfig>/_bShowCaseIcon}" class="sapUiTinyMarginEnd"/></HBox>
+				<ObjectAttribute title="{i18n>activityId}" class="sapUiSelectable sapUiSmallMarginBottom" text="{MCCDetail>/activity_id}" active="false"/>
+				<ObjectAttribute title="{i18n>account}" class="sapUiSelectable" text="{MCCDetail>/account_name_F}" active="true" press="onCustomerName"/>
+			</semantic:headerContent>
+			<semantic:titleCustomTextActions>
+				<Button id="iNoteAndClose" enabled="true" icon="sap-icon://accept" iconFirst="false" press="closeActivity" text="{i18n>closeActivity}"
+					type="Emphasized" visible="{MCCPageConfig>/bCloseButton}"/>
+				<Button width="auto" icon="sap-icon://feedback" text="Feedback" press="feedback"/>
+				<Button text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite"
+					visible="{= !(!(${MCCPageConfig>/display}) || (${MCCPageConfig>/_bFavorite}))}"/>
+				<Button text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite"
+					visible="{= !(!(${MCCPageConfig>/display}) || !(${MCCPageConfig>/_bFavorite}))}"/>
+				<Button text="{i18n>edit}" icon="sap-icon://edit" press="onEdit"
+					visible="{= ${MCCPageConfig>/display} &amp;&amp; ${MCCPageConfig>/edit} === false }"/>
+				<!--&amp;&amp; ${MCCDetail>/activity_status} !== 'E0014'}-->
+				<Button icon="sap-icon://email" text="Email" type="Transparent" press="onOverflow" class="sapUiSmallMarginEnd"/>
+			</semantic:titleCustomTextActions>
+			<semantic:titleCustomIconActions>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1}"/>
+				<Button type="Transparent" icon="sap-icon://decline" press="handleClose" visible="{= ${/layout}.indexOf('FullScreen') === -1}"/>
+			</semantic:titleCustomIconActions>
+			<!-- Content -->
+			<semantic:content>
+				<!--	<Page id="idDetailPage" class="mySapMPage" enableScrolling="true">
+					<customHeader>
+						<Toolbar >
+							<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back"
+								visible="{= !${device>/isLaunchpad} || ${/layout}.indexOf('FullScreen') > -1}" press="onNavBack"/>
+		
+							<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+								visible="{= ${/layout}.indexOf('FullScreen') > -1}"/>
+							<ToolbarSpacer/>
+							<Title text="{i18n>activityDetailTitle}"/>
+							<ToolbarSpacer class="myRightSpacer"/>
+							<Button type="Transparent" icon="sap-icon://decline" press="handleClose" visible="{= ${/layout}.indexOf('FullScreen') === -1}"/>
+						
+						</Toolbar>
+					</customHeader>
+					<content>
+				<l:VerticalLayout width="93%" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom">
+					<Toolbar class="myToolbar">
+						<Text text="{MCCDetail>/activity_description}" class="h2Title" maxLines="1"/>
+						<core:Icon src="sap-icon://favorite" visible="{MCCPageConfig>/_bFavorite}" class="sapUiTinyMarginEnd"/>
+						<ToolbarSpacer/>
+						<Button text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite"
+							visible="{= !(!(${MCCPageConfig>/display}) || (${MCCPageConfig>/_bFavorite}))}"/>
+						<Button text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite"
+							visible="{= !(!(${MCCPageConfig>/display}) || !(${MCCPageConfig>/_bFavorite}))}"/>
+						<Button text="{i18n>edit}" icon="sap-icon://edit" press="onEdit" visible="{MCCPageConfig>/display}"/>
+						<Button icon="sap-icon://overflow" type="Transparent" press="onOverflow" class="sapUiSmallMarginEnd"/>
+					
+					</Toolbar>
+					<Image id="noRelatedCaseImg" width="30px" height="30px" alt="{i18n>activityNotRelatedCase}" press="openQuickView"
+						visible="{MCCPageConfig>/_bShowCaseIcon}" class="sapUiSmallMarginBottom"/>
+					<ObjectAttribute title="{i18n>activityId}" class="sapUiSelectable sapUiSmallMarginBottom" text="{MCCDetail>/activity_id}" active="false"/>
+					<ObjectAttribute title="{i18n>account}" class="sapUiSelectable" text="{MCCDetail>/account_name_F}" active="true" press="onCustomerName"/>
+				</l:VerticalLayout>-->
+				<IconTabBar id="idMCCObjectPageLayout" expanded="true" class="sapUiResponsiveContentPadding" select="onIconTabFilterChanged">
+					<items>
+						<!--<uxap:ObjectPageLayout id="" subSectionLayout="TitleOnTop" enableLazyLoading="true" showTitleInHeaderContent="false"-->
+						<!--	useIconTabBar="true" showAnchorBar="true" upperCaseAnchorBar="false" headerContentPinnable="true" showAnchorBarPopover="false" showHeaderContent="true"-->
+						<!--	flexEnabled="true" class="sapUiSelectable">-->
+						<!--	<uxap:headerTitle>-->
+						<!--		<uxap:ObjectPageHeader objectTitle="{MCCDetail>/activity_description}" showMarkers="true" markFavorite="{MCCPageConfig>/_bFavorite}"-->
+						<!--			objectImageShape="Square" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="true" isActionAreaAlwaysVisible="false">-->
+						<!--			<uxap:actions>-->
+						<!--				<uxap:ObjectPageHeaderActionButton icon="sap-icon://overflow" type="Transparent" press="onOverflow"/>-->
+						<!--			</uxap:actions>-->
+						<!--		</uxap:ObjectPageHeader>-->
+						<!--	</uxap:headerTitle>-->
+						<!--	<uxap:headerContent>-->
+						<!--		<l:VerticalLayout>-->
+						<!--			<Image width="30px" height="30px" src="./image/mdr2.png" alt="{i18n>activityNotRelatedCase}" press="openQuickView"-->
+						<!--				visible="{MCCPageConfig>/_bShowCaseIcon}"/>-->
+						<!--			<ObjectAttribute title="{i18n>activityId}" class="sapUiSelectable" text="{MCCDetail>/activity_id}" active="false"/>-->
+						<!--			<ObjectAttribute title="{i18n>account}" class="sapUiSelectable" text="{MCCDetail>/account_name_F}" active="true" press="onCustomerName"/>-->
+						<!--		</l:VerticalLayout>-->
+						<!--</uxap:headerContent>-->
+						<!--<uxap:sections>-->
+						<IconTabFilter id="idNotes" text="{i18n>notes}" key="Notes">
+							<!--<Toolbar>
+								<Label text="Chat"/>
+								<ToolbarSpacer/>
+							</Toolbar>-->
+							<!--	
+							<commons:Timeline showHeaderBar="false" growingThreshold="0" content="{NoteList>/results}" enableScroll="false" textHeight="automatic">
+									<commons:content>
+										<commons:TimelineItem id="idTemplateItem" userNameClickable="false"
+											dateTime="{path:'NoteList>time',formatter:'.formatter.formatTimelineDate'}" text="{NoteList>text}" userName="{NoteList>name}"></commons:TimelineItem>
+									</commons:content>
+								</commons:Timeline>-->
+							<List id="chatList" showSeparators="None" showNoData="true" noDataText="{i18n>NoDataChatText}" class="sapUiTinyMarginTopBottom"></List>
+							<FeedInput post="onSaveNote" showIcon="true" placeholder="{i18n>ChatInputPlaceholder}" icon="{CurrentUserInfo>/userIconURL}"
+								iconInitials="{CurrentUserInfo>/Initials}"/></IconTabFilter>
+						<!--visible="{= ${MCCDetail>/activity_status} !== 'E0014'}"-->
+						<IconTabFilter id="idDetail" text="{i18n>details}" key="Details" visible="{=!${MCCPageConfig>/edit}}">
+							<f:SimpleForm editable="true" width="100%" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" labelSpanS="6" emptySpanL="1"
+								emptySpanM="1" emptySpanS="1" columnsL="2" columnsM="2" adjustLabelSpan="false">
+								<f:content>
+									<Label text="{i18n>status}"/>
+									<ObjectStatus id="textStatus" text="{MCCDetail>/activity_status_desc}"
+										state="{ path: 'MCCDetail>/activity_status_desc', formatter: '.formatter.formatStatusStateDetail' }"/>
+									<Label text="{i18n>priority}"/>
+									<ObjectStatus id="textPriority" text="{MCCDetail>/activity_priority_desc}"
+										state="{ path: 'MCCDetail>/activity_priority_desc', formatter: '.formatter.formatPriority' }"/>
+									<Label text="{i18n>rating}"/>
+									<Text id="textRating" text="{ path: 'MCCDetail>/activity_rating', formatter: '.formatter.formatRating' }"/>
+									<Label text="{i18n>mccActivityCategory}"/>
+									<Text id="textCategory" text="{MCCDetail>/activity_cat_desc}"/>
+									<Label text="{i18n>lastChanged}"/>
+									<Text
+										text="{MCCDetail>/ChangedByName} on {path: 'MCCDetail>/activity_change_date', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}"/>
+									<Label text="{i18n>created}"/>
+									<Text
+										text="{MCCDetail>/CreatedByName} on {path: 'MCCDetail>/activity_create_date', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}"/>
+									<Label text="{i18n>personResp}"/>
+									<Text text="{MCCDetail>/activity_person_name}"/>
+									<Label text="{i18n>serviceTeamId}"/>
+									<Text text="{MCCDetail>/activity_service_team}"/>
+									<Label text="{i18n>serviceTeamName}"/>
+									<Text text="{MCCDetail>/activity_service_team_name}"/>
+									<Label text="{i18n>reason}"/>
+									<Text text="{MCCDetail>/activity_reason_desc}"/>
+									<Label text="{i18n>result}"/>
+									<Text text="{MCCDetail>/activity_result_desc}"/>
+									<Label text="{i18n>relatedCase}"/>
+									<Link text="{MCCDetail>/FSC2Activity_CaseSet/results/0/transactions_case_id}"
+										enabled="{= ${MCCDetail>/FSC2Activity_CaseSet/results/0/has_auth} ? true : false}"
+										tooltip="{parts:[{path:'MCCDetail>/FSC2Activity_CaseSet/results/0/has_auth'}, {path:'MCCDetail>/FSC2Activity_CaseSet/results/0/transactions_id'}], formatter:'.formatter.formatTooltip'}"
+										press="onLinkCaseId" visible="{MCCPageConfig>/display}"/>
+									<Image width="30px" height="30px" src="./image/mdr2.png" alt="{i18n>activityNotRelatedCase}" press="openQuickView"
+										visible="{MCCPageConfig>/_bShowCaseIcon}"/>
+									<Label text="{i18n>urlToCRM}"/>
+									<Link text="{MCCDetail>/activity_id}" visible="{MCCPageConfig>/display}" press="onLinkActivityId"/>
+									<Label text="{i18n>plannedDateTo}"/>
+									<Text text="{path: 'MCCDetail>/activity_planned_date_to', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}"/>
+								</f:content>
+							</f:SimpleForm>
+						</IconTabFilter>
+						<IconTabFilter text="{i18n>details}" key="DetailsEdit" visible="{MCCPageConfig>/edit}">
+							<f:SimpleForm editable="true" width="100%" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+								emptySpanS="1" columnsL="2" columnsM="2" adjustLabelSpan="false">
+								<f:content>
+									<Label text="{i18n>status}"/>
+									<Select id="status" items="{ path: 'MCCSettings>/StatusList'}" selectedKey="{DetailEdit>/activity_status}">
+										<core:Item key="{MCCSettings>value1}" text="{MCCSettings>value3}"/>
+									</Select>
+									<Label text="{i18n>priority}"/>
+									<Select id="priority" items="{ path: 'MCCSettings>/PriorityList'}" selectedKey="{DetailEdit>/activity_priority}">
+										<core:Item key="{MCCSettings>value1}" text="{MCCSettings>value3}"/>
+									</Select>
+									<Label text="{i18n>rating}"/>
+									<Select id="rating" items="{ path: 'MCCSettings>/RatingList'}" selectedKey="{DetailEdit>/activity_rating}">
+										<core:Item key="{MCCSettings>value1}" text="{MCCSettings>value3}"/>
+									</Select>
+									<Label text="{i18n>category}"/>
+									<Select id="category" items="{ path: 'MCCSettings>/CategoryList'}" selectedKey="{DetailEdit>/activity_cat}">
+										<core:Item key="{MCCSettings>value1}" text="{MCCSettings>value3}"/>
+									</Select>
+									<Label text="{i18n>lastChanged}"/>
+									<Input enabled="false"
+										value="{DetailEdit>/ChangedByName} on {path: 'DetailEdit>/activity_change_date', type: 'sap.ui.model.type.Date', formatOptions: {style: 'long'}} {path: 'DetailEdit>/activity_change_time', type: 'sap.ui.model.type.Time', formatOptions: {style: 'long'}}"/>
+									<Label text="{i18n>created}"/>
+									<Input enabled="false"
+										value="{DetailEdit>/CreatedByName} on {path: 'DetailEdit>/activity_create_date', type: 'sap.ui.model.type.Date', formatOptions: {style: 'long'}} {path: 'DetailEdit>/activity_create_time', type: 'sap.ui.model.type.Time', formatOptions: {style: 'long'}}"/>
+									<Label text="{i18n>personResp}"/>
+									<Input id="inPersonUserID" value="{DetailEdit>/activity_person_user_id}" maxLength="10" placeholder="{i18n>addAUserPlaceHolder}"
+										valueHelpOnly="true" showValueHelp="true" valueHelpRequest="openEmployeeSearch"/>
+									<Label text="{i18n>region}" width="100%"/>
+									<Select id="region" change="onRegionChange" items="{ path: 'MCCSettings>/RegionList' }">
+										<core:Item key="{MCCSettings>Region}" text="{MCCSettings>Region}"/>
+									</Select>
+									<Label text="{i18n>focusTopic}" width="100%"/>
+									<Select id="topic" change="onTopicChange" items="{ path: 'MCCSettings>/ProductCollection' }">
+										<core:Item key="{MCCSettings>}" text="{MCCSettings>}"/>
+									</Select>
+									<Label text="{i18n>serviceTeam}"/>
+									<Input width="100%" id="inServiceTeam" type="Number" value="{DetailEdit>/activity_service_team}"/>
+									<Label text="{i18n>reason}"/>
+									<Input enabled="false" value="{DetailEdit>/activity_reason}"/>
+									<Label text="{i18n>result}"/>
+									<Input enabled="false" value="{DetailEdit>/activity_result_desc}"/>
+									<Label text="{i18n>urlToBCP}"/>
+									<Input enabled="false" visible="{MCCPageConfig>/edit}"/>
+									<Label text="{i18n>relatedCase}"/>
+									<Input id="idMatnrInputCaseID" enabled="false" value="{DetailEdit>/FSC2Activity_CaseSet/results/0/transactions_case_id}"
+										tooltip="{DetailEdit>/FSC2Activity_CaseSet/results/0/transactions_id}" type="Number"/>
+									<Label text="{i18n>urlToCRM}"/>
+									<Input enabled="false" value="{DetailEdit>/activity_id}" visible="{MCCPageConfig>/edit}"/>
+									<Label text="{i18n>plannedDateTo}"/>
+									<DatePicker id="inPlannedDateTo" dateValue="{DetailEdit>/activity_planned_date_to}" valueFormat="yyyy-MM-dd"/>
+								</f:content>
+							</f:SimpleForm>
+						</IconTabFilter>
+						<IconTabFilter text="{i18n>partiesInvolved}" id="PartiesInvolved">
+							<Table noDataText="{i18n>noData}" id="PartiesInvolvedTable" sticky="ColumnHeaders" mode="None"
+								items="{path: 'MCCDetail>/FSC2Activity_Parties/results/', sorter: {path: '/activity_change_date'}}">
+								<columns>
+									<Column>
+										<Text text="{i18n>partnerFunction}"/>
+									</Column>
+									<Column >
+										<Text text="{i18n>bpNumber}"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="{i18n>name}"/>
+									</Column>
+									<Column minScreenWidth="Tablet" demandPopin="true">
+										<Text text="{i18n>address}"/>
+									</Column>
+									<Column hAlign="Right">
+										<Text text="{i18n>mainPartner}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem>
+										<cells>
+											<Text text="{MCCDetail>parties_function}"/>
+											<Text text="{MCCDetail>BpNumber}"/>
+											<Text text="{MCCDetail>BpName}"/>
+											<Text text="{MCCDetail>AddressText}"/>
+											<CheckBox selected="{= (${MCCDetail>Mainpartner} === 'X') ? true : false}" enabled="false"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</IconTabFilter>
+						<IconTabFilter text="{i18n>attachments}" id="Attachments">
+							<UploadCollection id="UploadCollection" maximumFilenameLength="100" maximumFileSize="10" multiple="true" terminationEnabled="false"
+								change="onChange" fileSizeExceed="onFileSizeExceed" filenameLengthExceed="onFileNameExceed" uploadComplete="onUploadComplete"
+								beforeUploadStarts="onBeforeUploadStarts" items="{MCCDetail>/AttachmentSet/results}">
+								<items>
+									<UploadCollectionItem documentId="{MCCDetail>objid}" fileName="{MCCDetail>file_name}"
+										url="{ path: 'MCCDetail>', formatter: '.formatter.downloadUrl'}" enableEdit="false" enableDelete="false" visibleDelete="false"
+										visibleEdit="false">
+										<attributes>
+											<ObjectAttribute text="{MCCDetail>file_descr}"/>
+										</attributes>
+									</UploadCollectionItem>
+								</items>
+							</UploadCollection>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+				<!--	</content>	<footer>
+				<Bar>
+					<contentRight>
+						<Button id="saveButton" text="{i18n>save}" type="Emphasized" width="auto" press="onSave" visible="{MCCPageConfig>/edit}"/>
+						<Button id="cancelButton" text="{i18n>cancel}" width="auto" press="onCancel" visible="{MCCPageConfig>/edit}"/>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>-->
+			</semantic:content>
+			<semantic:footerCustomActions>
+				<Button id="scrollDownButton" text="{i18n>chatReply}" type="Emphasized" width="auto" press="onScrollBottom" icon="sap-icon://download"/>
+				<!--{= ${MCCDetail>/activity_status} !== 'E0014' ? ${i18n>chatReply} : ${i18n>ScrollDown}}-->
+				<Button id="scrollUpButton" text="{i18n>ScrollUp}" type="Emphasized" width="auto" press="onScrollTop" icon="sap-icon://back-to-top"/>
+				<Button id="saveButton" text="{i18n>save}" type="Emphasized" width="auto" press="onSave" visible="{MCCPageConfig>/edit}"
+					class="sapUiSmallMarginBegin"/>
+				<Button id="cancelButton" text="{i18n>cancel}" width="auto" press="onCancel" visible="{MCCPageConfig>/edit}"/>
+			</semantic:footerCustomActions>
+		</semantic:SemanticPage>
+		<!--	<Page id="idNotePage" title="{i18n>addNote}" class="sapUiSizeCompact">
+			<content>
+				<TextArea id="idTextArea" rows="20" placeholder="{i18n>enterNote}" width="100%" liveChange="onNoteChange"/>
+			</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button id="saveNoteBtn" text="{i18n>save}" type="Emphasized" width="auto" press="onSaveNote" enabled="false"/>
+						<Button id="saveNoteMCCBtn" text="{i18n>saveSendToMCC}" type="Accept" width="auto" press="onSaveNoteAndSendMCC" enabled="false"/>
+						<Button text="{i18n>close}" type="Reject" width="auto" press="onSaveNoteAndClose"/>
+						<Button text="{i18n>cancel}" width="auto" press="onCancelNote"/>-->
+		<!--<Button text="{i18n>save}" type="Emphasized" width="auto" press="onSaveNote"/>-->
+		<!--<Button text="{i18n>saveSendToMCC}" type="Emphasized" width="auto" press="onSaveNoteAndSendMCC"/>-->
+		<!--<Button text="{i18n>close}" type="Emphasized" width="auto" press="onSaveNoteAndClose"/>-->
+		<!--<Button text="{i18n>cancel}" type="Emphasized" width="auto" press="onCancelNote"/>-->
+		<!--	</contentRight>
+</Bar>
+</footer>
+</Page>-->
+	</NavContainer>
+</mvc:View>

@@ -1,0 +1,135 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.RequestSearch" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<!--<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>searchRequests}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+				suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValueRequest}"
+				class="sapUiMediumMarginTopBottom">
+				<suggestionItems>
+					<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+				</suggestionItems>
+			</SearchField>
+			<IconTabBar id="idSearchTab" headerMode="Inline" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+				
+					<IconTabFilter key="keySituation" text="{i18n>criticalSituation}" count="{= !!${searchResult>/Situation/loadComplete} ? ${searchResult>/Situation/count} : ''}">
+						<!--<List id="idSituation" noDataText="{i18n>noData}" mode="None" items="{path: 'searchResult>/Situation/results'}">
+							<ObjectListItem title="{searchResult>Description}" type="Active" press="handleRowPress($event, 'searchResult')">
+								<firstStatus>
+									<ObjectStatus text="{searchResult>Status}" state="None"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{searchResult>Name}"/>
+									<ObjectAttribute text="{path:'searchResult>ID',formatter:'.formatter.trimPreZeros'}"/>
+									<ObjectAttribute text="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>
+								</markers>
+							</ObjectListItem>
+						</List>-->
+						<Table id="idSituation" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'searchResult>/Situation/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<SearchField id="searchFieldSit" search="onFilterTable($event, 'idSituation')" liveChange="onFilterTable($event, 'idSituation')"
+											placeholder="Filter" class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'RequestSearch')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBar" visible="false">
+									<Text id="vsdFilterLabel"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="Low"><Text text="Customer Name"/></Column>
+								<Column importance="Low" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="Low" hAlign="Center" visible="{path:'searchResult>/Situation/results', formatter:'.formatter.SnowColumnVisible'}"><Text text="NOW ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'searchResult')" type="Navigation">
+									<cells>
+										<ObjectIdentifier title="{searchResult>Description}"/>
+										<Text text="{searchResult>Name}"/>
+										<ObjectNumber number="{path:'searchResult>ID', formatter:'.formatter.trimPreZeros'}"/>
+										<ObjectNumber number="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>
+										<ObjectStatus text="{searchResult>Status}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter key="favorites" text="{i18n>myFavorites}" count="{= !!${favorite>/Situation/loadComplete} ? ${favorite>/Situation/count} : 'N/A'}">
+					
+						<!--	<List id="idSituationFav" noDataText="{i18n>noData}" mode="None" items="{path: 'favorite>/Situation/results'}">
+							<ObjectListItem title="{favorite>Description}" type="Active" press="handleRowPress($event, 'favorite')">
+								<firstStatus>
+									<ObjectStatus text="{favorite>Status}" state="None"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{favorite>CustomerName}"/>
+									<ObjectAttribute text="{path:'favorite>ID',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite"/>
+								</markers>
+							</ObjectListItem>
+						</List>-->
+						<Table id="idSituationFav" growing="true" growingScrollToLoad="true" mode="None" autoPopinMode="true"
+							items="{path: 'favorite>/Situation/results'}" noDataText="{i18n>noData}">
+							<headerToolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<FlexBox>
+										<SearchField id="searchFieldFav" search="onFilterTable($event, 'idSituationFav')" liveChange="onFilterTable($event, 'idSituationFav')"
+											placeholder="Filter" class="sapUiTinyMarginEnd"/>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'RequestFav')" ariaHasPopup="Dialog"
+											class="sapUiTinyMarginBegin"/>
+										<!--<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed" ariaHasPopup="Dialog"/>-->
+									</FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarSitFav" visible="false">
+									<Text id="vsdFilterLabelSitFav"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="Low"><Text text="Customer Name"/></Column>
+								<Column importance="Low" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="handleRowPress($event, 'favorite')" type="Navigation">
+									<cells>
+										<ObjectIdentifier title="{favorite>Description}"/>
+										<Text text="{favorite>CustomerName}"/>
+										<ObjectNumber number="{path:'favorite>ID', formatter:'.formatter.trimPreZeros'}"/>
+										<ObjectStatus text="{favorite>Status}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

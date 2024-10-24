@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html> 
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--src="https://sapui5.hana.ondemand.com/resources/sap-ui-cachebuster/sap-ui-core.js"-->
+<!--src="resources/sap-ui-core.js"--> 
+<!--src="http://localhost:8080/sapui5-sdk-dist164/resources/sap-ui-cachebuste/sap-ui-core.js"-->
+		<title>MCC SOS</title>
+		<script id="sap-ui-bootstrap" 
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m,sap.uxap,sap.ui.layout,sap.f,sapit"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
+			data-sap-ui-resourceroots='{"sap.support.fsc2": "./"}'
+			data-sap-ui-frameOptions="trusted">
+		</script>
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({	
+					appWidthLimited: false,
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "sap.support.fsc2"
+					})
+				}).placeAt("content");
+			});
+			
+			// var swa = {
+		 //       pubToken: '594f61a0-09d3-7840-adbc-bc5e05ce5168',
+		 //       baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+		 //       visitorCookieTimeout: 63113852,
+		 //       dntLevel: 1,
+		 //       bannerEnabled: false
+		 //   };
+		    // (function(){
+		    //     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		    //     g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+		    //     s.parentNode.insertBefore(g,s);
+		    //  })();
+			
+			var timer;
+			var that = this;
+			function startTimer() {
+				window.clearTimeout(timer);
+				//Set timeout after 15 mins
+				timer = window.setTimeout("handleTimeout()", 15*60*1000);
+			}
+			function handleTimeout() {
+				if (!that.oTODialog) {
+					that.oTODialog = new sap.m.Dialog({
+						title: "Time Out",
+						type: "Message",
+						state: "Warning",
+						content: new sap.m.Text({
+							text: "Your session has expired. Please press OK to refresh the page."
+						}),
+						endButton: new sap.m.Button({
+							text: "OK",
+							press: function(oEvent) {
+								window.location.reload();
+							}
+						})
+					});
+				}
+				that.oTODialog.open();
+			}
+			startTimer;
+			document.onmousemove = startTimer;
+			document.onmousedown = startTimer;
+			document.onkeydown  = startTimer;
+			document.onkeypress  = startTimer;
+		</script>
+	</head>
+	
+	<body class="sapUiBody" id="content">
+		<div id="content"></div>
+	</body>
+
+</html>

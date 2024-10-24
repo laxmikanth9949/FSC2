@@ -1,0 +1,852 @@
+{
+	"_version": "1.4.0",
+	"sap.app": {
+		"id": "${project.artifactId}",
+		"type": "application",
+		"resources": "resources.json",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"ach": "ach"
+	},
+	"sap.fiori": {
+		"registrationIds": [
+			"F0000"
+		],
+		"archeType": "transactional"
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_fiori_3",
+			"sap_belize",
+			"sap_hcb"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.support.fsc2.view.FlexibleColumnLayout",
+			"type": "XML",
+			"id": "fcl"
+		},
+		"config": {
+			"reportingId": "MCC SOS",
+			"reportingHosts": [
+				"sapit-home-prod-004.launchpad.cfapps.eu10.hana.ondemand.com",
+				"fiorilaunchpad-sapitcloud.dispatcher.hana.ondemand.com",
+				"sapit-customersupport-prod-kestrel.launchpad.cfapps.eu10.hana.ondemand.com",
+				"mccsos-sapitcloud.dispatcher.hana.ondemand.com",
+				"mobile-sapitcloud.dispatcher.hana.ondemand.com"
+			],
+			"fullWidth": true
+		},
+		"dependencies": {
+			"minUI5Version": "${sap.ui5.dist.version}",
+			"libs": {
+				"sap.ui.core": {
+					"minVersion": "1.38.0",
+					"lazy": true
+				},
+				"sap.m": {
+					"minVersion": "1.38.0",
+					"lazy": true
+				},
+				"sap.ushell": {
+					"minVersion": "1.38.0",
+					"lazy": true
+				},
+				"sap.collaboration": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.ui.unified": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.ui.table": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.uxap": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.suite.ui.commons": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sap.suite.ui.microchart": {
+					"minVersion": "1.38",
+					"lazy": false
+				},
+				"sapit": {
+					"minVersion": "Active"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.support.fsc2.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				},
+				{
+					"uri": "css/bkChat.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.support.fsc2.view",
+				"controlId": "fcl",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"async": true,
+				"clearTarget": "true",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "dashboard",
+					"target": "dashboard"
+				},
+				{
+					"pattern": "otherMCCRequest/{layout}",
+					"name": "otherMCCRequest",
+					"target": "otherMCCReq"
+				},
+				{
+					"pattern": ":layout:",
+					"name": "dashboard",
+					"target": "dashboard"
+				},
+				{
+					"pattern": "homepage/{layout}",
+					"name": "homepage",
+					"target": "homepage"
+				},
+				{
+					"pattern": "notFound/{layout}",
+					"name": "notFound",
+					"target": "notFound"
+				},
+				{
+					"pattern": "help/{layout}",
+					"name": "help",
+					"target": "help"
+				},
+				{
+					"pattern": "favorites/{layout}",
+					"name": "favorites",
+					"target": "favorites"
+				},
+				{
+					"pattern": "request/{layout}",
+					"name": "request",
+					"target": "request"
+				},
+				{
+					"pattern": "iocrequest/{layout}",
+					"name": "ioc",
+					"target": "iocrequest"
+				},
+				{
+					"pattern": "assigned/{layout}",
+					"name": "assigned",
+					"target": "assigned"
+				},
+				{
+					"pattern": "search/{layout}",
+					"name": "search",
+					"target": "search"
+				},
+				{
+					"pattern": "customerSearch/{layout}",
+					"name": "customerSearch",
+					"target": "customerSearch"
+				},
+				{
+					"pattern": "requestSearch/{layout}",
+					"name": "requestSearch",
+					"target": "requestSearch"
+				},
+				{
+					"pattern": "searchIncident/{layout}",
+					"name": "searchIncident",
+					"target": "incidentSearch"
+				},
+				{
+					"pattern": "notification/{layout}",
+					"name": "notification",
+					"target": "notification"
+				},
+				{
+					"pattern": "customer/{layout}/custnum={custnum}&custname={custname}&favorite={favorite}",
+					"name": "customer",
+					"target": "customerN"
+				},
+				{
+					"pattern": "customer/{layout}/custnum={custnum}",
+					"name": "customer1",
+					"target": "customerN"
+				},
+				{
+					"pattern": "createByDefault/{layout}",
+					"name": "createByDefault",
+					"target": "createN"
+				},
+				{
+					"pattern": "bdmOnlyEscalations/{layout}",
+					"name": "bdmOnlyEscalations",
+					"target": "createN"
+				},
+				{
+					"pattern": "createByCustomer/{layout}/custnum={custnum}&custname={custname}",
+					"name": "createByCustomer",
+					"target": "createN"
+				},
+				{
+					"pattern": "createByDefault/{layout}/erpcust={erpcust}&caseid={caseid}&title={title}&category={category}&serviceteam={serviceteam}&desc={desc}",
+					"name": "createThroughSpecialUrl",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByDefault/{layout}/caseid={caseid}&title={title}&category={category}&serviceteam={serviceteam}&desc={desc}",
+					"name": "createThroughSpecialUrl1",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByDefault/{layout}/caseid={caseid}&title={title}&category={category}&serviceteam={serviceteam}",
+					"name": "createThroughSpecialUrl2",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByDefault/{layout}/caseid={caseid}&category={category}&serviceteam={serviceteam}",
+					"name": "createThroughSpecialUrl3",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByDefault/{layout}/category={category}&serviceteam={serviceteam}",
+					"name": "createThroughSpecialUrl4",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByDefault/{layout}/title={title}&category={category}&serviceteam={serviceteam}",
+					"name": "createThroughSpecialUrl5",
+					"target": "createActivity"
+				},
+				{
+					"pattern": "createByCustomerEnd/{layout}/custnum={custnum}&custname={custname}",
+					"name": "createByCustomerEnd",
+					"target": "createNLevel3"
+				},
+				{
+					"pattern": "createByIncident/{layout}/custnum={custnum}&custname={custname}&incident={incident}",
+					"name": "createByIncident",
+					"target": "createN"
+				},
+				{
+					"pattern": "createByIncident?type={type}&icdNum={icdNum}&icdYear={icdYear}",
+					"name": "createByIncidentOptions",
+					"target": "createN"
+				},
+				{
+					"pattern": "createByIncidentEnd/{layout}/custnum={custnum}&custname={custname}&incident={incident}",
+					"name": "createByIncidentEnd",
+					"target": "createNLevel3"
+				},
+				{
+					"pattern": "incidentSearch/{layout}/id={id}&flag={flag}&sam={sam}",
+					"name": "incidentSearch",
+					"target": [
+						"incidentSearch",
+						"incident"
+					]
+				},
+				{
+					"pattern": "incident/{layout}/id={id}&flag={flag}&sam={sam}",
+					"name": "incident",
+					"target": "incident"
+				},
+				{
+					"pattern": "incidentEnd/{layout}/id={id}&flag={flag}&sam={sam}",
+					"name": "incidentEnd",
+					"target": "incidentLevel3"
+				},
+				{
+					"pattern": "requestDetailIncidentSearch/{layout}/id={id}&transType={transType}&flag={flag}&sam={sam}",
+					"name": "requestDetailIncidentSearch",
+					"target": [
+						"incidentSearch",
+						"requestDetail"
+					]
+				},
+				{
+					"pattern": "requestDetailRequestSearch/{layout}/id={id}&transType={transType}",
+					"name": "requestDetailRequestSearch",
+					"target": [
+						"requestSearch",
+						"requestDetail"
+					]
+				},
+				{
+					"pattern": "incident/{layout}/id={id}&transType={transType}&flag={flag}&sam={sam}",
+					"name": "requestDetail",
+					"target": "requestDetail"
+				},
+				{
+					"pattern": "requestDetail/{layout}/id={id}&transType={transType}",
+					"name": "requestDetail",
+					"target": "requestDetail"
+				},
+				{
+					"pattern": "requestDetails/{layout}/id={id}&transType={transType}",
+					"name": "requestDetails",
+					"target": [
+						"request",
+						"requestDetail"
+					]
+				},
+				{
+					"pattern": "requestDetailEnd/{layout}/id={id}&transType={transType}",
+					"name": "requestDetailEnd",
+					"target": "requestDetailLevel3"
+				},
+				{
+					"pattern": "commentCIMReq/{layout}/id={id}&transType={transType}",
+					"name": "commentCIMReq",
+					"target": "commentCIMReq"
+				},
+				{
+					"pattern": "mccDetail/{layout}/activity_id={activity_id}",
+					"name": "mccDetail",
+					"target": [
+						"assigned",
+						"mccDetail"
+					]
+				},
+				{
+					"pattern": "mccDetailRequest/{layout}/activity_id={activity_id}",
+					"name": "mccDetailRequest",
+					"target": [
+						"request",
+						"mccDetail"
+					]
+				},
+				{
+					"pattern": "mccDetailRequestSearch/{layout}/activity_id={activity_id}",
+					"name": "mccDetailRequestSearch",
+					"target": [
+						"requestSearch",
+						"mccDetail"
+					]
+				},
+				{
+					"pattern": "mccDetailEnd/{layout}/activity_id={activity_id}",
+					"name": "mccDetailEnd",
+					"target": "mccDetailLevel3"
+				},
+				{
+					"pattern": "escalationCaseDetailEnd/{layout}/id={id}",
+					"name": "escalationCaseDetailEnd",
+					"target": "escalationCaseDetailLevel3"
+				},
+				{
+					"pattern": "escalationCaseDetail/{layout}/id={id}",
+					"name": "escalationCaseDetail",
+					"target": "escalationCaseDetail"
+				},
+				{
+					"pattern": "incidentList/{layout}/custnum={custnum}",
+					"name": "incidentList",
+					"target": "incidentList"
+				},
+				{
+					"pattern": "incidentListEnd/{layout}/custnum={custnum}",
+					"name": "incidentListEnd",
+					"target": "incidentListEnd"
+				},
+				{
+					"pattern": "subscription/{layout}",
+					"name": "subscription",
+					"target": "subscription"
+				},
+				{
+					"pattern": "SaM/{layout}/incident={incident}&earea={earea}",
+					"name": "SaM",
+					"target": "SaM"
+				},
+				{
+					"pattern": "escalateIncident/{layout}/custnum={custnum}&custname={custname}&incident={incident}",
+					"name": "escalateIncident",
+					"target": "escalateIncident"
+				},
+				{
+					"pattern": "escalationRequestStart/{layout}",
+					"name": "escalationRequestStart",
+					"target": "escalationRequestStart"
+				},
+				{
+					"pattern": "escalationRequestStart/{layout}/{custnum}",
+					"name": "escalationRequestStart",
+					"target": "escalationRequestStart"
+				},
+				{
+					"pattern": "escalationRequestCreate/{layout}/custnum={custnum}",
+					"name": "escalationRequestCreate",
+					"target": "escalationRequestCreate"
+				},
+				{
+					"pattern": "escalationRequest/{layout}/activityid={activityid}&editable={editable}",
+					"name": "escalationRequest",
+					"target": [
+						"request",
+						"escalationRequestCreate"
+					]
+				},
+				{
+					"pattern": "escalationRequestDetail/{layout}/activityid={activityid}&editable={editable}",
+					"name": "escalationRequestDetail",
+					"target": "escalationRequestCreate"
+				},
+				{
+					"pattern": "escalationRequestDetailSearch/{layout}/activityid={activityid}&editable={editable}",
+					"name": "escalationRequestDetailSearch",
+					"target": [
+						"requestSearch",
+						"escalationRequestCreate"
+					]
+				},
+				{
+					"pattern": "escalationRequestDetailEnd/{layout}/activityid={activityid}&editable={editable}",
+					"name": "escalationRequestDetailEnd",
+					"target": "escalationRequestCreateLevel3"
+				},
+				{
+					"pattern": "changeEsvLevel/{cimId}",
+					"name": "ChangeEscLevel",
+					"target": "ChangeEscLevel"
+				},
+				{
+					"pattern": "changeEsvLevel/{layout}/cimId={cimId}&transType={transType}",
+					"name": "ChangeEscLevel",
+					"target": "ChangeEscLevel"
+				}
+			],
+			"targets": {
+				"dashboard": {
+					"viewName": "DashBoard",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlAggregation": "beginColumnPages",
+					"async": true
+				},
+				"otherMCCReq": {
+					"viewName": "OtherMCCReq",
+					"viewId": "othermccreq",
+					"controlAggregation": "beginColumnPages"
+				},
+				"homepage": {
+					"viewName": "HomepageN",
+					"viewId": "homepage",
+					"controlAggregation": "beginColumnPages"
+				},
+				"notification": {
+					"viewName": "Notification",
+					"controlAggregation": "midColumnPages"
+				},
+				"notFound": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition": "show",
+					"controlAggregation": "midColumnPages"
+				},
+				"help": {
+					"viewName": "Help",
+					"viewId": "helpPage",
+					"controlAggregation": "midColumnPages"
+				},
+				"favorites": {
+					"viewName": "myFavorites",
+					"viewId": "favorites",
+					"controlAggregation": "beginColumnPages"
+				},
+				"request": {
+					"viewName": "myRequest",
+					"viewId": "request",
+					"controlAggregation": "beginColumnPages"
+				},
+				"iocrequest": {
+					"viewName": "iocRequest",
+					"viewId": "iocRequest",
+					"controlAggregation": "beginColumnPages"
+				},
+				"assigned": {
+					"viewName": "myActivity",
+					"viewId": "assigned",
+					"controlAggregation": "beginColumnPages"
+				},
+				"search": {
+					"viewName": "SearchResult",
+					"viewId": "search",
+					"controlAggregation": "beginColumnPages"
+				},
+				"incidentSearch": {
+					"viewName": "IncidentSearch",
+					"controlAggregation": "beginColumnPages"
+				},
+				"requestSearch": {
+					"viewName": "RequestSearch",
+					"controlAggregation": "beginColumnPages"
+				},
+				"customerSearch": {
+					"viewName": "CustomerSearch",
+					"controlAggregation": "beginColumnPages"
+				},
+				"createN": {
+					"viewType": "XML",
+					"viewName": "CreateCriticalSituationN",
+					"controlAggregation": "beginColumnPages"
+				},
+				"createActivity": {
+					"viewType": "XML",
+					"viewName": "CreateActivity",
+					"controlAggregation": "beginColumnPages"
+				},
+				"createNLevel3": {
+					"viewType": "XML",
+					"viewName": "CreateCriticalSituationN",
+					"controlAggregation": "endColumnPages"
+				},
+				"escalationRequestStart": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestStart",
+					"controlAggregation": "beginColumnPages"
+				},
+				"mccDetail": {
+					"viewName": "MCCDetail",
+					"viewId": "mccDetail",
+					"controlAggregation": "midColumnPages"
+				},
+				"mccDetailLevel3": {
+					"viewName": "MCCDetail",
+					"viewId": "mccDetail",
+					"controlAggregation": "endColumnPages"
+				},
+				"requestDetail": {
+					"viewName": "IncidentDetail",
+					"viewId": "requestDetail",
+					"controlAggregation": "midColumnPages"
+				},
+				"requestDetailLevel3": {
+					"viewName": "IncidentDetail",
+					"viewId": "requestDetail",
+					"controlAggregation": "endColumnPages"
+				},
+				"escalationRequest": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate",
+					"controlAggregation": "midColumnPages"
+				},
+				"escalationRequestDetail": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate",
+					"controlAggregation": "midColumnPages"
+				},
+				"escalationRequestDetailLevel3": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate",
+					"controlAggregation": "endColumnPages"
+				},
+				"escalationRequestCreate": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate",
+					"controlAggregation": "midColumnPages"
+				},
+				"escalationRequestCreateLevel3": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate",
+					"controlAggregation": "endColumnPages"
+				},
+				"incident": {
+					"viewName": "IncidentDetail",
+					"viewId": "incident",
+					"controlAggregation": "midColumnPages"
+				},
+				"incidentLevel3": {
+					"viewName": "IncidentDetail",
+					"viewId": "incident",
+					"controlAggregation": "endColumnPages"
+				},
+				"escalationCaseDetailLevel3": {
+					"viewType": "XML",
+					"viewName": "EscalationCaseDetail",
+					"controlAggregation": "endColumnPages"
+				},
+				"customerN": {
+					"viewType": "XML",
+					"viewName": "CustomerDetail",
+					"controlAggregation": "midColumnPages"
+				},
+				"subscription": {
+					"viewType": "XML",
+					"viewName": "Subscription",
+					"controlAggregation": "midColumnPages"
+				},
+				"incidentListEnd": {
+					"viewType": "XML",
+					"viewName": "IncidentList",
+					"controlAggregation": "endColumnPages"
+				},
+				"incidentList": {
+					"viewType": "XML",
+					"viewName": "IncidentList",
+					"controlAggregation": "midColumnPages"
+				},
+				"commentCIMReq": {
+					"viewName": "CommentCIMReq",
+					"viewId": "commentCIMReq",
+					"controlAggregation": "endColumnPages"
+				},
+				"homepageOLD": {
+					"viewName": "HomepageN",
+					"viewId": "homepage",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"dashboardOLD": {
+					"viewName": "DashBoard",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"notFoundOLD": {
+					"viewId": "notFound",
+					"viewName": "NotFound",
+					"transition": "show"
+				},
+				"helpOLD": {
+					"viewName": "Help",
+					"viewId": "helpPage",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"favoritesOLD": {
+					"viewName": "myFavorites",
+					"viewId": "favorites",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"requestOLD": {
+					"viewName": "myRequest",
+					"viewId": "request",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"searchOLD": {
+					"viewName": "SearchResult",
+					"viewId": "search",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"customer": {
+					"viewName": "CustomerDetail",
+					"viewId": "customer",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"create": {
+					"viewName": "CreateCriticalSituation",
+					"viewId": "create",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"incidentOLD": {
+					"viewName": "IncidentDetail",
+					"viewId": "incident",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"requestDetailOLD": {
+					"viewName": "IncidentDetail",
+					"viewId": "requestDetail",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"commentCIMReqOLD": {
+					"viewName": "CommentCIMReq",
+					"viewId": "commentCIMReq",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"mccDetailOLD": {
+					"viewName": "MCCDetail",
+					"viewId": "mccDetail",
+					"viewLevel": 1,
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"escalationCaseDetailOLD": {
+					"viewType": "XML",
+					"viewName": "EscalationCaseDetail",
+					"routerClass": "sap.m.routing.Router",
+					"viewPath": "sap.support.fsc2.view",
+					"controlId": "fsc2app",
+					"controlAggregation": "pages",
+					"async": true
+				},
+				"notificationOLD": {
+					"viewType": "XML",
+					"viewName": "Notification"
+				},
+				"HomepageN": {
+					"viewType": "XML",
+					"viewName": "HomepageN"
+				},
+				"createNOLD": {
+					"viewType": "XML",
+					"viewName": "CreateCriticalSituationN"
+				},
+				"incidentListOLD": {
+					"viewType": "XML",
+					"viewName": "IncidentList"
+				},
+				"customerNOLD": {
+					"viewType": "XML",
+					"viewName": "CustomerDetail"
+				},
+				"subscriptionOLD": {
+					"viewType": "XML",
+					"viewName": "Subscription"
+				},
+				"SaM": {
+					"viewType": "XML",
+					"viewName": "SaM",
+					"controlAggregation": "midColumnPages"
+				},
+				"escalateIncident": {
+					"viewType": "XML",
+					"viewName": "EscalateIncident",
+					"controlAggregation": "endColumnPages"
+				},
+				"escalationRequestStartOLD": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestStart"
+				},
+				"escalationRequestCreateOLD": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate"
+				},
+				"escalationRequestDetailOLD": {
+					"viewType": "XML",
+					"viewName": "EscalationRequestCreate"
+				},
+				"ChangeEscLevel": {
+					"viewType": "XML",
+					"viewName": "ChangeEscLevel",
+					"controlAggregation": "endColumnPages"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

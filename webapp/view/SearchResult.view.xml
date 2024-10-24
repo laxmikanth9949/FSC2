@@ -1,0 +1,81 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.support.fsc2.controller.SearchResult" xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<!--<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavHome"/>-->
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>searchResults}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+				suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValue}"
+				class="sapUiMediumMarginTopBottom">
+				<suggestionItems>
+					<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+				</suggestionItems>
+			</SearchField>
+			<IconTabBar id="idSearchTab" headerMode="Inline" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter key="keyCustomer" text="{i18n>customer}" count="{searchResult>/Customer/count}">
+						<List id="idCustomer" noDataText="{i18n>noData}" mode="None" items="{path: 'searchResult>/Customer/results'}">
+							<ObjectListItem title="{searchResult>CustomerName}" type="Active" press="handleRowPress">
+								<attributes>
+									<ObjectAttribute text="{path:'searchResult>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter key="keySituation" text="{i18n>criticalSituation}" count="{searchResult>/Situation/count}">
+						<List id="idSituation" noDataText="{i18n>noData}" mode="None" items="{path: 'searchResult>/Situation/results'}">
+							<ObjectListItem title="{searchResult>Description}" type="Active" press="handleRowPress">
+								<firstStatus>
+									<ObjectStatus text="{searchResult>Status}" state="None"/>
+								</firstStatus>
+								<attributes>
+									<ObjectAttribute text="{searchResult>Name}"/>
+									<ObjectAttribute text="{path:'searchResult>ID',formatter:'.formatter.trimPreZeros'}"/>
+									<ObjectAttribute text="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter key="keyIncident" text="{i18n>incident}" count="{searchResult>/Incident/count}">
+						<List id="idIncident" noDataText="{i18n>noData}" mode="None"
+							items="{path: 'searchResult>/Incident/results', sorter: { path: 'MessageYear',descending: true}}">
+							<ObjectListItem title="{searchResult>Description}" type="Active" press="handleRowPress">
+								<firstStatus>
+									<ObjectStatus text="{searchResult>Priority}"
+										state="{parts:[{path:'searchResult>SNow_number'},{path:'searchResult>PriorityID'}],formatter:'.formatter.formatIcdPriority'}"/>
+								</firstStatus>
+								<secondStatus>
+									<ObjectStatus text="{searchResult>Component}" state="None"/>
+								</secondStatus>
+								<attributes>
+									<ObjectAttribute text="{searchResult>Name}"/>
+									<ObjectAttribute text="{searchResult>ShortID} {path:'searchResult>Active',formatter:'.formatActiveStatus'}"/>
+									<ObjectAttribute text="{searchResult>SNow_number}" visible="{= ${searchResult>SNow_number} ? true : false}"/>
+									<!--<ObjectAttribute text="{parts:[{path:'searchResult>ShortID'},{path:'searchResult>SNow_number'}],formatter:'.formatter.formatSNowNum'}"/>-->
+									<!--{path:'searchResult>ID',formatter:'.formatter.formatIncidentCatalog'}-->
+								</attributes>
+								<markers>
+									<ObjectMarker type="Favorite" visible="{=${searchResult>Action} === 'X'}"/>
+									<ObjectMarker type="Flagged" visible="{searchResult>Escalation}"/>
+								</markers>
+							</ObjectListItem>
+						</List>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>
