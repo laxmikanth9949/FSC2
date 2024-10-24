@@ -1,0 +1,60 @@
+{
+    "destinations": [
+        {
+            "name": "local",
+            "url": "http://localhost:8080",
+	    "forwardAuthToken": true
+        }
+    ],
+    "VCAP_SERVICES": {
+        "xsuaa": [
+            {
+                "name": "sapsupportfsc2-xsuaa-srv",
+                "label": "xsuaa",
+                "tags": [
+                    "xsuaa"
+                ],
+                "credentials": {
+                    "tenantmode": "dedicated",
+                    "sburl": "https://internal-xsuaa.authentication.eu10.hana.ondemand.com",
+                    "subaccountid": "36b3db9d-3e64-42b5-88fb-5b7b39ec2833",
+                    "credential-type": "instance-secret",
+                    "clientid": "sb-sapsupportfsc2!t224065",
+                    "xsappname": "sapsupportfsc2!t224065",
+                    "clientsecret": "Nyps4KEW2Q4kMBcEiSSIP1OUVF8=",
+                    "url": "https://sapit-customersupport-dev-mallard.authentication.eu10.hana.ondemand.com",
+                    "uaadomain": "authentication.eu10.hana.ondemand.com",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy3IfPe+Pr8HwdoZQ0f/H3cD7knv1HUcHIhoVxTajIdVssnfIDbVroD8iU8SN936VsXldPQZ7egq+nz0VRl7Q5/ZlYpU5tekpEfT0c1dwxPXi6e2VW4wTUNZLLLytgVNmy4xtgSMDx36wYDS0wE1qb7tTbGNMih3b/n7iVkK6T7c0TTVaIhp8d7ppyO9qJVkrG4Aou4gLUkRTewYuHskfrq8vyI1vNE7R0N4DG+ak5d5JuDGmXn2b5AtKKnV78MvEBJfDO2OWWjgnXLF3rnv0g0cfXV1UL4f8hBXNqL3XkFLrcMU4RyeAIgQ1qOCXcyN37zsEIoSHgfj8JhY3GfnpbwIDAQAB-----END PUBLIC KEY-----",
+                    "apiurl": "https://api.authentication.eu10.hana.ondemand.com",
+                    "identityzone": "sapit-customersupport-dev-mallard",
+                    "identityzoneid": "36b3db9d-3e64-42b5-88fb-5b7b39ec2833",
+                    "tenantid": "36b3db9d-3e64-42b5-88fb-5b7b39ec2833",
+                    "zoneid": "36b3db9d-3e64-42b5-88fb-5b7b39ec2833"
+                  }
+            }
+        ],
+        "destination": [
+            {
+                "name": "sapsupportfsc2-destination-service",
+                "label": "destination",
+                "tags": [
+                    "destination"
+                ],
+                "credentials": {
+                    "tenantmode": "dedicated",
+                    "clientid": "sb-cloneb534e29bff63451f89f743bd4542f485!b224065|destination-xsappname!b404",
+                    "credential-type": "binding-secret",
+                    "xsappname": "cloneb534e29bff63451f89f743bd4542f485!b224065|destination-xsappname!b404",
+                    "clientsecret": "d2754864-43a3-4e30-a2f6-9ecce0eef8a7$s9VQR8ctfbB--CvaQthx0ij3NxjQpQw7QEpnTtVvg5s=",
+                    "uri": "https://destination-configuration.cfapps.eu10.hana.ondemand.com",
+                    "url": "https://sapit-customersupport-dev-mallard.authentication.eu10.hana.ondemand.com",
+                    "uaadomain": "authentication.eu10.hana.ondemand.com",
+                    "instanceid": "b534e29b-ff63-451f-89f7-43bd4542f485",
+                    "verificationkey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy3IfPe+Pr8HwdoZQ0f/H\n3cD7knv1HUcHIhoVxTajIdVssnfIDbVroD8iU8SN936VsXldPQZ7egq+nz0VRl7Q\n5/ZlYpU5tekpEfT0c1dwxPXi6e2VW4wTUNZLLLytgVNmy4xtgSMDx36wYDS0wE1q\nb7tTbGNMih3b/n7iVkK6T7c0TTVaIhp8d7ppyO9qJVkrG4Aou4gLUkRTewYuHskf\nrq8vyI1vNE7R0N4DG+ak5d5JuDGmXn2b5AtKKnV78MvEBJfDO2OWWjgnXLF3rnv0\ng0cfXV1UL4f8hBXNqL3XkFLrcMU4RyeAIgQ1qOCXcyN37zsEIoSHgfj8JhY3Gfnp\nbwIDAQAB\n-----END PUBLIC KEY-----",
+                    "identityzone": "sapit-customersupport-dev-mallard",
+                    "tenantid": "36b3db9d-3e64-42b5-88fb-5b7b39ec2833"
+                  }
+            }
+        ]
+    }
+}

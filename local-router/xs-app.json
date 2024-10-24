@@ -1,0 +1,93 @@
+{
+	"welcomeFile": "/index.html",
+	"authenticationMethod": "route",
+	"routes": [
+		{
+			"source": "^/intbc/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "int_bc",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/intic/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "int_ic",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/servicenow/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "int_snow",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/sap/opu/odata/(.*)$",
+			"target": "/sap/opu/odata/$1",
+			"csrfProtection": false,
+			"destination": "int_pg",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/bct/odata/(.*)$",
+			"target": "/sap/opu/odata/$1",
+			"csrfProtection": false,
+			"destination": "int_crm_ags_web",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/w71/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "Int_w71",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/w72/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "Int_w72",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/ext_pd_api/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "ext_pagerduty",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/ext_pd_events/(.*)$",
+			"target": "$1",
+			"csrfProtection": false,
+			"destination": "ext_pagerdutyevents",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/apim/(.*)$",
+			"target": "/$1",
+			"csrfProtection": false,
+			"destination": "ext_mcc_apim",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/sapit-employee-data",
+			"target": "/",
+			"csrfProtection": false,
+			"destination": "sapit-employee-data",
+			"authenticationType": "xsuaa"
+		},
+		{
+			"source": "^/user-api(.*)",
+			"target": "$1",
+			"service": "sap-approuter-userapi"
+		},
+		{
+			"source": "^(.*)$",
+			"target": "$1",
+			"destination": "local"
+		}
+	]
+}

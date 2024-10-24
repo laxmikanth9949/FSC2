@@ -1,0 +1,27 @@
+{
+  "xsappname": "sapsupportfsc2",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [
+    {
+    "name": "$XSAPPNAME.user",
+    "description": "Can access MCCSOS"
+  }
+],
+  "role-templates": [
+    {
+      "name": "User",
+      "description": "MCCSOS User - Can access MCCSOS",
+      "scope-references": [
+        "$XSAPPNAME.user"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+        "https://**.hana.ondemand.com/**",
+        "https://**.applicationstudio.cloud.sap/**",
+        "http://localhost:*/**"
+    ]
+  }
+}
