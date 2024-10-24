@@ -1,0 +1,83 @@
+<mvc:View xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" height="100%" controllerName="sap.support.fsc2.controller.ChangeEscLevel" class="sapUiSizeCompact">
+	<Page title="{i18n>changeEscLevel}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Wizard id="ScheduleWizard" complete="onReview" visible="{ChangeEscLevel>/bEdit}">
+				<WizardStep id="Step1" title="{i18n>changeEscLevelStep1}" validated="false"  activate="onActivateStep1">
+					<TextArea value="{ChangeEscLevel>/RequestReason}"  class="sapUiSmallMarginBeginEnd" width="90%" rows="6"  maxLength="1000" valueLiveUpdate="true" liveChange="onActivateStep1"/>
+				</WizardStep>
+				<WizardStep id="Step2" validated="false" title="{i18n>changeEscLevelStep2}"  activate="onActivateStep2" >
+					<TextArea value="{ChangeEscLevel>/BusImpCust}"  class="sapUiSmallMarginBeginEnd" width="90%" rows="6"  maxLength="1000"  valueLiveUpdate="true" liveChange="onActivateStep2"/>
+				</WizardStep>
+				<WizardStep id="Step3" validated="false" title="{i18n>changeEscLevelStep3}"   activate="onActivateStep3">
+					<TextArea value="{ChangeEscLevel>/BusImpSAP}"  class="sapUiSmallMarginBeginEnd" width="90%" rows="6"  maxLength="1000"  valueLiveUpdate="true" liveChange="onActivateStep3"/>
+				</WizardStep>
+			</Wizard>
+			<VBox visible="{= !${ChangeEscLevel>/bEdit}}">
+				<form:SimpleForm editable="true" title="{i18n>changeEscLevelStep1}" layout="ResponsiveGridLayout" labelSpanXL="1" labelSpanL="1" labelSpanM="1"
+					labelSpanS="1" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+					<Label text="" class="mySFLabel"/>
+					<Text text="{ChangeEscLevel>/RequestReason}">
+						<layoutData>
+							<l:GridData span="XL10 L10 M10 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep1">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+				</form:SimpleForm>
+				<form:SimpleForm editable="true" title="{i18n>changeEscLevelStep2}" layout="ResponsiveGridLayout"  labelSpanXL="1" labelSpanL="1" labelSpanM="1"
+					labelSpanS="1" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+					<Label text="" class="mySFLabel"/>
+					<Text text="{ChangeEscLevel>/BusImpCust}">
+						<layoutData>
+							<l:GridData span="XL10 L10 M10 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep2">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+				</form:SimpleForm>
+				<form:SimpleForm editable="true" title="{i18n>changeEscLevelStep3}" layout="ResponsiveGridLayout"  labelSpanXL="1" labelSpanL="1" labelSpanM="1"
+					labelSpanS="1" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1">
+					<Label text="" class="mySFLabel"/>
+					<Text text="{ChangeEscLevel>/BusImpSAP}">
+						<layoutData>
+							<l:GridData span="XL10 L10 M10 S9"/>
+						</layoutData>
+					</Text>
+					<ToolbarSpacer>
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S1"/>
+						</layoutData>
+					</ToolbarSpacer>
+					<Link text="{i18n>edit}" press="onEditStep3">
+						<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Link>
+				</form:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<Toolbar>
+				<Button text="{i18n>submit}" id="sendChangeEsc" type="Emphasized" press="onSubmit" width="50%" visible="{= !${ChangeEscLevel>/bEdit}}"/>
+				<Button text="{i18n>cancel}" press="onCancelSubmit" width="50%" visible="{= !${ChangeEscLevel>/bEdit}}"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

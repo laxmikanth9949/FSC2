@@ -1,0 +1,87 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:commons="sap.suite.ui.commons" controllerName="sap.support.fsc2.controller.EscalationCaseDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back"
+					visible="{= !${device>/isLaunchpad}|| ${/layout}.indexOf('FullScreen') > -1}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>escalationDetailTitle}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+				<Button type="Transparent" icon="sap-icon://decline" press="handleClose" visible="{= ${/layout}.indexOf('FullScreen') === -1}"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<l:VerticalLayout width="93%" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom">
+				<OverflowToolbar class="sapUiSmallMarginBottom myToolbar">
+					<Text text="{caseDetail>/case_title}" class="h2Title" maxLines="1"/>
+					<core:Icon src="sap-icon://favorite" visible="{caseDetailPage>/ShowFavorite}"/>
+					<ToolbarSpacer/>
+					<Button text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite" visible="{= !(${caseDetailPage>/ShowFavorite})}"/>
+					<Button text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite" visible="{caseDetailPage>/ShowFavorite}"/>
+				</OverflowToolbar>
+				<ObjectStatus title="{i18n>caseID}" text="{caseDetail>/case_id}"/>
+				<ObjectStatus title="{i18n>rating}" text="{caseDetail>/rating_text}"
+					state="{path:'caseDetail>/rating',formatter:'.formatter.formatRatingState'}"/>
+				<ObjectStatus title="{i18n>customerName}" text="{caseDetail>/customer_name}" active="true" state="Information" press="onCustomerName"/>
+			</l:VerticalLayout>
+			<IconTabBar id="idObjectPageLayout" expanded="true" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="idOverViewSection" text="{i18n>overview}" key="overview">
+						<f:SimpleForm id="idCaseSimpleForm" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6"
+							labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1"
+							singleContainerFullSize="false">
+							<f:content>
+								<core:Title text="{i18n>caseDetails}"/>
+								<VBox width="100%">
+									<Label text="{i18n>status}"/>
+									<Text text="{caseDetail>/status_text}"/>
+									<Label text="{i18n>priority}"/>
+									<Text text="{caseDetail>/priority_text}"/>
+									<Label text="{i18n>reason}"/>
+									<Text text="{caseDetail>/reason_text}"/>
+									<Label text="{i18n>employeeResponsible}"/>
+									<Text text="{caseDetail>/responsible_person}"/>
+									<Label text="{i18n>processor}"/>
+									<Text text="{caseDetail>/processor_person}"/>
+									<Label text="{i18n>agsInitiative}"/>
+									<Text text="{caseDetail>/initiative_text}"/>
+									<Label text="{i18n>creationDate}"/>
+									<Text text="{path:'caseDetail>/create_time',formatter:'.formatter.formatNotificationTime'}"/>
+									<Label text="{i18n>planCloseDate}"/>
+									<Text text="{path:'caseDetail>/planned_close_date',formatter:'.formatter.formatNotificationTime'}"/>
+								</VBox>
+								<core:Title text="{i18n>customerDetails}"/>
+								<Label text="{i18n>crmBpNumber}"/>
+								<Text text="{caseDetail>/customer_bp_id}"/>
+								<Label text="{i18n>erpCustomerNumber}"/>
+								<Text text="{caseDetail>/customer_r3_no}"/>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter id="idAttachmentsSection" text="{i18n>attachments}">
+						<UploadCollection id="UploadCollection" uploadEnabled="false" uploadButtonInvisible="true" maximumFilenameLength="100" maximumFileSize="10"
+							multiple="true" terminationEnabled="false" change="onChange" fileSizeExceed="onFileSizeExceed" filenameLengthExceed="onFileNameExceed"
+							uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" items="{caseDetail>/AttachmentSet/results}">
+							<items>
+								<UploadCollectionItem documentId="{caseDetail>objid}" fileName="{caseDetail>file_name}"
+									url="{ path: 'caseDetail>', formatter: '.formatter.downloadUrl'}" enableEdit="false" enableDelete="false" visibleDelete="false"
+									visibleEdit="false">
+									<attributes>
+										<ObjectAttribute text="{caseDetail>file_descr}"/>
+									</attributes>
+								</UploadCollectionItem>
+							</items>
+						</UploadCollection>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>caseNotes}">
+						<TextArea id="idBusImpact" value="{notes>/value}" rows="16" width="100%" wrapping="Soft" editable="false" visible="true"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</mvc:View>

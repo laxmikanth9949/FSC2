@@ -1,0 +1,37 @@
+{
+
+		"results": [{
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='1')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='1')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "FAVORITE_INCIDENTS",
+			"Field": "1",
+			"Value": "002007974700008600812015",
+			"Text": "002007974700008600812015",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='1')/Attributes"
+				}
+			}
+		}, {
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='2')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='2')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "FAVORITE_INCIDENTS",
+			"Field": "2",
+			"Value": "002075129500001891612016",
+			"Text": "002075129500001891612016",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='FAVORITE_INCIDENTS',Field='2')/Attributes"
+				}
+			}
+		}]
+
+}

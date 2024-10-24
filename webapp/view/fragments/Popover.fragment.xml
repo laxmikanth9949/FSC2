@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Popover id="reqDescPopover" title="Info"
+		class="sapUiResponsivePadding--header sapUiResponsivePadding--footer sapUiResponsivePadding--content" placement="Top" contentWidth="300px"
+		contentHeight="auto" initialFocus="email">
+		<content>
+			<Text
+				text="Please provide additional business impact details that allows the MCC to fully understand and manage the criticality. For more details about required information, please refer to ."/>
+			<Link text="KBA 2847688" target="_blank" href="https://launchpad.support.sap.com/#/notes/2847688"/>
+		</content>
+	</Popover>
+</core:FragmentDefinition>

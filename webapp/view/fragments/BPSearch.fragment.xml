@@ -1,0 +1,50 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="{i18n>BPSearch}" icon="sap-icon://supplier" contentWidth="70%" state="None" class="sapUiSizeCompact" stretch="{device>/isPhone}">
+		<content>
+			<VBox>
+				<f:SimpleForm editable="true" layout="ResponsiveGridLayout" maxContainerCols="1" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+					labelSpanS="6" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="1">
+					<Label text="{i18n>userID}"/>
+					<Input value="{BPSearchCriteria>/userID}" change="onStartBpSearch"/>
+					<Label text="{i18n>lastName}"/>
+					<Input value="{BPSearchCriteria>/lastName}"  change="onStartBpSearch"/>
+					<Label text="{i18n>firstName}"/>
+					<Input value="{BPSearchCriteria>/firstName}" change="onStartBpSearch"/>
+					<Label text="{i18n>bpID}"/>
+					<Input value="{BPSearchCriteria>/bpID}"  change="onStartBpSearch"/>
+				</f:SimpleForm>
+			<Table class="responsiveTable" items="{ path: 'BPSearchResult>/results'}">
+						<columns>
+							<Column hAlign="Left" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>userID}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>lastName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>firstName}"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline">
+								<Text text="{i18n>bpID}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type="Active" press="onPerssBP">
+								<cells>
+									<Label text="{BPSearchResult>parties_user_id}"/>
+									<Label text="{BPSearchResult>parties_lastname}"/>
+									<Label text="{BPSearchResult>parties_firstname}"/>
+									<Label text="{BPSearchResult>parties_bp_id}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</VBox>
+		</content>
+		<buttons>
+			<Button width="30%" text="{i18n>clearSearch}" press="onClearBpSearch"/>
+			<Button width="30%" text="{i18n>startSearch}" press="onStartBpSearch"/>
+			<Button width="30%" text="{i18n>cancel}" press="onCancelBpSearch"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

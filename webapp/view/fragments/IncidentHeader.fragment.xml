@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<HBox>
+		<VBox class="custDetailAvatarBlock" width="6rem">
+			<Avatar displayShape="Square"
+				src="{parts:[{path:'customerDetails>/Logo/MimeType'},{path:'customerDetails>/Logo/Value'}],formatter:'.formatter.formatLogoSrc'}"
+				id="mccDetail_custlogo"/>
+		</VBox>
+		<f:SimpleForm id="incidentHeaderForm" editable="false" layout="ColumnLayout" labelSpanXL="2" labelSpanL="2" labelSpanM="12" labelSpanS="12"
+			adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<core:Title text="" id="incidentHeaderTitle_col1"/>
+				<Label text="{i18n>CIMRequest}"/>
+				<Text text="{CIMRequest>/object_id}" visible="{incidentDetailPage>/isCimRequest}"/>
+				<Label text="{i18n>incidentNo}"/>
+				<Text text="{incidentDetail>/ShortID}"/>
+				<Label text="{i18n>snowNumber}"/>
+				<Text text="{incidentDetail>/SNow_number}" visible="{= ${incidentDetail>/SNow_number} ? true: false}"/>
+				<Label text="{i18n>priority}"/>
+				<ObjectStatus text="{incidentDetail>/PriorityTxt}"
+					state="{parts:[{path:'incidentDetail>/SNow_number'},{path:'incidentDetail>/Priority'}],formatter:'.formatter.formatIcdPriority'}"/>
+				<Label text="{i18n>customerName}"/>
+				<Text id="idCustName" text="{incidentDetail>/CustomerName}"/>
+				<Label text="{i18n>contract}"/>
+				<Text text="{incidentDetail>/Contract_Type}"/>
+				<Label text=""/>
+				<ObjectStatus text="{path:'incidentDetail>/Escalation',formatter:'.formatter.formatEscalation'}" state="Error"/>
+				<core:Title text="" id="incidentHeaderTitle_col2"/>
+				<Label text="{i18n>timeSAP}"/>
+				<ProgressIndicator percentValue="{incidentDetail>/SAPPercent}" displayValue="{incidentDetail>/SAP_D}" showValue="true" state="Error"
+					displayOnly="true" width="75%"/>
+				<Label text="{i18n>timeCustomer}"/>
+				<ProgressIndicator percentValue="{incidentDetail>/CustomerPercent}" displayValue="{incidentDetail>/Customer_D}" showValue="true"
+					state="Success" displayOnly="true" width="75%"/>
+				<Label text="{i18n>days}" textAlign="Right" width="100%" class="myFooterText"/>
+				<Label text="{i18n>incidentStatus}"/>
+				<Text text="{incidentDetail>/StatusTxt}"/>
+				<Label text="{i18n>incidentComponent}"/>
+				<Text text="{incidentDetail>/ComponentName}"/>
+				<Label text="{i18n>processingOrg}"/>
+				<Text text="{incidentDetail>/PROCESSOR_ORG}"/>
+				<Label text="{i18n>incidentProcessor}"/>
+				<Text text="{incidentDetail>/Processor}"/>
+				<Label text="{i18n>instno}"/>
+				<Text text="{incidentDetail>/Instno}"/>
+				<Label text="{i18n>sysID}"/>
+				<Text text="{incidentDetail>/SysID}"/>
+			</f:content>
+		</f:SimpleForm>
+	</HBox>
+</core:FragmentDefinition>

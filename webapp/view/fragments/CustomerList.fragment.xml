@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"  xmlns:tnt="sap.tnt">
+	<Dialog title="{i18n>selectCustomer}" class="sapUiSizeCompact">
+		<content>
+			<Panel height="286px" width="auto" class="sapUiResponsiveMargin">
+				<Table  id="idCustListTab" noDataText="No Customer Found" mode="SingleSelectMaster" selectionChange="onConfirm"
+				items="{ path : 'customerList>/'  }">
+					<columns>
+						<Column>
+							<Text text="{i18n>customerNo.}"/>
+						</Column>
+						<Column >
+							<Text text="{i18n>customerName}"/>
+						</Column>
+														<Column importance="Low" hAlign="Center"><Text text=""/></Column>
+								<Column importance="Low" hAlign="Center"><Text text=""/></Column>
+					</columns>
+					<ColumnListItem>
+						<cells>
+							<Text text="{path:'customerList>CustomerNo',formatter:'.formatter.trimPreZeros'}"/>
+							<Text text="{customerList>CustomerName}"/>
+								<tnt:InfoLabel width="225px" text="Top Match" colorScheme="2" visible="{customerList>isTopMatch}"/>
+										<tnt:InfoLabel width="190px" text='{customerList>filterProp}' colorScheme="{= ${customerList>IsGlobalUltimate}? 1 :5}"/>
+								
+						</cells>
+						<customData>
+							<core:CustomData key="customerNo" value="{customerList>Customer_No}"/>
+					</customData>
+					</ColumnListItem>
+				</Table>
+			</Panel>
+		</content>
+		<!--<beginButton>-->
+		<!--	<Button text="{i18n>confirm}" press="onConfirm"/>-->
+		<!--</beginButton>-->
+		<endButton>
+			<Button text="{i18n>cancel}" press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,58 @@
+{
+	"results":[{
+	"ID": "10010",
+	"CustomerBP": 22635,
+	"Description":"test 1",
+	"Name": "Robert Bosch GmbH",
+	"Status": "In Process",
+	"Action": "X"
+}, {
+	"ID": "11133",
+	"CustomerBP": 1455632,
+	"Description":"test 1",
+	"Name": "BMW AG",
+	"Status":"New",
+	"Action": "X"
+}, {
+	"ID": "12186",
+	"CustomerBP": 160073,
+	"Description":"test 1",
+	"Name": "Bayer AG",
+	"Status":"New",
+	"Action": ""
+}, {
+	"ID": "202418",
+	"CustomerBP": 12655,
+	"Description":"test 1",
+	"Name": "OSS Test function #1",
+	"Action": ""
+},{
+	"ID": "10010",
+	"CustomerBP": 22635,
+	"Description":"test 1",
+	"Name": "Robert Bosch GmbH",
+	"Status": "In Process",
+	"Action": ""
+}, {
+	"ID": "11133",
+	"Description":"test 1",
+	"CustomerBP": 1455632,
+	"Name": "BMW AG",
+	"Status": "In Process",
+	"Action": "X"
+}, {
+	"ID": "12186",
+	"Description":"test 1",
+	"CustomerBP": 160073,
+	"Name": "Bayer AG",
+	"Status": "In Process",
+	"Action": ""
+}, {
+	"ID": "202418",
+	"CustomerBP": 12655,
+	"Description":"test 1",
+	"Name": "OSS Test function #1",
+	"Status":"Closed",
+	"Action": ""
+}]
+}

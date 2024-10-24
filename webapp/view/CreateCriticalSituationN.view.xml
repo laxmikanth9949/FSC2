@@ -1,0 +1,189 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified" xmlns:upload="sap.m.upload" xmlns:custom="sap.support.fsc2.ExtendControl"
+	controllerName="sap.support.fsc2.controller.CreateCriticalSituationN" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page id="wizardContentPage" class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBackCreate"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1 || ${/layout}.indexOf('OneColumn') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="{= ${device>/isPhone} ? ${i18n>createRequest} : ${i18n>createCustomerSituation} }"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<HBox>
+				<Label text="{i18n>createLabel}" class="sapUiSmallMargin"/>
+				<Switch id="idSwitch" state="true" customTextOn="Yes" customTextOff="No" change="onSwitchChange"/>
+			</HBox>
+			<f:SimpleForm id="custNoSF" editable="true" layout="ResponsiveGridLayout" visible="{FieldVisible>/CustomerNo}" class="incidentSForm">
+				<Label text="{i18n>caseID}" visible="{FieldVisible>/CaseID}"/>
+				<Input id="idCase" value="{createCriticalSituation>/CaseID}" showValueHelp="true" valueHelpOnly="false" valueHelpRequest="onCaseHelp"
+					change="onSearchCaseID" valueLiveUpdate="true" visible="{FieldVisible>/CaseID}"/>
+				<Label text="{i18n>customerNo.}" required="true"/>
+				<Input id="idCustNo" value="{createCriticalSituation>/CustomerNo}" editable="{createCriticalSituation>/CustomerNoEdit}" showValueHelp="true"
+					valueHelpOnly="false" valueHelpRequest="onInputHelp" change="onSearchCustomerName" valueLiveUpdate="true"/>
+				<Label text="" class="mySFLabel">
+					<layoutData>
+						<l:GridData span="XL2 L2 M2 S6"/>
+					</layoutData>
+				</Label>
+				<ToolbarSpacer/>
+				<Button id="addIncBtn" visible="{FieldVisible>/AddIncBtn}" text="{i18n>AddRelevantIncidents}" type="Emphasized"
+					enabled="{path:'createCriticalSituation>/CustomerNo',formatter:'.formatter.formatAddBtnEnable'}" press="onAddIncidentImpact"
+					class="buttonRelevantIncidentsAdd">
+					<layoutData>
+						<l:GridData span="XL10 L10 M10 S6"/>
+					</layoutData>
+				</Button>
+				<Label text=""/>
+				<List id="selectedList" items="{selectedIncidentList>/results}" growingScrollToLoad="false"
+					noDataText="{= ${createCriticalSituation>/CustomerNo} ? ${i18n>noDataTextList2} : ${i18n>noDataTextList} }">
+					<items>
+						<!--<StandardListItem title="{selectedIncidentList>title}"-->
+						<!--	description="{parts:[{path:'selectedIncidentList>desc'},{path:'selectedIncidentList>SNow_number'}],formatter:'.formatIcdDesc'}"/>-->
+						<!--<ObjectListItem title="{selectedIncidentList>title}" >-->
+						<!--	<attributes>-->
+						<!--		<ObjectAttribute text="{selectedIncidentList>desc}" />-->
+						<!--		<ObjectAttribute text="{selectedIncidentList>SNow_number}" visible="{= ${selectedIncidentList>SNow_number} ? true:false}"/>-->
+						<!--	</attributes>-->
+						<!--</ObjectListItem>-->
+						<CustomListItem >
+							<HBox class="priority_cust">
+								<ObjectListItem title="{selectedIncidentList>title}">
+									<attributes>
+										<ObjectAttribute text="{parts:[{path:'selectedIncidentList>desc'},{path:'selectedIncidentList>SNow_number'}],formatter:'.formatIcdDesc'}"/>
+										<!--<ObjectAttribute text="{selectedIncidentList>SNow_number}" visible="{= ${selectedIncidentList>SNow_number} ? true:false}"/>-->
+									</attributes>
+								</ObjectListItem>
+								<ObjectListItem title="Priority">
+									<!--<attributes>-->
+									<!--	<ObjectAttribute text="{selectedIncidentList>priority}" />-->
+									<!--</attributes>-->
+									<firstStatus>
+										<ObjectStatus
+											text="{parts:[{ path: 'selectedIncidentList>p_formatter'},{path:'selectedIncidentList>priority'}], formatter: '.formatter.formatCCSPriorityText' }"
+											state="{ path: 'selectedIncidentList>priority', formatter: '.formatter.formatPriority' }" app:priority_state="test"/>
+									</firstStatus>
+								</ObjectListItem>
+								<ObjectListItem title="Processor" class="cust_proc_test">
+									<attributes>
+										<ObjectAttribute text="{selectedIncidentList>Assigned_to}"/>
+										<!--<ObjectAttribute text="{selectedIncidentList>SNow_number}" visible="{= ${selectedIncidentList>SNow_number} ? true:false}"/>-->
+									</attributes>
+								</ObjectListItem>
+							</HBox>
+						</CustomListItem>
+					</items>
+				</List>
+			</f:SimpleForm>
+			<f:SimpleForm id="custNameSF" editable="true" layout="ResponsiveGridLayout" visible="{FieldVisible>/CustomerName}">
+				<Label id="custNameLabel" required="true" text="{i18n>customerName}"/>
+				<Input id="idCustName" value="{createCriticalSituation>/CustomerName}" editable="{createCriticalSituation>/CustomerNoEdit}" maxLength="40"
+					valueLiveUpdate="true" change="onCustInputChange"/>
+			</f:SimpleForm>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+				<Label text="{i18n>businessImpact}" required="true" visible="{FieldVisible>/BusinessImpact}"/>
+				<TextArea id="idBusImpact" value="{createCriticalSituation>/BusinessImpact/Text}" rows="8" width="100%" wrapping="Soft" editable="true"
+					change="onBusImpactChange" visible="{FieldVisible>/BusinessImpact}"/>
+				<Label text="" class="mySFLabel" visible="{FieldVisible>/RequestReason}">
+					<layoutData>
+						<l:GridData span="XL2 L2 M2 S6"/>
+					</layoutData>
+				</Label>
+				<!--<ToolbarSpacer visible="{FieldVisible>/RequestReason}"/>-->
+				<!--<Button id="linkJamGroup" icon="sap-icon://hint" type="Transparent" press="onNavtoJamGroup" visible="{FieldVisible>/RequestReason}">
+					<layoutData>
+						<l:GridData span="XL1 L1 M1 S2"/>
+					</layoutData>
+				</Button>-->
+				<Label text="{i18n>isRise}"/>
+				<Switch id="idSwitchRISE" state="{createCriticalSituation>/isRISE}" customTextOn="Yes" customTextOff="No" change="onSwitchRISE"/>
+				<Label text="" visible="{FieldVisible>/RequestReason}"/>
+				<l:VerticalLayout >
+					<l:HorizontalLayout>
+						<!-- class="sapUiContentPadding"-->
+						<CheckBox id="idBusinessDown" text="{i18n>isBusinessDown}" selected="{createCriticalSituation>/IsBusiDown}" select="onBDMCheckBoxSelect"
+							enabled="{UIconfig>/enableBDM_cb}" class="sapUiLargeMarginEnd" tooltip="{= ${UIconfig>/enableBDM_cb} ? '' : ${i18n>BusinessDownCbTooltip}}"/>
+						<!--<ToolbarSpacer visible="true"/>-->
+						<!--<Button id="linkJamGroup" icon="sap-icon://hint" type="Transparent" press="onNavtoJamGroup" visible="{FieldVisible>/RequestReason}">-->
+						<!--<layoutData>
+							<l:GridData span="XL1 L1 M1 S2"/>
+						</layoutData>
+					</Button>-->
+					</l:HorizontalLayout>
+					<l:VerticalLayout id="idVerticalLayout" content="{keyWords>/results}" visible="{FieldVisible>/RequestReason}">
+						<l:content>
+							<!--{= ${createCriticalSituation>/CustomerNo} ? ${i18n>noDataTextList2} : ${i18n>noDataTextList} }-->
+							<CheckBox text="{keyWords>Key_Name}" app:Key_ID="{keyWords>Key_ID}" tooltip="{keyWords>Description}" select="checkBoxSelect"
+								enabled="{= ${UIconfig>/enable_3_cb} ? ${keyWords>enabled} : ${UIconfig>/enable_3_cb}}"/>
+						</l:content>
+					</l:VerticalLayout>
+				</l:VerticalLayout>
+				<Label labelFor="rbg3" text="Escalation Type"/>
+				<RadioButtonGroup id="rbg3" columns="5" select="onPressRadioBtnExpertMode" visible="{UIconfig>/RadioBtnIncidentVisible}"
+					class="sapUiTinyMarginBottom">
+					<RadioButton id="RB3-1" text="Case/Incident Escalation" enabled="{UIconfig>/RadioBtnIncidentEnabled}"/>
+					<RadioButton id="RB3-2" text="Critical Situation"/>
+					<RadioButton id="RB3-3" selected="{createCriticalSituation>/IsBusiDown}" text="Business Down"/>
+				</RadioButtonGroup>
+				<Label id="idTitleLb" required="true" visible="true" text="{i18n>requestTitle}"/>
+				<Input id="idTitleIp" maxLength="40" visible="true" editable="true" value="{createCriticalSituation>/Title}" change="onTitleInputChange"/>
+				<Label id="randomlabel" required="true" visible="true" text=""/>
+				<Button type="Transparent" width="10px" icon="sap-icon://message-information" id="reqDescInfo" press="handlePopoverPress"/>
+				<!--<Label required="true" text="{i18n>requestDescription}"/>-->
+				<!--<TextArea id="idDesc" tooltip="{i18n>requestHint}" value="{createCriticalSituation>/Description}" rows="4" wrapping="Soft" visible="true"-->
+				<!--	valueLiveUpdate="true" change="onDescInputChange"/>-->
+				<!--<Label required="true" text="{i18n>requestTitle}"/>-->
+				<!--<TextArea id="idDesc1" tooltip="{i18n>requestHint1}" value="{createCriticalSituation>/Description1}" rows="1" wrapping="Soft" visible="true"-->
+				<!--	valueLiveUpdate="true" change="onDescInputChange"/>-->
+				<Label required="true" text="{i18n>affectedBusinessProcess}"/>
+				<TextArea id="idDesc2" tooltip="{i18n>requestHint2}" placeholder="{i18n>requestHint2}" value="{createCriticalSituation>/Description2}"
+					rows="4" wrapping="Soft" visible="true" valueLiveUpdate="true" change="onDescInputChange"/>
+				<Label required="true" text="{i18n>howTheyAreAffected}"/>
+				<TextArea id="idDesc3" tooltip="{i18n>requestHint3}" placeholder="{i18n>requestHint3}" value="{createCriticalSituation>/Description3}"
+					rows="4" wrapping="Soft" visible="true" valueLiveUpdate="true" change="onDescInputChange"/>
+				<Label required="true" text="{i18n>upcomingDuedates}"/>
+				<TextArea id="idDesc4" tooltip="{i18n>requestHint4}" placeholder="{i18n>requestHint4}" value="{createCriticalSituation>/Description4}"
+					rows="4" wrapping="Soft" visible="true" valueLiveUpdate="true" change="onDescInputChange"/>
+				<Label required="true" text="{i18n>strategicInvolvement}"/>
+				<TextArea id="idDesc5" tooltip="{i18n>requestHint5}" placeholder="{i18n>requestHint5}" value="{createCriticalSituation>/Description5}"
+					rows="4" wrapping="Soft" visible="true" valueLiveUpdate="true" change="onDescInputChange"/>
+				<Label required="true" text="{i18n>alreadyInvolvedParties}"/>
+				<TextArea id="idDesc6" tooltip="{i18n>requestHint6}" placeholder="{i18n>requestHint6}" value="{createCriticalSituation>/Description6}"
+					rows="4" wrapping="Soft" visible="true" valueLiveUpdate="true" change="onDescInputChange"/>
+			</f:SimpleForm>
+			<!--<Toolbar class="myToolbar">-->
+			<!--	<Label text="{i18n>isBusinessDown}" class="sapUiSmallMargin"/>-->
+			<!--	<CheckBox id="idBusinessDown" selected="{createCriticalSituation>/IsBusiDown}" class="sapUiSmallMarginEnd"/>-->
+			<!--</Toolbar>-->
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout">
+				<Label text=""/>
+				<!--<unified:FileUploader id="idFileUpload" maximumFilenameLength="100" maximumFileSize="10" multiple="true" useMultipart="false"-->
+				<!--	filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="onFileSizeExceed" sendXHR="true"-->
+				<!--	fileType="jpg,pdf,png,jpeg,ppt,pptx,txt,doc,docx,xls,xlsx,tiff,bmp,HEIF,HEVC" typeMissmatch="onTypeMissmatch"-->
+				<!--	uploadComplete="onUploadComplete" width="100%"/>-->
+				<!--<UploadCollection id="idUploadCollection" maximumFilenameLength="100" maximumFileSize="10" multiple="true"-->
+				<!--	fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="onFileSizeExceed" -->
+				<!--	fileType="jpg,pdf,png,jpeg,ppt,pptx,txt,doc,docx,xls,xlsx,tiff,bmp,HEIF,HEVC" typeMissmatch="onTypeMissmatch"-->
+				<!--	uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" instantUpload="false" uploadEnabled="true"></UploadCollection>-->
+				<upload:UploadSet id="UploadSet" visible="false" instantUpload="false" showIcons="true" uploadEnabled="true" terminationEnabled="false"
+					fileTypes="jpg,pdf,png,jpeg,ppt,pptx,txt,doc,docx,xls,xlsx,tiff,bmp,HEIF,HEVC" maxFileNameLength="100" maxFileSize="10"
+					uploadUrl="../../../../upload" beforeUploadStarts="onBeforeUploadStarts" fileNameLengthExceeded="onFilenameLengthExceed"
+					fileSizeExceeded="onFileSizeExceed" fileTypeMismatch="onTypeMissmatch" uploadCompleted="onUploadComplete"/>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button text="{i18n>clearAll}" type="Reject" press="onClearAll"/>
+					<Button id="setDefaultBtn" text="{i18n>setDefault}" press="onSetDefault" visible="false"/>
+					<Button id="submit_new" text="{i18n>submit}" type="Emphasized" press="handleSubmit"/>
+					<Button text="{i18n>cancel}" press="handleCancel"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

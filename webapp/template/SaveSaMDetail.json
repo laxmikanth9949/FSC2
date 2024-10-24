@@ -1,0 +1,25 @@
+{"AppInfo": "MCC",
+"SamAction": "insert",
+"SamContact": "Sherry",
+"SamPhone": "+86 021 22222222",
+"SamEmail": "sherry.bai@sap.com",
+"SamcProcessing": false,
+"SaMcLackResponse": true,
+"SaMcNoProcessor": true,
+"SaMcCriticalIssue": true,
+"SaMcCommunication": false,
+"SaMcOther": true,
+"SaMOtherInput": "unknown reason",
+"SaMAdditionalInfo": "test",
+"Date": "20191115",
+"Time": "13:30",
+"bEditContact": false,
+"initResult":{
+"IncidentRef": "002075129200003153762019",
+"AppSource": "MCC",
+"SamInfo": "{\"AppInfo\":\"MCC\",\"SamAction\":\"insert\",\"SamContact\":\"Sherry\",\"SamPhone\":\"+86 021 22222222\",\"SamEmail\":\"sherry.bai@sap.com\",\"SamcProcessing\":false,\"SaMcLackResponse\":true,\"SaMcNoProcessor\":true,\"SaMcCriticalIssue\":true,\"SaMcCommunication\":false,\"SaMcOther\":true,\"SaMOtherInput\":\"unknown reason\",\"SaMAdditionalInfo\":\"test\"}",
+"SamDuration": 15,
+"SamStartTime": "20191115133000",
+"SamStatus": "E0001"
+}
+}

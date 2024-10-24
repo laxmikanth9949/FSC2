@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>help}" stretch="true" class="sapUiSizeCompact">
+		<Toolbar>
+			<SearchField liveChange="handleIncidentSearch" width="100%"/>
+		</Toolbar>
+		<List id="idIncidentList" items="{incidentList>/results}" mode="MultiSelect" includeItemInSelection="false"
+			selectionChange="onSelectIncident">
+			<StandardListItem title="{incidentList>Title}" description="{incidentList>Description}" info="{incidentList>Priority}"
+				infoState="{path:'incidentList>PriorityKey',formatter:'.formatter.formatPriority'}" type="Navigation" press="onIncidentItemPress"/>
+		</List>
+		<beginButton>
+			<Button text="{i18n>save}" type="Emphasized" press="handleIncidentClose"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" press="handleIncidentClose"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

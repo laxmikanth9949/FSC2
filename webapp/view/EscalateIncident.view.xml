@@ -1,0 +1,41 @@
+<mvc:View xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:commons="sap.suite.ui.commons" controllerName="sap.support.fsc2.controller.EscalateIncident"
+	class="sapUiSizeCompact" xmlns:ui="sap.suite.ui.microchart">
+	<Page class="mySapMPage" title="{i18n>escalate}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<!--<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">-->
+			<!--	<headerToolbar>-->
+			<!--		<OverflowToolbar height="3rem">-->
+			<!--			<Title text="{i18n>criticalSituation}"/>-->
+			<!--		</OverflowToolbar>-->
+			<!--	</headerToolbar>-->
+			<!--	<content>-->
+			<!--		<VBox>-->
+			<!--			<Text text="{i18n>escalateIncident}" class="sapUiMediumMarginBottom sapUiSmallMarginTop"/>-->
+			<!--			<Button text="{i18n>escalateIncidentBtn}" type="Emphasized" press="onCreateRequest"/>-->
+			<!--		</VBox>-->
+			<!--	</content>-->
+			<!--</Panel>-->
+			<!--<Panel  id="SaMPanel" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">-->
+			<!--	<headerToolbar>-->
+			<!--		<OverflowToolbar height="3rem">-->
+			<!--			<Title text="{i18n>scheduleManager}"/>-->
+			<!--		</OverflowToolbar>-->
+			<!--	</headerToolbar>-->
+			<!--	<content>-->
+			<!--		<VBox>-->
+			<!--			<Text text="{i18n>SamIncident}" class="sapUiMediumMarginBottom  sapUiSmallMarginTop"/>-->
+			<!--			<Button text="{i18n>SamIncidentBtn}" type="Emphasized" press="onNavToSaM"/>-->
+			<!--		</VBox>-->
+			<!--	</content>-->
+			<!--</Panel>-->
+			<Text text="{i18n>SamIncident}" class="sapUiMediumMarginTopBottom  sapUiSmallMarginBeginEnd"/>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>SamIncidentBtn}" type="Emphasized" press="onNavToSaM" class="sapUiMediumMarginEnd"/>
+				<Button text="{i18n>escalateIncidentBtn}" type="Emphasized" press="onCreateRequest"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</content>
+	</Page>
+</mvc:View>

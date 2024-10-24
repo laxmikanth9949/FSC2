@@ -1,0 +1,18 @@
+{	"TimeZone":"CET",
+	"SamContact":"",
+	"SamPhone":"",
+	"SamEmail":"",
+	"SamcProcessing":false,
+	"SaMcLackResponse":false,
+	"SaMcNoProcessor":false,
+	"SaMcCriticalIssue":false,
+	"SaMcCommunication":false,
+	"SaMcOther":false,
+	"SaMOtherInput":"",
+	"SaMAdditionalInfo":"",
+	"bEdit":true,
+	"requestReasonTxt":"",
+	"bEditContact":false,
+	"selectedDate":"",
+	"selectedTimeSlot":""
+}

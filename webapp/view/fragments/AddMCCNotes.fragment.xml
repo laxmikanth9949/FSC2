@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Page title="{i18n>Add A Note}" class="sapUiSizeCompact">
+		<content>
+		<TextArea rows="5" placeholder="{i18n>enterNote}" width="100%"/>
+		</content>
+			<footer>
+			<Bar>
+				<contentRight>
+					<Button  text="{i18n>save}" type="Emphasized" width="auto" press="onSaveNote"/>
+					<Button  text="{i18n>saveSendToMCC}" type="Emphasized" width="auto" press="onSaveNoteAndSendMCC"/>
+					<Button  text="{i18n>close}" type="Emphasized" width="auto" press="onSaveNoteAndClose"/>
+					<Button  text="{i18n>cancel}" type="Emphasized" width="auto" press="onCancelNote"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:FragmentDefinition>

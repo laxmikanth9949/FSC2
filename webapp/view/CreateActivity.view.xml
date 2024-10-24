@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified" xmlns:upload="sap.m.upload" xmlns:custom="sap.support.fsc2.ExtendControl"
+	controllerName="sap.support.fsc2.controller.CreateActivity" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="wizardContentPage" class="mySapMPage">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1 || ${/layout}.indexOf('OneColumn') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>createActivityTitle}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<MessageStrip
+				text="All requests for SAP MCC Critical Period Coverage (CPC) are subject to evaluation. Acceptance dependence upon the critical activity to be safeguarded, the strategic relevance of the customer and SAP MCC resource availability."
+				class="sapUiTinyMargin" visible="{= ${createActivity>/ActivityCat}.toLowerCase() === 'zzm' }"/>
+			<f:SimpleForm id="custInfo" editable="true" title="Customer Info" layout="ResponsiveGridLayout">
+				<Label text="{i18n>customerNo.}" required="true"/>
+				<!--<Text id="idCustNo" text="{createActivity>/CustomerNo}"/>-->
+				<Input id="idCustNo" value="{createActivity>/CustomerNo}" editable="true" showValueHelp="true" valueHelpOnly="true"
+					valueHelpRequest="onInputHelp"/>
+				<!--change="onSearchCustomerName" valueLiveUpdate="true"-->
+				<Label id="caseIDLabel" text="{i18n>caseID}"/>
+				<Input id="idCaseID" value="{createActivity>/Case_ID}"/>
+			</f:SimpleForm>
+			<f:SimpleForm editable="true" title="Activity Details" layout="ResponsiveGridLayout">
+				<Label id="idTitleLb" required="true" visible="true" text="{i18n>requestTitle}"/>
+				<Input id="idTitleIp" maxLength="40" visible="true" editable="true" value="{createActivity>/Description}" change="onTitleInputChange"/>
+				<Label required="true" text="{i18n>requestDescription}"/>
+				<!--{createActivity>/Description}-->
+				<TextArea id="idDesc" tooltip="{createActivity>/RequestDesc}" value="{createActivity>/RequestDesc}" rows="25" wrapping="Soft" visible="true"
+					valueLiveUpdate="true" change="onDescInputChange"/>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<!--<Button text="{i18n>clearAll}" type="Reject" press="onClearAll"/>-->
+					<!--<Button id="setDefaultBtn" text="{i18n>setDefault}" press="onSetDefault" visible="false"/>-->
+					<Button id="submit_new" text="{i18n>submit}" type="Emphasized" press="handleSubmit"/>
+					<Button text="{i18n>cancel}" press="handleCancel"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

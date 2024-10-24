@@ -1,0 +1,43 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.support.fsc2.controller.HomepageN"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page>
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://sys-help" tooltip="Open Help" press="onOpenHelpJAM"/>
+				<Button icon="sap-icon://home" tooltip="Dashboard" press="onNavToDashboard"/>
+				<Label text=""/>
+				<ToolbarSpacer/>
+				<Title text="{= ${device>/isLaunchpad} ? '' : ${i18n>appTitle} }"/>
+				<ToolbarSpacer/>
+				<Button id="notificationBtn" icon="sap-icon://ui-notifications" tooltip="Notifications" press="onNavToNotification"/>
+				<Button id="settingBtn" icon="sap-icon://settings" tooltip="Settings" press="onSettingPress"/>
+			</Toolbar>
+		</customHeader>
+		<SearchField id="searchField" value="{searchContent>/Value}" enableSuggestions="true" search="onSearch" suggest="onSuggest"
+			suggestionItems="{ path: 'suggestion>/results', sorter: '{suggestion>Name}' }" placeholder="{i18n>searchValue}"
+			class="sapUiMediumMarginTopBottom">
+			<suggestionItems>
+				<SuggestionItem text="{suggestion>Name}" description="{suggestion>Description}"/>
+			</suggestionItems>
+		</SearchField>
+		<IconTabBar expandable="false" applyContentPadding="false" class="custWidthTabFilter">
+			<items>
+				<IconTabFilter icon="sap-icon://request" count="{homePageCount>/myRequests}" text="{i18n>myRequests}" key="Requests">
+					<mvc:XMLView viewName="sap.support.fsc2.view.myRequest"/>
+				</IconTabFilter>
+				<IconTabFilter icon="sap-icon://favorite-list" count="{homePageCount>/myFavorites}" text="{i18n>myFavorites}" key="Favorites">
+					<mvc:XMLView viewName="sap.support.fsc2.view.myFavorites"/>
+				</IconTabFilter>
+				<IconTabFilter icon="sap-icon://customer-view" count="{homePageCount>/myActivities}" text="{i18n>myActivity}" key="Activity">
+					<mvc:XMLView viewName="sap.support.fsc2.view.myActivity"/>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="createBtn" text="{i18n>createRequest}" type="Emphasized" press="onCreateIssue"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,4 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"  controllerName="sap.support.fsc2.controller.App" displayBlock="true" 	xmlns:u="sap.ui.unified" xmlns="sap.m">
+	
+	<App id="fsc2app"/>
+</mvc:View>

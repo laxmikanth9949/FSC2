@@ -1,0 +1,50 @@
+<mvc:View xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout" height="100%" controllerName="sap.support.fsc2.controller.EscalationRequestStart" class="sapUiSizeCompact">
+	<Page>
+		<!-- title="{i18n>escalationRequestForm}" showNavButton="true" navButtonPress="onNavBack"-->
+		<customHeader>
+			<Toolbar >
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"
+					visible="{= ${/layout}.indexOf('FullScreen') > -1 || ${/layout}.indexOf('OneColumn') > -1}"/>
+				<ToolbarSpacer/>
+				<Title text="{i18n>escalationRequestForm}"/>
+				<ToolbarSpacer class="myRightSpacer"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<Panel headerText="{i18n>draftsHeader}" expanded="true">
+				<content>
+					<List items="{path: 'EscalationDraft>/results'}" noDataText="{i18n>noDraftRquestText}">
+						<CustomListItem>
+							<HBox>
+								<Label text="{i18n>draftRquestID}" class="sapUiSmallMarginEnd"/>
+								<Link text="{EscalationDraft>object_id}" press="onNavtoDraftDetail"/>
+							</HBox>
+						</CustomListItem>
+					</List>
+				</content>
+			</Panel>
+			<Panel headerText="{i18n>formatedTextHeader}">
+				<content>
+					<VBox>
+						<FormattedText htmlText="{FormattedText>/p1}"/>
+						<FormattedText htmlText="{FormattedText>/p2}" class="sapUiSmallMarginBottom"/>
+						<FormattedText htmlText="{FormattedText>/p3}" class="sapUiSmallMarginBottom"/>
+						<FormattedText htmlText="{FormattedText>/p4}"/>
+						<FormattedText htmlText="{FormattedText>/p5}" class="sapUiSmallMarginBottom"/>
+						<FormattedText htmlText="{FormattedText>/p6}" class="sapUiSmallMarginBottom"/>
+						<FormattedText htmlText="{FormattedText>/p7}"/>
+						<FormattedText htmlText="{FormattedText>/p8}"/>
+					</VBox>
+				</content>
+			</Panel>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button type="Emphasized" width="100px" text="{i18n>ok}" press="onCreateRequest"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

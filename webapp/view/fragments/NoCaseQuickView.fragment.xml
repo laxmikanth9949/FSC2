@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<QuickView >
+		<QuickViewPage pageId="test" header="Activity is not related to a Case!" title="" description="Please enter case in Activity in ICP"
+			icon="./image/mdr2.png"></QuickViewPage>
+	</QuickView>
+</core:FragmentDefinition>

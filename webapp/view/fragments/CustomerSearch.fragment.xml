@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>customerSearch}" class="sapUiSizeCompact">
+		<content>
+			<Panel height="auto" width="auto" class="sapUiResponsiveMargin">
+				<content>
+<!--					<Label text="{i18n>customerBPNo.}"/>
+					<Input value="{customerSearch>/CustomerBPNo}" valueLiveUpdate="true" change="onSearch" />
+					<Label text="{i18n>customerNo.}"/>
+					<Input value="{customerSearch>/CustomerNo}" valueLiveUpdate="true" change="onSearch" />
+					<Label text="{i18n>customerName}"/>
+					<Input value="{customerSearch>/CustomerName}" valueLiveUpdate="true" change="onSearch" />-->
+					<Label text="{i18n>customerSearchLabel}"/>
+					<Input value="{customerSearch>/genericSearch}" valueLiveUpdate="true" change="onSearch" />
+				</content>
+			</Panel>
+		</content>
+		<beginButton>
+			<Button text="{i18n>search}" type="Emphasized" press="onSearch"/>
+		</beginButton>
+		<endButton>
+			<Button text="{i18n>cancel}" press="onCloseDialog"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

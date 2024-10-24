@@ -1,0 +1,51 @@
+{
+	"results": [{
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('API')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('API')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "API",
+		"Key_Name": "Assign processor to incident"
+	}, {
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('GMSR')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('GMSR')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "GMSR",
+		"Key_Name": "General MCC Support Request"
+	}, {
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('RGE')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('RGE')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "RGE",
+		"Key_Name": "Request global escalation"
+	}, {
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('RIP')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('RIP')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "RIP",
+		"Key_Name": "Raise incident priority"
+	}, {
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('SBI')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('SBI')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "SBI",
+		"Key_Name": "Severe business impact"
+	}, {
+		"__metadata": {
+			"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('SUI')",
+			"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FSC2KeywordSet('SUI')",
+			"type": "ZS_AGS_FSC2_SRV.FSC2Keyword"
+		},
+		"Key_ID": "SUI",
+		"Key_Name": "Speed up incident"
+	}]
+}

@@ -1,0 +1,333 @@
+{
+	"results": [{
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16122383",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-ANZ"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14722020",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-IN"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16122385",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-JP"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "22163161",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-KOR"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14217680",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-NA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16122387",
+		"value2": "APJ",
+		"value3": "Engagement Support APJ-SEA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14235363",
+		"value2": "APJ",
+		"value3": "HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "19093065",
+		"value2": "APJ",
+		"value3": "Cloud"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25978270",
+		"value2": "APJ",
+		"value3": "Hybrid"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "29788190",
+		"value2": "APJ",
+		"value3": "Innovation Adopt & Hybrid Ops"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25970641",
+		"value2": "APJ",
+		"value3": "S/4 HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16539820",
+		"value2": "EMEA",
+		"value3": "Engagement Support"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14217791",
+		"value2": "EMEA",
+		"value3": "HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "17877275",
+		"value2": "EMEA",
+		"value3": "Cloud"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25674544",
+		"value2": "EMEA",
+		"value3": "Hybrid"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "29765610",
+		"value2": "EMEA",
+		"value3": "Innovation Adopt & Hybrid Ops"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16673868",
+		"value2": "EMEA",
+		"value3": "S/4 HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "20672944",
+		"value2": "GLOBAL",
+		"value3": "MCC"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "13732949",
+		"value2": "GLOBAL",
+		"value3": "HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "19568810",
+		"value2": "GLOBAL",
+		"value3": "Cloud"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "28054858",
+		"value2": "GLOBAL",
+		"value3": "Innovation Adopt & Hybrid Ops"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "15966792",
+		"value2": "LAC",
+		"value3": "Engagement Support"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14235365",
+		"value2": "LAC",
+		"value3": "HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "17403528",
+		"value2": "LAC",
+		"value3": "Cloud"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25978266",
+		"value2": "LAC",
+		"value3": "Hybrid"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "29788192",
+		"value2": "LAC",
+		"value3": "Innovation Adopt & Hybrid Ops"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25970643",
+		"value2": "LAC",
+		"value3": "S/4 HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "21710213",
+		"value2": "NA",
+		"value3": "Engagement Support"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "14235364",
+		"value2": "NA",
+		"value3": "HANA"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "16755384",
+		"value2": "NA",
+		"value3": "Cloud"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25978264",
+		"value2": "NA",
+		"value3": "Hybrid"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "29788191",
+		"value2": "NA",
+		"value3": "Innovation Adopt & Hybrid Ops"
+	}, {
+		"__metadata": {
+			"id": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"uri": "https://webidetesting1330345-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/SettingSet('SERVICETEAM')",
+			"type": "ZS_AGS_FSC2_SRV.Setting"
+		},
+		"key": "SERVICETEAM",
+		"value1": "25970644",
+		"value2": "NA",
+		"value3": "S/4 HANA"
+	}]
+}

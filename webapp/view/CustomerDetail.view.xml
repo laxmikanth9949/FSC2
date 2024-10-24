@@ -1,0 +1,605 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:uxap="sap.uxap" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="sap.support.fsc2.controller.CustomerDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showFooter="true">
+		<customHeader>
+			<Toolbar>
+				<Button icon="sap-icon://nav-back" type="Transparent" tooltip="Back" visible="{= !${device>/isLaunchpad}}" press="onNavBack"/>
+				<Button icon="sap-icon://home" type="Transparent" tooltip="Home" press="onNavToDashboard"/>
+			</Toolbar>
+		</customHeader>
+		<content>
+			<uxap:ObjectPageHeader id="headerForTest" isActionAreaAlwaysVisible="false" objectTitle="{customerPageConfig>/title}" showMarkers="true"
+				markFavorite="{customerPageConfig>/_bFavorite}" showPlaceholder="true" class="custH2Title" objectImageURI="{parts:[{path:'customerDetails>/Logo/MimeType'},{path:'customerDetails>/Logo/Value'}],formatter:'.formatter.formatLogoSrc'}" isObjectIconAlwaysVisible="true">
+				<uxap:actions>
+					<uxap:ObjectPageHeaderActionButton text="{i18n>createRequest}" icon="sap-icon://create" press="onCreateSituation" hideText="false"
+						importance="High"/>
+					<uxap:ObjectPageHeaderActionButton text="{i18n>setFavorite}" icon="sap-icon://favorite" press="onSetFavorite" hideText="false"
+						visible="{= !(${customerPageConfig>/_bFavorite})}" importance="High"/>
+					<uxap:ObjectPageHeaderActionButton text="{i18n>removeFavorite}" icon="sap-icon://unfavorite" press="onRemoveFavorite" hideText="false"
+						visible="{customerPageConfig>/_bFavorite}" importance="High"/>
+				</uxap:actions>
+			</uxap:ObjectPageHeader>
+			<IconTabBar id="idIconTabBar" expandable="false" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter key="all" text="{i18n>all}" design="{= ${device>/isPhone} ? 'Vertical' : 'Horizontal' }" showAll="true"
+						icon="sap-icon://grid">
+						<!--count="{customerPageConfig>/all/count}"-->
+						<l:Grid class="custGrid">
+							<SearchField id="allSearch" liveChange="onSearch" placeholder="{i18n>searchListPh}" width="100%">
+								<layoutData>
+									<l:GridData span="L11 M11 S11"/>
+								</layoutData>
+							</SearchField>
+							<Button icon="{filterOptionModel>/allFilterIcon}" press="openFilterPanel" type="Transparent">
+								<layoutData>
+									<l:GridData span="L1 M1 S1"/>
+								</layoutData>
+							</Button>
+						</l:Grid>
+						<l:Grid id="allFilterGrid" defaultSpan="L4 M4 S6" class="custGrid" visible="true">
+							<l:content>
+								<MultiComboBox id="allPriorityFilter" placeholder="{i18n>priority}"
+									items="{path:'filterOptionModel>/allPriority',sorter: { path: 'PriorityCode' }}" width="100%">
+									<core:Item key="{filterOptionModel>PriorityCode}" text="{filterOptionModel>Priority}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S6"/>
+									</layoutData>
+								</MultiComboBox>
+								<MultiComboBox id="allStatusFilter" placeholder="{i18n>status}" items="{path:'filterOptionModel>/allStatus',sorter: { path: 'Status' }}"
+									width="100%">
+									<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S5"/>
+									</layoutData>
+								</MultiComboBox>
+								<ComboBox id="allTimeFilter" placeholder="{i18n>lastChanged}"
+									items="{path:'filterOptionModel>/allTimePeriod',sorter: { path: 'TimePeriod' }}" width="100%">
+									<core:Item text="{filterOptionModel>TimePeriodTxt}" key="{filterOptionModel>TimePeriod}"/>
+									<layoutData>
+										<l:GridData span="L3 M3 S6"/>
+									</layoutData>
+								</ComboBox>
+								<Button text="{i18n>apply}" press="onFilterAll" type="Transparent">
+									<layoutData>
+										<l:GridData span="L1 M1 S6"/>
+									</layoutData>
+								</Button>
+							</l:content>
+						</l:Grid>
+						<!--<List id="allList" mode="None" items="{ path: 'customerPageConfig>/all/results'}">
+							<items>
+								<CustomListItem press="onRowPress" type="Navigation">
+									<VBox class="sapUiSmallMargin">
+										<Title text="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Label text="{customerPageConfig>UpdateAt}"/>
+										<HBox>
+											<VBox class="sapUiTinyMarginEnd">
+												<core:Icon src="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+											</VBox>
+											<VBox width="80%">
+												<Label width="100%"
+													text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+											</VBox>
+											<VBox width="50%" alignItems="End">
+												<Label width="100%" text="{customerPageConfig>Status}"/>
+											</VBox>
+										</HBox>
+										<Label text="{customerPageConfig>SNow_number}" visible="{= ${customerPageConfig>SNow_number} ? true : false}"/>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>
+						<Toolbar id="allToolbar" visible="{= (${customerPageConfig>/all/results}).length >= (${customerPageConfig>/all/count}) ? false : true }">
+							<ToolbarSpacer/>
+							<Button text="{i18n>showMore}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>-->
+						<Table id="allList" growing="true" growingScrollToLoad="true" mode="None" items="{ path: 'customerPageConfig>/all/results'}"
+							noDataText="{i18n>noData}" autoPopinMode="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<!--	<Title text="{i18n>myRequests}" level="H2"/>-->
+									<ToolbarSpacer/>
+									<FlexBox>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerDetails')" ariaHasPopup="Dialog"/></FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBar" visible="false">
+									<Text id="vsdFilterLabel"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column importance="Low" width="10%"><Text text="Trans. Type"/></Column>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="High" hAlign="Center"><Text text="Changed At"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+								<Column importance="Low" hAlign="Center" visible="{path:'customerPageConfig>/all/results', formatter:'.formatter.SnowColumnVisible'}"><Text text="NOW ID"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="onRowPress" type="Navigation">
+									<cells>
+										<ObjectStatus icon="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>EscType'}],formatter:'.formatter.formatRequestIcon'}"
+											tooltip="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+										<ObjectIdentifier title="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Text text=" {customerPageConfig>UpdateAt}"/>
+										<ObjectNumber number="{path:'customerPageConfig>ID', formatter:'.formatter.formatRequestId'}"/>
+										<ObjectStatus text="{customerPageConfig>Status}"/>
+										<ObjectNumber number="{customerPageConfig>SNow_number}" visible="{= ${customerPageConfig>SNow_number} ? true : false}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Toolbar id="allToolbar" visible="{= ${customerPageConfig>/closed/all} === true ? false : true }">
+							<!--visible="{= (${customerPageConfig>/all/results}).length >= (${customerPageConfig>/all/count}) ? false : true }"-->
+							<ToolbarSpacer/>
+							<Button text="{i18n>showClosed}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</IconTabFilter>
+					<IconTabSeparator/>
+					<IconTabFilter key="situation" icon="sap-icon://BusinessSuiteInAppSymbols/icon-multiple-warnings" 
+						design="{= ${device>/isPhone} ? 'Vertical' : 'Horizontal' }" count="{= !!${customerPageConfig>/situation/loadComplete} ? ${customerPageConfig>/situation/count} : '...'}"
+						text="{= ${device>/isPhone} ? ${i18n>criticalSituationS} : ${i18n>criticalSituation} }">
+						<l:Grid class="custGrid">
+							<SearchField id="situationSearch" liveChange="onSearch" placeholder="{i18n>searchListPh}" width="100%">
+								<layoutData>
+									<l:GridData span="L11 M11 S11"/>
+								</layoutData>
+							</SearchField>
+							<Button icon="{filterOptionModel>/situationFilterIcon}" press="openFilterPanel" type="Transparent">
+								<layoutData>
+									<l:GridData span="L1 M1 S1"/>
+								</layoutData>
+							</Button>
+						</l:Grid>
+						<l:Grid id="situationFilterGrid" defaultSpan="L4 M4 S6" class="custGrid" visible="false">
+							<l:content>
+								<MultiComboBox id="situationPriorityFilter" placeholder="{i18n>priority}" selectionChange="onFilterSituration"
+									items="{path:'filterOptionModel>/allPriority',sorter: { path: 'PriorityCode' }}" width="100%">
+									<core:Item key="{filterOptionModel>PriorityCode}" text="{filterOptionModel>Priority}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S6"/>
+									</layoutData>
+								</MultiComboBox>
+								<MultiComboBox id="situationStatusFilter" placeholder="{i18n>status}" selectionChange="onFilterSituration"
+									items="{path:'filterOptionModel>/situationStatus',sorter: { path: 'Status' }}" width="100%">
+									<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S5"/>
+									</layoutData>
+								</MultiComboBox>
+								<ComboBox id="situationTimeFilter" placeholder="{i18n>lastChanged}" selectionChange="onFilterSituration"
+									items="{path:'filterOptionModel>/allTimePeriod',sorter: { path: 'TimePeriod' }}" width="100%">
+									<core:Item text="{filterOptionModel>TimePeriodTxt}" key="{filterOptionModel>TimePeriod}"/>
+									<layoutData>
+										<l:GridData span="L3 M3 S6"/>
+									</layoutData>
+								</ComboBox>
+								<Button id="situationFilter" text="{i18n>apply}" press="onFilterSituation" type="Transparent">
+									<layoutData>
+										<l:GridData span="L1 M1 S6"/>
+									</layoutData>
+								</Button>
+							</l:content>
+						</l:Grid>
+						<!--<List id="situationList" mode="None"
+							items="{ path: 'customerPageConfig>/situation/results', sorter: [{ path: 'Priority',descending: false},{ path: 'UpdateDate',descending: true}]}">
+							<items>
+								<CustomListItem press="onRowPress" type="Navigation">
+									<VBox class="sapUiSmallMargin">
+										<Title text="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Label text="{customerPageConfig>UpdateAt}"/>
+										<HBox>
+											<VBox class="sapUiTinyMarginEnd">
+												<core:Icon src="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+											</VBox>
+											<VBox width="80%">
+												<Label width="100%"
+													text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}], formatter:'.formatter.formatRequestType'}"/>
+											</VBox>
+											<VBox width="50%" alignItems="End">
+												<Label width="100%" text="{customerPageConfig>Status}"/>
+											</VBox>
+										</HBox>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>-->
+						<Table id="situationList" growing="true" growingScrollToLoad="true" mode="None"
+							items="{ path: 'customerPageConfig>/situation/results', sorter: [{ path: 'Priority',descending: false},{ path: 'UpdateDate',descending: true}]}"
+							noDataText="{i18n>noData}" autoPopinMode="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<!--	<Title text="{i18n>myRequests}" level="H2"/>-->
+									<ToolbarSpacer/>
+									<FlexBox>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerDetails')" ariaHasPopup="Dialog"/></FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarSit" visible="false">
+									<Text id="vsdFilterLabelSit"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column width="10%" importance="Low"><Text text="Trans. Type"/></Column>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="High" hAlign="Center"><Text text="Changed At"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+								<!--<Column importance="Low" hAlign="Center" visible="{= ${customerPageConfig>SNow_number} ? true : false}"><Text text="NOW ID"/></Column>-->
+							</columns>
+							<items>
+								<ColumnListItem press="onRowPress" type="Navigation">
+									<cells>
+										<ObjectStatus icon="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"
+											tooltip="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+										<!--text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"-->
+										<ObjectIdentifier title="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Text text="{customerPageConfig>UpdateAt}"/>
+										<ObjectNumber number="{path:'customerPageConfig>ID', formatter:'.formatter.formatRequestId'}"/>
+										<ObjectStatus text="{customerPageConfig>Status}"/>
+										<!--<ObjectNumber number="{customerPageConfig>SNow_number}"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Toolbar id="situationToolbar" visible="{= ${customerPageConfig>/closed/situation} === true ? false : true }">
+							<!--visible="{= (${customerPageConfig>/situation/results}).length === (${customerPageConfig>/situation/count}) ? false : true }"-->
+							<ToolbarSpacer/>
+							<Button text="{i18n>showClosed}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</IconTabFilter>
+					<IconTabFilter key="businessDown" icon="sap-icon://quality-issue" design="{= ${device>/isPhone} ? 'Vertical' : 'Horizontal' }"
+						count="{= !!${customerPageConfig>/businessDown/loadComplete} ? ${customerPageConfig>/businessDown/count} : '...'}"
+						text="{= ${device>/isPhone} ? ${i18n>businessDownS} : ${i18n>businessDown} }">
+						<l:Grid class="custGrid">
+							<SearchField id="businessDownSearch" liveChange="onSearch" placeholder="{i18n>searchListPh}" width="100%">
+								<layoutData>
+									<l:GridData span="L11 M11 S11"/>
+								</layoutData>
+							</SearchField>
+							<Button icon="{filterOptionModel>/businessDownFilterIcon}" press="openFilterPanel" type="Transparent">
+								<layoutData>
+									<l:GridData span="L1 M1 S1"/>
+								</layoutData>
+							</Button>
+						</l:Grid>
+						<l:Grid id="businessDownFilterGrid" defaultSpan="L4 M4 S6" class="custGrid" visible="false">
+							<l:content>
+								<MultiComboBox id="businessDownPriorityFilter" placeholder="{i18n>priority}"
+									items="{path:'filterOptionModel>/incidentPriority',sorter: { path: 'PriorityCode' }}" width="100%">
+									<core:Item key="{filterOptionModel>PriorityCode}" text="{filterOptionModel>Priority}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S6"/>
+									</layoutData>
+								</MultiComboBox>
+								<MultiComboBox id="businessDownStatusFilter" placeholder="{i18n>status}"
+									items="{path:'filterOptionModel>/incidentStatus',sorter: { path: 'Status' }}" width="100%">
+									<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S5"/>
+									</layoutData>
+								</MultiComboBox>
+								<ComboBox id="businessDownTimeFilter" placeholder="{i18n>lastChanged}"
+									items="{path:'filterOptionModel>/allTimePeriod',sorter: { path: 'TimePeriod' }}" width="100%">
+									<core:Item text="{filterOptionModel>TimePeriodTxt}" key="{filterOptionModel>TimePeriod}"/>
+									<layoutData>
+										<l:GridData span="L3 M3 S6"/>
+									</layoutData>
+								</ComboBox>
+								<Button id="businessDownFilter" text="{i18n>apply}" press="onFilterBusinessDown" type="Transparent">
+									<layoutData>
+										<l:GridData span="L1 M1 S6"/>
+									</layoutData>
+								</Button>
+							</l:content>
+						</l:Grid>
+						<!--<List id="businessDownList" mode="None" items="{ path: 'customerPageConfig>/businessDown/results'}">
+							<items>
+								<CustomListItem press="onRowPress" type="Navigation">
+									<VBox class="sapUiSmallMargin">
+										<Title text="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Label text="{customerPageConfig>UpdateAt}"/>
+										<HBox>
+											<VBox class="sapUiTinyMarginEnd">
+												<core:Icon src="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+											</VBox>
+											<VBox width="80%">
+												<Label width="100%"
+													text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}], formatter:'.formatter.formatRequestType'}"/>
+											</VBox>
+											<VBox width="50%" alignItems="End">
+												<Label width="100%" text="{customerPageConfig>Status}"/>
+											</VBox>
+										</HBox>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>-->
+						<Table id="businessDownList" growing="true" growingScrollToLoad="true" mode="None"
+							items="{ path: 'customerPageConfig>/businessDown/results'}" noDataText="{i18n>noData}" autoPopinMode="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<!--	<Title text="{i18n>myRequests}" level="H2"/>-->
+									<ToolbarSpacer/>
+									<FlexBox>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerDetails')" ariaHasPopup="Dialog"/></FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarBD" visible="false">
+									<Text id="vsdFilterLabelBD"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column width="10%" importance="Low"><Text text="Trans. Type"/></Column>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="High" hAlign="Center"><Text text="Changed At"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+								<!--<Column importance="Low" hAlign="Center" visible="{= ${customerPageConfig>SNow_number} ? true : false}"><Text text="NOW ID"/></Column>-->
+							</columns>
+							<items>
+								<ColumnListItem press="onRowPress" type="Navigation">
+									<cells>
+										<ObjectStatus icon="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>EscType'}], formatter:'.formatter.formatRequestIcon'}"
+											tooltip="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+										<!--text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"-->
+										<ObjectIdentifier title="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Text text="{customerPageConfig>UpdateAt}"/>
+										<ObjectNumber number="{path:'customerPageConfig>ID', formatter:'.formatter.formatRequestId'}"/>
+										<ObjectStatus text="{customerPageConfig>Status}"/>
+										<!--<ObjectNumber number="{customerPageConfig>SNow_number}"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Toolbar id="businessDownToolbar" visible="{= ${customerPageConfig>/closed/businessDown} === true ? false : true }">
+							<!--visible="{= (${customerPageConfig>/businessDown/results}).length === (${customerPageConfig>/businessDown/count}) ? false : true }"-->
+							<ToolbarSpacer/>
+							<Button text="{i18n>showClosed}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</IconTabFilter>
+					<IconTabFilter key="incident" icon="sap-icon://overlay" design="{= ${device>/isPhone} ? 'Vertical' : 'Horizontal' }"
+						text="{= ${device>/isPhone} ? ${i18n>p1IncidentS} : ${i18n>p1Incident} }"
+						count="{= !!${customerPageConfig>/incident/loadComplete} ? ${customerPageConfig>/incident/count} : '...'}">
+						<l:Grid class="custGrid">
+							<SearchField id="incidentSearch" liveChange="onSearch" placeholder="{i18n>searchListPh}" width="100%">
+								<layoutData>
+									<l:GridData span="L11 M11 S11"/>
+								</layoutData>
+							</SearchField>
+							<Button icon="{filterOptionModel>/incidentFilterIcon}" press="openFilterPanel" type="Transparent">
+								<layoutData>
+									<l:GridData span="L1 M1 S1"/>
+								</layoutData>
+							</Button>
+						</l:Grid>
+						<l:Grid id="incidentFilterGrid" defaultSpan="L4 M4 S6" class="custGrid" visible="false">
+							<l:content>
+								<MultiComboBox id="incidentPriorityFilter" placeholder="{i18n>priority}"
+									items="{path:'filterOptionModel>/incidentPriority',sorter: { path: 'PriorityCode' }}" width="100%">
+									<core:Item key="{filterOptionModel>PriorityCode}" text="{filterOptionModel>Priority}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S6"/>
+									</layoutData>
+								</MultiComboBox>
+								<MultiComboBox id="incidentStatusFilter" placeholder="{i18n>status}"
+									items="{path:'filterOptionModel>/incidentStatus',sorter: { path: 'Status' }}" width="100%">
+									<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S5"/>
+									</layoutData>
+								</MultiComboBox>
+								<ComboBox id="incidentTimeFilter" placeholder="{i18n>lastChanged}"
+									items="{path:'filterOptionModel>/allTimePeriod',sorter: { path: 'TimePeriod' }}" width="100%">
+									<core:Item text="{filterOptionModel>TimePeriodTxt}" key="{filterOptionModel>TimePeriod}"/>
+									<layoutData>
+										<l:GridData span="L3 M3 S6"/>
+									</layoutData>
+								</ComboBox>
+								<Button id="incidentFilter" text="{i18n>apply}" press="onFilterIncident" type="Transparent">
+									<layoutData>
+										<l:GridData span="L1 M1 S6"/>
+									</layoutData>
+								</Button>
+							</l:content>
+						</l:Grid>
+						<!--	<List id="incidentList" mode="None" items="{ path: 'customerPageConfig>/incident/results'}">
+							<items>
+								<CustomListItem press="onRowPress" type="Navigation">
+									<VBox class="sapUiSmallMargin">
+										<Title text="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Label text="{customerPageConfig>UpdateAt}"/>
+										<HBox>
+											<VBox class="sapUiTinyMarginEnd">
+												<core:Icon src="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+											</VBox>
+											<VBox width="80%">
+												<Label width="100%"
+													text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+											</VBox>
+											<VBox width="50%" alignItems="End">
+												<Label width="100%" text="{customerPageConfig>Status}"/>
+											</VBox>
+										</HBox>
+										<Label text="{customerPageConfig>SNow_number}" visible="{= ${customerPageConfig>SNow_number} ? true : false}"/>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>-->
+						<Table id="incidentList" growing="true" growingScrollToLoad="true" mode="None" items="{ path: 'customerPageConfig>/incident/results'}"
+							noDataText="{i18n>noData}" autoPopinMode="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<!--	<Title text="{i18n>myRequests}" level="H2"/>-->
+									<ToolbarSpacer/>
+									<FlexBox>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerDetails')" ariaHasPopup="Dialog"/></FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarIncident" visible="false">
+									<Text id="vsdFilterLabelIncident"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column width="10%" importance="Low"><Text text="Trans. Type"/></Column>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="High" hAlign="Center"><Text text="Changed At"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+								<Column importance="Low" hAlign="Center" visible="{path:'customerPageConfig>/incident/results', formatter:'.formatter.SnowColumnVisible'}"><Text text="NOW ID"/></Column>
+							</columns>
+							<items>
+								<ColumnListItem press="onRowPress" type="Navigation">
+									<cells>
+										<ObjectStatus icon="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"
+											tooltip="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+										<!--text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"-->
+										<ObjectIdentifier title="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Text text="{customerPageConfig>UpdateAt}"/>
+										<ObjectNumber number="{path:'customerPageConfig>ID', formatter:'.formatter.formatRequestId'}"/>
+										<ObjectStatus text="{customerPageConfig>Status}"/>
+										<ObjectNumber number="{customerPageConfig>SNow_number}" visible="{= ${customerPageConfig>SNow_number} ? true : false}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Toolbar id="incidentToolbar" visible="{= ${customerPageConfig>/closed/incident} === true ? false : true }">
+							<!--	visible="{= (${customerPageConfig>/incident/results}).length >= (${customerPageConfig>/incident/count}) ? false : true }"-->
+							<ToolbarSpacer/>
+							<Button text="{i18n>showClosed}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</IconTabFilter>
+					<IconTabFilter key="case" id="idCaseFilter" icon="sap-icon://BusinessSuiteInAppSymbols/icon-gis-layer"
+						design="{= ${device>/isPhone} ? 'Vertical' : 'Horizontal' }" 
+						count="{= !!${customerPageConfig>/case/loadComplete} ? ${customerPageConfig>/case/count} : '...'}"
+						text="{= ${device>/isPhone} ? ${i18n>globalEscalationCaseS} : ${i18n>globalEscalationCase} }">
+						<l:Grid class="custGrid">
+							<SearchField id="caseSearch" liveChange="onSearch" placeholder="{i18n>searchListPh}" width="100%">
+								<layoutData>
+									<l:GridData span="L11 M11 S11"/>
+								</layoutData>
+							</SearchField>
+							<Button icon="{filterOptionModel>/caseFilterIcon}" press="openFilterPanel" type="Transparent" visible="false">
+								<layoutData>
+									<l:GridData span="L1 M1 S1"/>
+								</layoutData>
+							</Button>
+						</l:Grid>
+						<l:Grid id="caseFilterGrid" defaultSpan="L4 M4 S6" class="custGrid" visible="false">
+							<l:content>
+								<MultiComboBox id="casePriorityFilter" placeholder="{i18n>priority}"
+									items="{path:'filterOptionModel>/casePriority',sorter: { path: 'PriorityCode' }}" width="100%">
+									<core:Item key="{filterOptionModel>PriorityCode}" text="{filterOptionModel>Priority}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S6"/>
+									</layoutData>
+								</MultiComboBox>
+								<MultiComboBox id="caseStatusFilter" placeholder="{i18n>status}" items="{path:'filterOptionModel>/caseStatus',sorter: { path: 'Status' }}"
+									width="100%">
+									<core:Item key="{filterOptionModel>Status}" text="{filterOptionModel>StatusTxt}"/>
+									<layoutData>
+										<l:GridData span="L4 M4 S5"/>
+									</layoutData>
+								</MultiComboBox>
+								<ComboBox id="caseTimeFilter" placeholder="{i18n>lastChanged}"
+									items="{path:'filterOptionModel>/allTimePeriod',sorter: { path: 'TimePeriod' }}" width="100%">
+									<core:Item text="{filterOptionModel>TimePeriodTxt}" key="{filterOptionModel>TimePeriod}"/>
+									<layoutData>
+										<l:GridData span="L3 M3 S6"/>
+									</layoutData>
+								</ComboBox>
+								<Button id="caseFilter" text="{i18n>apply}" press="onFilterCase" type="Transparent">
+									<layoutData>
+										<l:GridData span="L1 M1 S6"/>
+									</layoutData>
+								</Button>
+							</l:content>
+						</l:Grid>
+						<!--<List id="caseList" mode="None" items="{ path: 'customerPageConfig>/case/results', sorter: { path: 'UpdateDate',descending: true}}">
+							<items>
+								<CustomListItem press="onRowPress" type="Navigation">
+									<VBox class="sapUiSmallMargin">
+										<Title text="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Label text="{customerPageConfig>UpdateAt}"/>
+										<HBox>
+											<VBox class="sapUiTinyMarginEnd">
+												<core:Icon src="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"/>
+											</VBox>
+											<VBox width="80%">
+												<Label width="100%"
+													text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}], formatter:'.formatter.formatRequestType'}"/>
+											</VBox>
+											<VBox width="50%" alignItems="End">
+												<Label width="100%" text="{customerPageConfig>Status}"/>
+											</VBox>
+										</HBox>
+									</VBox>
+								</CustomListItem>
+							</items>
+						</List>-->
+						<Table id="caseList" growing="true" growingScrollToLoad="true" mode="None"
+							items="{ path: 'customerPageConfig>/case/results', sorter: { path: 'UpdateDate',descending: true}}" noDataText="{i18n>noData}"
+							autoPopinMode="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<!--	<Title text="{i18n>myRequests}" level="H2"/>-->
+									<ToolbarSpacer/>
+									<FlexBox>
+										<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed($event, 'CustomerDetails')" ariaHasPopup="Dialog"/></FlexBox>
+								</OverflowToolbar>
+							</headerToolbar>
+							<infoToolbar>
+								<OverflowToolbar id="vsdFilterBarCase" visible="false">
+									<Text id="vsdFilterLabelCase"/>
+								</OverflowToolbar>
+							</infoToolbar>
+							<columns>
+								<Column width="10%" importance="Low"><Text text="Trans. Type"/></Column>
+								<Column importance="High"><Text text="Description"/></Column>
+								<Column importance="High" hAlign="Center"><Text text="Changed At"/></Column>
+								<Column importance="Medium" hAlign="Center"><Text text="Object ID"/></Column>
+								<Column importance="High" hAlign="End"><Text text="Status"/></Column>
+								<!--<Column importance="Low" hAlign="Center" visible="{= ${customerPageConfig>SNow_number} ? true : false}"><Text text="NOW ID"/></Column>-->
+							</columns>
+							<items>
+								<ColumnListItem press="onRowPress" type="Navigation">
+									<cells>
+										<ObjectStatus icon="{path:'customerPageConfig>TransType',formatter:'.formatter.formatRequestIcon'}"
+											tooltip="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"/>
+										<!--text="{parts:[{path:'customerPageConfig>TransType'}, {path:'customerPageConfig>ID'}, {path:'customerPageConfig>PriorityCode'},{path:'customerPageConfig>SNow_number'}], formatter:'.formatter.formatRequestType'}"-->
+										<ObjectIdentifier title="{path:'customerPageConfig>Description', formatter:'.formatter.formatRequestHeader'}"/>
+										<Text text="{customerPageConfig>UpdateAt}"/>
+										<ObjectNumber number="{path:'customerPageConfig>ID', formatter:'.formatter.formatRequestId'}"/>
+										<ObjectStatus text="{customerPageConfig>Status}"/>
+										<!--<ObjectNumber number="{customerPageConfig>SNow_number}"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<Toolbar id="caseToolbar" visible="{= ${customerPageConfig>/closed/case} === true ? false : true }">
+							<!--visible="{= (${customerPageConfig>/case/results}).length === (${customerPageConfig>/case/count}) ? false : true }"-->
+							<ToolbarSpacer/>
+							<Button text="{i18n>showClosed}" type="Transparent" press="onShowMore"/>
+							<ToolbarSpacer/>
+						</Toolbar>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://download" type="Transparent" press="onDownload"/>
+			</Toolbar>
+		</footer>
+	</Page >
+</mvc:View>

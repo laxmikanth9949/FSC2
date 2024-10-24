@@ -1,0 +1,170 @@
+{
+
+		"results": [{
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000448',GUID='005056A501541EE28BFC664AC92B4437')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000448',GUID='005056A501541EE28BFC664AC92B4437')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0010000448",
+			"GUID": "005056A501541EE28BFC664AC92B4437",
+			"Description": "test 2 andre",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS90",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "Action needed",
+			"Field": "1                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000751',GUID='0894EF0801901ED6AEEDA7B98D24D207')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000751',GUID='0894EF0801901ED6AEEDA7B98D24D207')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0010000751",
+			"GUID": "0894EF0801901ED6AEEDA7B98D24D207",
+			"Description": "test dates",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS90",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "In process",
+			"Field": "4                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000713',GUID='089E01806CEA1EE69CE260069E679188')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000713',GUID='089E01806CEA1EE69CE260069E679188')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0010000713",
+			"GUID": "089E01806CEA1EE69CE260069E679188",
+			"Description": "test test",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS90",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "7                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000714',GUID='089E01806CEA1EE69CE2F0EF7508D413')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0010000714',GUID='089E01806CEA1EE69CE2F0EF7508D413')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0010000714",
+			"GUID": "089E01806CEA1EE69CE2F0EF7508D413",
+			"Description": "test 33",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS90",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "3                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000010004',GUID='B5FD29F966BD5946B1724C0A681B812D')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000010004',GUID='B5FD29F966BD5946B1724C0A681B812D')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000010004",
+			"GUID": "B5FD29F966BD5946B1724C0A681B812D",
+			"Description": "",
+			"CustomerNo": "0000010004",
+			"CustomerName": "Arburg GmbH + Co Test WD 4",
+			"TransType": "",
+			"FavoriteType": "FAVORITE_CUSTOMERS",
+			"Status": "",
+			"Field": "2                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000012186',GUID='AAD9B96C539D814BA11F8EA72D76EE11')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000012186',GUID='AAD9B96C539D814BA11F8EA72D76EE11')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000012186",
+			"GUID": "AAD9B96C539D814BA11F8EA72D76EE11",
+			"Description": "",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "",
+			"FavoriteType": "FAVORITE_CUSTOMERS",
+			"Status": "",
+			"Field": "3                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0001373542',GUID='288023A496341EE7B18C9476BDBA4D53')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0001373542',GUID='288023A496341EE7B18C9476BDBA4D53')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0001373542",
+			"GUID": "288023A496341EE7B18C9476BDBA4D53",
+			"Description": "",
+			"CustomerNo": "0001373542",
+			"CustomerName": "Test 23",
+			"TransType": "",
+			"FavoriteType": "FAVORITE_CUSTOMERS",
+			"Status": "",
+			"Field": "1                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000090612',GUID='005056A501541EE2A2C971F7F4033386')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000090612',GUID='005056A501541EE2A2C971F7F4033386')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000090612",
+			"GUID": "005056A501541EE2A2C971F7F4033386",
+			"Description": "Test Andre NEW",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS31",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "1                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000079069',GUID='005056A501541EE1BF9592646CA26437')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000079069',GUID='005056A501541EE1BF9592646CA26437')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000079069",
+			"GUID": "005056A501541EE1BF9592646CA26437",
+			"Description": "Test Involved user",
+			"CustomerNo": "0000012186",
+			"CustomerName": "Bayer Aktiengesellschaft",
+			"TransType": "ZS31",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "4                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000144914',GUID='005056A501541ED5BDB707124DBF44E6')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000144914',GUID='005056A501541ED5BDB707124DBF44E6')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000144914",
+			"GUID": "005056A501541ED5BDB707124DBF44E6",
+			"Description": "Test Test",
+			"CustomerNo": "",
+			"CustomerName": "",
+			"TransType": "ZS31",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "3                               "
+		}, {
+			"__metadata": {
+				"id": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000144969',GUID='005056A501541ED5BEC918B9752C84E6')",
+				"uri": "https://webidetesting1358206-waeb84638.dispatcher.int.sap.hana.ondemand.com/sap/opu/odata/sap/ZS_AGS_FSC2_SRV/FavoriteObjectSet(ID='0000144969',GUID='005056A501541ED5BEC918B9752C84E6')",
+				"type": "ZS_AGS_FSC2_SRV.FavoriteObject"
+			},
+			"ID": "0000144969",
+			"GUID": "005056A501541ED5BEC918B9752C84E6",
+			"Description": "This is a test",
+			"CustomerNo": "0000012520",
+			"CustomerName": "AUDI AG",
+			"TransType": "ZS31",
+			"FavoriteType": "FAVORITE_CRITICAL",
+			"Status": "New",
+			"Field": "2                               "
+		}]
+	
+}

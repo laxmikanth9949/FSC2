@@ -1,0 +1,85 @@
+{
+
+		"results": [{
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='6')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='6')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "APP_FSC2_SEARCH_HISTORY",
+			"Field": "6",
+			"Value": "0010000898",
+			"Text": "0010000898",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='6')/Attributes"
+				}
+			}
+		}, {
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='5')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='5')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "APP_FSC2_SEARCH_HISTORY",
+			"Field": "5",
+			"Value": "0010000897",
+			"Text": "0010000897",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='5')/Attributes"
+				}
+			}
+		}, {
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='4')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='4')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "APP_FSC2_SEARCH_HISTORY",
+			"Field": "4",
+			"Value": "0010000878",
+			"Text": "0010000878",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='4')/Attributes"
+				}
+			}
+		}, {
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='3')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='3')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "APP_FSC2_SEARCH_HISTORY",
+			"Field": "3",
+			"Value": "0010000889",
+			"Text": "0010000889",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='3')/Attributes"
+				}
+			}
+		}, {
+			"__metadata": {
+				"id": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='2')",
+				"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='2')",
+				"type": "/SVT/USER_PROFILE_SRV.Entry"
+			},
+			"Username": "",
+			"Attribute": "APP_FSC2_SEARCH_HISTORY",
+			"Field": "2",
+			"Value": "test",
+			"Text": "test",
+			"Attributes": {
+				"__deferred": {
+					"uri": "https://PGDMAIN.WDF.SAP.CORP:443/sap/opu/odata/SVT/USER_PROFILE_SRV/Entries(Username='',Attribute='APP_FSC2_SEARCH_HISTORY',Field='2')/Attributes"
+				}
+			}
+		}]
+	
+}
